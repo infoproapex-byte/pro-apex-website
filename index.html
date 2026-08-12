@@ -1,6 +1,4 @@
-from pathlib import Path
-
-html = r'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
@@ -289,7 +287,7 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none}
     <div class="section-head">
       <div class="eyebrow">Multi-trade maintenance</div>
       <h2>One local point of contact for a wide range of jobs.</h2>
-      <p>Suitable for homeowners, landlords, letting agents and business clients who want a reliable local tradesman rather than several different contractors.</p>
+      <p>Suitable for homeowners, landlords, letting agents and business clients who want one dependable local maintenance partner rather than several different contractors.</p>
     </div>
     <div class="services-grid">
       <div class="service-card"><span class="icon">🔌</span><h3>Electrical works</h3><p>Sockets, lighting, switches, testing, fault-finding and other electrical work within qualifications and scope.</p></div>
@@ -312,7 +310,7 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none}
     <h2>Built around trust, clear communication and accountability.</h2>
   </div>
   <div class="why-grid">
-    <div class="why-card"><span class="num">01</span><p><strong>One local point of contact.</strong> Reduce the need to coordinate several trades for smaller maintenance jobs.</p></div>
+    <div class="why-card"><span class="num">01</span><p><strong>One local point of contact.</strong> Reduce the need to coordinate several different contractors for smaller maintenance jobs.</p></div>
     <div class="why-card"><span class="num">02</span><p><strong>18th Edition electrical qualification.</strong> Electrical work is carried out within the appropriate qualification and scope.</p></div>
     <div class="why-card"><span class="num">03</span><p><strong>Comfortable around occupied homes.</strong> Previous healthcare experience helps me understand the importance of respectful working.</p></div>
     <div class="why-card"><span class="num">04</span><p><strong>Written agreements.</strong> Scope, finish and price are agreed before work starts.</p></div>
@@ -486,8 +484,3 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none}
 
 </body>
 </html>
-'''
-
-path = Path("/mnt/data/proapex_index_updated.html")
-path.write_text(html, encoding="utf-8")
-print(f"Created: {path}")
