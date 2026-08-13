@@ -63,37 +63,15 @@ nav.main .container{display:flex;align-items:center;justify-content:space-betwee
 .navlinks{display:flex;gap:20px;font-size:.9rem;font-weight:700;}
 .navlinks a{text-decoration:none;color:var(--ink-soft);}
 .navlinks a:hover{color:var(--teal);}
-.nav-right{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.nav-apps{border:2px solid var(--line);background:#fff;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.9rem;white-space:nowrap;color:var(--ink-soft);transition:.18s;}
+.nav-apps:hover{border-color:var(--teal);color:var(--teal-dark);}
 .nav-cta{background:var(--amber);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.9rem;white-space:nowrap;}
 @media(max-width:850px){.navlinks{display:none;}}
-
-/* LANGUAGE SWITCH */
-.lang-switch{
-  display:flex;
-  align-items:center;
-  gap:2px;
-  background:var(--soft);
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:3px;
+@media(max-width:520px){
+  .nav-apps,.nav-cta{padding:8px 13px;font-size:.82rem;}
+  .brand{font-size:1.1rem;}
 }
-.lang-btn{
-  border:none;
-  background:transparent;
-  color:var(--ink-soft);
-  font-weight:800;
-  font-size:.76rem;
-  letter-spacing:.02em;
-  padding:6px 11px;
-  border-radius:999px;
-  cursor:pointer;
-  font-family:inherit;
-}
-.lang-btn.active{background:var(--ink);color:#fff;}
-.lang-btn:not(.active):hover{color:var(--teal-dark);}
-.topbar .lang-switch{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);}
-.topbar .lang-btn{color:#C9D2DE;}
-.topbar .lang-btn.active{background:var(--amber);color:var(--ink);}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid transparent;transition:.18s;}
@@ -153,6 +131,9 @@ section{padding:66px 0;}
 .app-content h3 + p{color:var(--slate);max-width:560px;}
 .app-features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 27px;}
 .app-features div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:.9rem;font-weight:700;color:var(--ink-soft);}
+.app-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.app-ctas .btn-outline{border-color:var(--line);background:#fff;color:var(--ink);}
+.app-ctas .btn-outline:hover{border-color:var(--teal);color:var(--teal-dark);}
 .optional-extra .app-card{background:var(--ink);border-radius:20px;padding:20px;box-shadow:0 18px 45px rgba(14,26,43,.16);max-width:480px;width:100%;margin-left:auto;}
 .app-card-top{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;padding:4px 5px 18px;}
 .app-status{width:9px;height:9px;background:var(--teal);border-radius:50%;display:inline-block;}
@@ -241,8 +222,6 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
   .hero{padding:48px 0 62px;}
   .hero h1{font-size:2.15rem;}
   .contact,.business-cta{border-radius:0;}
-  .lang-switch{padding:2px;}
-  .lang-btn{padding:5px 9px;font-size:.72rem;}
 }
 </style>
 </head>
@@ -254,13 +233,9 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="container">
-    <span data-i18n="topbar_hours">Rugby, Warwickshire · Mon–Sat, 8am–6pm</span>
+    <span>Rugby, Warwickshire · Mon–Sat, 8am–6pm</span>
     <div style="display:flex;align-items:center;gap:14px;">
       <a class="call" href="tel:+447775877746">📞 07775 877 746</a>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button class="lang-btn" data-lang="en" type="button">EN</button>
-        <button class="lang-btn" data-lang="ro" type="button">RO</button>
-      </div>
     </div>
   </div>
 </div>
@@ -278,16 +253,16 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
     </a>
 
     <div class="navlinks">
-      <a href="#care" data-i18n="nav_care">Care Providers</a>
-      <a href="#app" data-i18n="nav_app">Staff Break App</a>
-      <a href="#services" data-i18n="nav_services">Services</a>
-      <a href="#trust" data-i18n="nav_trust">Why Us</a>
-      <a href="#faq" data-i18n="nav_faq">FAQ</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="#care">Care Providers</a>
+      <a href="#services">Services</a>
+      <a href="#trust">Why Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </div>
 
     <div class="nav-right">
-      <a class="nav-cta" href="#contact" data-i18n="nav_cta">Get a Quote →</a>
+      <a class="nav-apps" href="apps.html">📱 Apps</a>
+      <a class="nav-cta" href="#contact">Get a Quote →</a>
     </div>
 
   </div>
@@ -299,21 +274,22 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <header class="hero">
   <div class="container hero-inner">
 
-    <div class="eyebrow" data-i18n="hero_eyebrow">Multi-Trade Property Maintenance</div>
+    <div class="eyebrow">Multi-Trade Property Maintenance</div>
 
-    <h1 data-i18n="hero_h1">Reliable multi-trade property maintenance for homes, landlords and businesses.</h1>
+    <h1>Reliable multi-trade property maintenance for homes, landlords and businesses.</h1>
 
-    <p class="lead" data-i18n="hero_lead">Pro APEX provides practical multi-trade property maintenance, repairs and improvements for homes, landlords, letting agents and businesses across the local area.</p>
+    <p class="lead">Pro APEX provides practical multi-trade property maintenance, repairs and improvements for homes, landlords, letting agents and businesses across the local area.</p>
 
     <div class="hero-ctas">
-      <a class="btn btn-primary" href="#services" data-i18n="hero_cta1">View My Services →</a>
-      <a class="btn btn-outline" href="#contact" data-i18n="hero_cta2">📞 Get a Quote</a>
+      <a class="btn btn-primary" href="#services">View My Services →</a>
+      <a class="btn btn-outline" href="apps.html">📱 View Our Apps</a>
+      <a class="btn btn-outline" href="#contact">📞 Get a Quote</a>
     </div>
 
     <div class="hero-badges">
-      <span><i class="dot"></i><span data-i18n="hero_badge1">Fully insured Ltd company</span></span>
-      <span><i class="dot"></i><span data-i18n="hero_badge2">Multi-trade maintenance</span></span>
-      <span><i class="dot"></i><span data-i18n="hero_badge3">Rugby & Warwickshire</span></span>
+      <span><i class="dot"></i><span>Fully insured Ltd company</span></span>
+      <span><i class="dot"></i><span>Multi-trade maintenance</span></span>
+      <span><i class="dot"></i><span>Rugby & Warwickshire</span></span>
     </div>
 
   </div>
@@ -323,16 +299,16 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <div class="container">
   <div class="partner-strip">
     <div>
-      <strong data-i18n="partner1_title">Care providers</strong>
-      <span data-i18n="partner1_desc">Reliable maintenance and practical property support.</span>
+      <strong>Care providers</strong>
+      <span>Reliable maintenance and practical property support.</span>
     </div>
     <div>
-      <strong data-i18n="partner2_title">Landlords & agents</strong>
-      <span data-i18n="partner2_desc">Repairs, decorating and property turnarounds.</span>
+      <strong>Landlords &amp; agents</strong>
+      <span>Repairs, decorating and property turnarounds.</span>
     </div>
     <div>
-      <strong data-i18n="partner3_title">Businesses</strong>
-      <span data-i18n="partner3_desc">A dependable local point of contact for property work.</span>
+      <strong>Businesses</strong>
+      <span>A dependable local point of contact for property work.</span>
     </div>
   </div>
 </div>
@@ -344,28 +320,28 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 
       <div>
         <div class="section-head">
-          <div class="eyebrow" data-i18n="care_eyebrow">Care providers & supported living</div>
-          <h2 data-i18n="care_h2">A maintenance partner who understands occupied homes.</h2>
-          <p data-i18n="care_p">When a carer, care manager or family member identifies a maintenance problem, you need someone dependable who can respond professionally and treat the person and their home with respect.</p>
+          <div class="eyebrow">Care providers &amp; supported living</div>
+          <h2>A maintenance partner who understands occupied homes.</h2>
+          <p>When a carer, care manager or family member identifies a maintenance problem, you need someone dependable who can respond professionally and treat the person and their home with respect.</p>
         </div>
 
         <div class="care-list">
-          <div data-i18n="care_item1">Home safety improvements</div>
-          <div data-i18n="care_item2">Grab rails & accessibility</div>
-          <div data-i18n="care_item3">Minor bathroom adaptations</div>
-          <div data-i18n="care_item4">Electrical & lighting repairs</div>
-          <div data-i18n="care_item5">Doors, locks & carpentry</div>
-          <div data-i18n="care_item6">Painting & decorating</div>
-          <div data-i18n="care_item7">General property repairs</div>
-          <div data-i18n="care_item8">Maintenance inspections</div>
+          <div>Home safety improvements</div>
+          <div>Grab rails &amp; accessibility</div>
+          <div>Minor bathroom adaptations</div>
+          <div>Electrical &amp; lighting repairs</div>
+          <div>Doors, locks &amp; carpentry</div>
+          <div>Painting &amp; decorating</div>
+          <div>General property repairs</div>
+          <div>Maintenance inspections</div>
         </div>
       </div>
 
       <div class="care-panel">
-        <h3 data-i18n="care_panel_h3">Clear records after the work</h3>
-        <p data-i18n="care_panel_p1">For business clients, Pro APEX can provide a simple record of completed works, including what was repaired, the date and photographs where appropriate.</p>
-        <p><strong data-i18n="care_panel_p2_strong">Need a local maintenance partner?</strong> <span data-i18n="care_panel_p2_rest">Let's discuss how referrals and repeat maintenance could work for your organisation.</span></p>
-        <a class="btn btn-primary" href="#business" data-i18n="care_panel_btn">Discuss a partnership</a>
+        <h3>Clear records after the work</h3>
+        <p>For business clients, Pro APEX can provide a simple record of completed works, including what was repaired, the date and photographs where appropriate.</p>
+        <p><strong>Need a local maintenance partner?</strong> Let's discuss how referrals and repeat maintenance could work for your organisation.</p>
+        <a class="btn btn-primary" href="#business">Discuss a partnership</a>
       </div>
 
     </div>
@@ -376,42 +352,42 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <section class="container">
 
   <div class="section-head">
-    <div class="eyebrow" data-i18n="safety_eyebrow">Home safety & accessibility</div>
-    <h2 data-i18n="safety_h2">Small changes can make a home safer and easier to use.</h2>
-    <p data-i18n="safety_p">Practical maintenance and accessibility improvements for older people, families and anyone who needs a little extra support around the home.</p>
+    <div class="eyebrow">Home safety &amp; accessibility</div>
+    <h2>Small changes can make a home safer and easier to use.</h2>
+    <p>Practical maintenance and accessibility improvements for older people, families and anyone who needs a little extra support around the home.</p>
   </div>
 
   <div class="services-grid">
 
     <div class="service-card">
       <span class="icon">🛟</span>
-      <h3 data-i18n="safety1_title">Grab rails & support fittings</h3>
-      <p data-i18n="safety1_desc">Practical fitting of suitable support rails and safety accessories where appropriate.</p>
+      <h3>Grab rails &amp; support fittings</h3>
+      <p>Practical fitting of suitable support rails and safety accessories where appropriate.</p>
     </div>
 
     <div class="service-card">
       <span class="icon">🚿</span>
-      <h3 data-i18n="safety2_title">Bathroom safety</h3>
-      <p data-i18n="safety2_desc">Minor repairs, fittings, flooring and improvements that can make bathrooms easier and safer to use.</p>
+      <h3>Bathroom safety</h3>
+      <p>Minor repairs, fittings, flooring and improvements that can make bathrooms easier and safer to use.</p>
     </div>
 
     <div class="service-card">
       <span class="icon">💡</span>
-      <h3 data-i18n="safety3_title">Lighting & electrical</h3>
-      <p data-i18n="safety3_desc">Lighting, sockets, switches, fault-finding and other electrical work within the appropriate scope.</p>
+      <h3>Lighting &amp; electrical</h3>
+      <p>Lighting, sockets, switches, fault-finding and other electrical work within the appropriate scope.</p>
     </div>
 
     <div class="service-card">
       <span class="icon">🚪</span>
-      <h3 data-i18n="safety4_title">Doors & access</h3>
-      <p data-i18n="safety4_desc">Door repairs, handles, locks, adjustments and carpentry to improve everyday access.</p>
+      <h3>Doors &amp; access</h3>
+      <p>Door repairs, handles, locks, adjustments and carpentry to improve everyday access.</p>
     </div>
 
   </div>
 
   <div class="report">
-    <strong data-i18n="report_strong">Respectful working in occupied homes</strong>
-    <p data-i18n="report_p">Pro APEX aims to keep disruption to a minimum, protect the working area and leave the property clean and safe when the job is finished.</p>
+    <strong>Respectful working in occupied homes</strong>
+    <p>Pro APEX aims to keep disruption to a minimum, protect the working area and leave the property clean and safe when the job is finished.</p>
   </div>
 
 </section>
@@ -421,55 +397,55 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
   <div class="container">
 
     <div class="section-head">
-      <div class="eyebrow" data-i18n="services_eyebrow">Multi-trade maintenance</div>
-      <h2 data-i18n="services_h2">One local point of contact for a wide range of jobs.</h2>
-      <p data-i18n="services_p">Suitable for homeowners, landlords, letting agents and business clients who want one dependable local maintenance partner rather than several different contractors.</p>
+      <div class="eyebrow">Multi-trade maintenance</div>
+      <h2>One local point of contact for a wide range of jobs.</h2>
+      <p>Suitable for homeowners, landlords, letting agents and business clients who want one dependable local maintenance partner rather than several different contractors.</p>
     </div>
 
     <div class="services-grid">
 
       <div class="service-card">
         <span class="icon">🔌</span>
-        <h3 data-i18n="serv1_title">Electrical works</h3>
-        <p data-i18n="serv1_desc">Sockets, lighting, switches, testing, fault-finding and other electrical work within qualifications and scope.</p>
+        <h3>Electrical works</h3>
+        <p>Sockets, lighting, switches, testing, fault-finding and other electrical work within qualifications and scope.</p>
       </div>
 
       <div class="service-card">
         <span class="icon">🎨</span>
-        <h3 data-i18n="serv2_title">Painting & decorating</h3>
-        <p data-i18n="serv2_desc">Interior and exterior painting, plastering, skimming and finishing. Low-odour options can be discussed for occupied properties.</p>
-        <span class="service-tag" data-i18n="serv2_tag">Low-odour options</span>
+        <h3>Painting &amp; decorating</h3>
+        <p>Interior and exterior painting, plastering, skimming and finishing. Low-odour options can be discussed for occupied properties.</p>
+        <span class="service-tag">Low-odour options</span>
       </div>
 
       <div class="service-card">
         <span class="icon">🪚</span>
-        <h3 data-i18n="serv3_title">Carpentry & repairs</h3>
-        <p data-i18n="serv3_desc">Doors, skirting, shelving, fencing, flat-pack assembly and general property repairs.</p>
+        <h3>Carpentry &amp; repairs</h3>
+        <p>Doors, skirting, shelving, fencing, flat-pack assembly and general property repairs.</p>
       </div>
 
       <div class="service-card">
         <span class="icon">🧱</span>
-        <h3 data-i18n="serv4_title">Tiling & flooring</h3>
-        <p data-i18n="serv4_desc">Wall and floor tiling, laminate, vinyl, sub-floor preparation and repairs.</p>
+        <h3>Tiling &amp; flooring</h3>
+        <p>Wall and floor tiling, laminate, vinyl, sub-floor preparation and repairs.</p>
       </div>
 
       <div class="service-card">
         <span class="icon">🚿</span>
-        <h3 data-i18n="serv5_title">Kitchens & bathrooms</h3>
-        <p data-i18n="serv5_desc">Fitting, upgrades, tiling, sinks, toilets and associated work within the agreed scope.</p>
+        <h3>Kitchens &amp; bathrooms</h3>
+        <p>Fitting, upgrades, tiling, sinks, toilets and associated work within the agreed scope.</p>
       </div>
 
       <div class="service-card">
         <span class="icon">🏠</span>
-        <h3 data-i18n="serv6_title">Property maintenance</h3>
-        <p data-i18n="serv6_desc">General repairs, property checks, gutters, end-of-tenancy work and small renovations.</p>
+        <h3>Property maintenance</h3>
+        <p>General repairs, property checks, gutters, end-of-tenancy work and small renovations.</p>
       </div>
 
     </div>
 
     <div class="report" style="border-left-color:var(--amber);background:var(--soft-amber)">
-      <strong data-i18n="outside_scope_strong">Outside my scope?</strong>
-      <p data-i18n="outside_scope_p">I do not carry out Gas or F-Gas air-conditioning work. Where appropriate, I can recommend suitably registered specialists for those jobs.</p>
+      <strong>Outside my scope?</strong>
+      <p>I do not carry out Gas or F-Gas air-conditioning work. Where appropriate, I can recommend suitably registered specialists for those jobs.</p>
     </div>
 
   </div>
@@ -479,35 +455,35 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <section id="trust" class="container">
 
   <div class="section-head">
-    <div class="eyebrow" data-i18n="why_eyebrow">Why Pro APEX</div>
-    <h2 data-i18n="why_h2">Built around trust, clear communication and accountability.</h2>
+    <div class="eyebrow">Why Pro APEX</div>
+    <h2>Built around trust, clear communication and accountability.</h2>
   </div>
 
   <div class="why-grid">
 
     <div class="why-card">
       <span class="num">01</span>
-      <p><strong data-i18n="why1_strong">One local point of contact.</strong> <span data-i18n="why1_rest">Reduce the need to coordinate several different contractors for smaller maintenance jobs.</span></p>
+      <p><strong>One local point of contact.</strong> Reduce the need to coordinate several different contractors for smaller maintenance jobs.</p>
     </div>
 
     <div class="why-card">
       <span class="num">02</span>
-      <p><strong data-i18n="why2_strong">18th Edition electrical qualification.</strong> <span data-i18n="why2_rest">Electrical work is carried out within the appropriate qualification and scope.</span></p>
+      <p><strong>18th Edition electrical qualification.</strong> Electrical work is carried out within the appropriate qualification and scope.</p>
     </div>
 
     <div class="why-card">
       <span class="num">03</span>
-      <p><strong data-i18n="why3_strong">Comfortable around occupied homes.</strong> <span data-i18n="why3_rest">Previous healthcare experience helps me understand the importance of respectful working.</span></p>
+      <p><strong>Comfortable around occupied homes.</strong> Previous healthcare experience helps me understand the importance of respectful working.</p>
     </div>
 
     <div class="why-card">
       <span class="num">04</span>
-      <p><strong data-i18n="why4_strong">Written agreements.</strong> <span data-i18n="why4_rest">Scope, finish and price are agreed before work starts.</span></p>
+      <p><strong>Written agreements.</strong> Scope, finish and price are agreed before work starts.</p>
     </div>
 
     <div class="why-card">
       <span class="num">05</span>
-      <p><strong data-i18n="why5_strong">12-month workmanship guarantee.</strong> <span data-i18n="why5_rest">If completed work does not match what was agreed, I will return to put it right within the guarantee terms.</span></p>
+      <p><strong>12-month workmanship guarantee.</strong> If completed work does not match what was agreed, I will return to put it right within the guarantee terms.</p>
     </div>
 
   </div>
@@ -518,34 +494,34 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
   <div class="container">
 
     <div class="section-head">
-      <div class="eyebrow" data-i18n="steps_eyebrow">How business referrals can work</div>
-      <h2 data-i18n="steps_h2">Simple for your team. Clear for the customer.</h2>
+      <div class="eyebrow">How business referrals can work</div>
+      <h2>Simple for your team. Clear for the customer.</h2>
     </div>
 
     <div class="steps-grid">
 
       <div class="step-card">
         <span class="num">01</span>
-        <h3 data-i18n="step1_title">Identify the problem</h3>
-        <p data-i18n="step1_desc">Your team, customer or family member identifies a maintenance or safety issue.</p>
+        <h3>Identify the problem</h3>
+        <p>Your team, customer or family member identifies a maintenance or safety issue.</p>
       </div>
 
       <div class="step-card">
         <span class="num">02</span>
-        <h3 data-i18n="step2_title">Contact Pro APEX</h3>
-        <p data-i18n="step2_desc">Send the details or ask the customer to contact Pro APEX directly.</p>
+        <h3>Contact Pro APEX</h3>
+        <p>Send the details or ask the customer to contact Pro APEX directly.</p>
       </div>
 
       <div class="step-card">
         <span class="num">03</span>
-        <h3 data-i18n="step3_title">Assess & agree</h3>
-        <p data-i18n="step3_desc">The job is assessed and the scope, price and requirements are agreed in writing.</p>
+        <h3>Assess &amp; agree</h3>
+        <p>The job is assessed and the scope, price and requirements are agreed in writing.</p>
       </div>
 
       <div class="step-card">
         <span class="num">04</span>
-        <h3 data-i18n="step4_title">Complete & report</h3>
-        <p data-i18n="step4_desc">The work is completed professionally, with a simple completion record for business clients where requested.</p>
+        <h3>Complete &amp; report</h3>
+        <p>The work is completed professionally, with a simple completion record for business clients where requested.</p>
       </div>
 
     </div>
@@ -557,25 +533,25 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
   <div class="container">
 
     <div class="section-head">
-      <div class="eyebrow" data-i18n="terms_eyebrow">Clear terms</div>
-      <h2 data-i18n="terms_h2">Professional arrangements without unnecessary complexity.</h2>
+      <div class="eyebrow">Clear terms</div>
+      <h2>Professional arrangements without unnecessary complexity.</h2>
     </div>
 
     <div class="info-stack">
 
       <div class="info-card">
-        <h3 data-i18n="terms1_title">📝 Written scope before work</h3>
-        <p data-i18n="terms1_desc">Jobs are agreed in writing before work starts, including the work to be completed and the agreed price.</p>
+        <h3>📝 Written scope before work</h3>
+        <p>Jobs are agreed in writing before work starts, including the work to be completed and the agreed price.</p>
       </div>
 
       <div class="info-card teal">
-        <h3 data-i18n="terms2_title">📋 Business records</h3>
-        <p data-i18n="terms2_desc">For care providers, landlords and property managers, a simple completion record can be supplied after agreed works, including photographs where appropriate.</p>
+        <h3>📋 Business records</h3>
+        <p>For care providers, landlords and property managers, a simple completion record can be supplied after agreed works, including photographs where appropriate.</p>
       </div>
 
       <div class="info-card">
-        <h3 data-i18n="terms3_title">🛡️ Insurance & qualifications</h3>
-        <p data-i18n="terms3_desc">Pro APEX is a fully insured Ltd company. Electrical work is undertaken within the relevant qualifications and regulations.</p>
+        <h3>🛡️ Insurance &amp; qualifications</h3>
+        <p>Pro APEX is a fully insured Ltd company. Electrical work is undertaken within the relevant qualifications and regulations.</p>
       </div>
 
     </div>
@@ -586,40 +562,40 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <section id="faq" class="container">
 
   <div class="section-head">
-    <div class="eyebrow" data-i18n="faq_eyebrow">Questions</div>
-    <h2 data-i18n="faq_h2">Frequently asked questions</h2>
+    <div class="eyebrow">Questions</div>
+    <h2>Frequently asked questions</h2>
   </div>
 
   <div>
 
     <details class="faq-item">
-      <summary data-i18n="faq1_q">Do you work with care providers?</summary>
-      <p data-i18n="faq1_a">Yes. Pro APEX is available for maintenance, repairs and practical home safety improvements for care providers, supported living environments, landlords and occupied homes.</p>
+      <summary>Do you work with care providers?</summary>
+      <p>Yes. Pro APEX is available for maintenance, repairs and practical home safety improvements for care providers, supported living environments, landlords and occupied homes.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq2_q">Can you provide a record of completed work?</summary>
-      <p data-i18n="faq2_a">For business clients, a simple completion record can be provided, including the work carried out, date and photographs where appropriate.</p>
+      <summary>Can you provide a record of completed work?</summary>
+      <p>For business clients, a simple completion record can be provided, including the work carried out, date and photographs where appropriate.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq3_q">Do you supply materials?</summary>
-      <p data-i18n="faq3_a">For private customers, the standard service is labour-only unless otherwise agreed. For business maintenance arrangements, the supply of materials can be discussed as part of the agreed job.</p>
+      <summary>Do you supply materials?</summary>
+      <p>For private customers, the standard service is labour-only unless otherwise agreed. For business maintenance arrangements, the supply of materials can be discussed as part of the agreed job.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq4_q">How quickly can you visit?</summary>
-      <p data-i18n="faq4_a">I usually aim to visit within 48 hours for an initial assessment, subject to availability and the nature of the job.</p>
+      <summary>How quickly can you visit?</summary>
+      <p>I usually aim to visit within 48 hours for an initial assessment, subject to availability and the nature of the job.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq5_q">Do you do gas or F-Gas air-conditioning work?</summary>
-      <p data-i18n="faq5_a">No. These services are outside my qualifications. Where appropriate, I can recommend suitably registered specialists.</p>
+      <summary>Do you do gas or F-Gas air-conditioning work?</summary>
+      <p>No. These services are outside my qualifications. Where appropriate, I can recommend suitably registered specialists.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq6_q">What is the Staff Break Manager?</summary>
-      <p data-i18n="faq6_a">Staff Break Manager is a simple digital tool designed to help businesses, particularly care environments, keep track of staff breaks in a straightforward way.</p>
+      <summary>What is the Staff Break Manager?</summary>
+      <p>Staff Break Manager is a simple digital tool designed to help businesses, particularly care environments, keep track of staff breaks in a straightforward way.</p>
     </details>
 
   </div>
@@ -631,22 +607,25 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
     <div class="app-grid">
 
       <div class="app-content">
-        <div class="eyebrow" data-i18n="app_eyebrow">Optional digital extras</div>
-        <h2 data-i18n="app_h2">Need something extra for your business?</h2>
-        <p class="app-lead" data-i18n="app_lead">My main work is multi-trade property maintenance. If you need a simple website or business app as an extra service, I can build that too.</p>
+        <div class="eyebrow">Optional digital extras</div>
+        <h2>Need something extra for your business?</h2>
+        <p class="app-lead">My main work is multi-trade property maintenance. If you need a simple website or business app as an extra service, I can build that too.</p>
 
-        <div class="app-label" data-i18n="app_label">OPTIONAL EXTRA SERVICE</div>
+        <div class="app-label">OPTIONAL EXTRA SERVICE</div>
         <h3>Staff Break Manager</h3>
-        <p data-i18n="app_h3_p">A simple staff break tracking application designed with care homes, nursing homes and similar care environments in mind.</p>
+        <p>A simple staff break tracking application designed with care homes, nursing homes and similar care environments in mind.</p>
 
         <div class="app-features">
-          <div data-i18n="app_feat1">✓ Simple break tracking</div>
-          <div data-i18n="app_feat2">✓ Designed for care environments</div>
-          <div data-i18n="app_feat3">✓ Easy to use for staff</div>
-          <div data-i18n="app_feat4">✓ Clear information for managers</div>
+          <div>✓ Simple break tracking</div>
+          <div>✓ Designed for care environments</div>
+          <div>✓ Easy to use for staff</div>
+          <div>✓ Clear information for managers</div>
         </div>
 
-        <a class="btn btn-primary" href="https://breakclock.app/" target="_blank" rel="noopener" data-i18n="app_cta">Open Staff Break Manager →</a>
+        <div class="app-ctas">
+          <a class="btn btn-primary" href="https://breakclock.app/" target="_blank" rel="noopener">Open Staff Break Manager →</a>
+          <a class="btn btn-outline" href="apps.html">See all apps →</a>
+        </div>
       </div>
 
       <div class="app-card">
@@ -656,32 +635,32 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
         </div>
 
         <div class="app-preview">
-          <div class="preview-title" data-i18n="preview_title">Staff Breaks</div>
+          <div class="preview-title">Staff Breaks</div>
 
           <div class="preview-row">
-            <span data-i18n="preview_row_head1">Staff member</span>
-            <strong data-i18n="preview_row_head2">Break status</strong>
+            <span>Staff member</span>
+            <strong>Break status</strong>
           </div>
 
           <div class="preview-row">
-            <span data-i18n="preview_member">Team member</span>
-            <span class="break-badge" data-i18n="badge_on_break">On Break</span>
+            <span>Team member</span>
+            <span class="break-badge">On Break</span>
           </div>
 
           <div class="preview-row">
-            <span data-i18n="preview_member">Team member</span>
-            <span class="available-badge" data-i18n="badge_available">Available</span>
+            <span>Team member</span>
+            <span class="available-badge">Available</span>
           </div>
 
           <div class="preview-row">
-            <span data-i18n="preview_member">Team member</span>
-            <span class="available-badge" data-i18n="badge_available">Available</span>
+            <span>Team member</span>
+            <span class="available-badge">Available</span>
           </div>
 
-          <div class="preview-button" data-i18n="preview_button">Start Break</div>
+          <div class="preview-button">Start Break</div>
         </div>
 
-        <a class="app-card-link" href="https://breakclock.app/" target="_blank" rel="noopener" data-i18n="app_card_link">Visit the application →</a>
+        <a class="app-card-link" href="https://breakclock.app/" target="_blank" rel="noopener">Visit the application →</a>
       </div>
 
     </div>
@@ -694,13 +673,13 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
   <div class="container">
     <div class="business-cta">
 
-      <div class="eyebrow" data-i18n="business_eyebrow">Care providers · landlords · businesses</div>
-      <h2 data-i18n="business_h2">Looking for a reliable local partner?</h2>
-      <p data-i18n="business_p">Let's talk about how Pro APEX could support your team with property maintenance, practical digital tools and repeat business services.</p>
+      <div class="eyebrow">Care providers · landlords · businesses</div>
+      <h2>Looking for a reliable local partner?</h2>
+      <p>Let's talk about how Pro APEX could support your team with property maintenance, practical digital tools and repeat business services.</p>
 
       <div class="contact-actions">
-        <a class="btn btn-primary" href="tel:+447775877746" data-i18n="business_call">📞 Call 07775 877 746</a>
-        <a class="btn btn-outline" href="https://wa.me/447775877746" target="_blank" rel="noopener" data-i18n="business_whatsapp">💬 WhatsApp</a>
+        <a class="btn btn-primary" href="tel:+447775877746">📞 Call 07775 877 746</a>
+        <a class="btn btn-outline" href="https://wa.me/447775877746" target="_blank" rel="noopener">💬 WhatsApp</a>
       </div>
 
     </div>
@@ -711,17 +690,17 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <section id="contact" class="container">
   <div class="contact">
 
-    <h2 data-i18n="contact_h2">Need a repair or maintenance visit?</h2>
-    <p class="sub" data-i18n="contact_sub">Call, text or WhatsApp. I usually aim to visit within 48 hours for an initial assessment.</p>
+    <h2>Need a repair or maintenance visit?</h2>
+    <p class="sub">Call, text or WhatsApp. I usually aim to visit within 48 hours for an initial assessment.</p>
 
     <a class="phone-big" href="tel:+447775877746">07775 877 746</a>
 
     <div class="contact-actions">
-      <a class="btn btn-primary" href="tel:+447775877746" data-i18n="contact_call">Call now</a>
-      <a class="btn btn-outline" href="https://wa.me/447775877746" target="_blank" rel="noopener" data-i18n="contact_whatsapp">WhatsApp</a>
+      <a class="btn btn-primary" href="tel:+447775877746">Call now</a>
+      <a class="btn btn-outline" href="https://wa.me/447775877746" target="_blank" rel="noopener">WhatsApp</a>
     </div>
 
-    <div class="area-list" data-i18n="area_list">Serving Rugby, Coventry, Leamington Spa, Daventry, Bedworth & Nuneaton</div>
+    <div class="area-list">Serving Rugby, Coventry, Leamington Spa, Daventry, Bedworth &amp; Nuneaton</div>
 
   </div>
 </section>
@@ -731,204 +710,21 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <span data-i18n="footer_copyright">© 2026 Pro APEX. All rights reserved.</span>
+    <span>© 2026 Pro APEX. All rights reserved.</span>
     <br>
-    <span data-i18n="footer_reg">Ltd registered in England &amp; Wales. Fully insured.</span>
+    <span>Ltd registered in England &amp; Wales. Fully insured.</span>
     <div style="margin-top:7px">
-      <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy &amp; GDPR Information</a>
+      <a href="apps.html">Apps</a> ·
+      <a href="privacy.html">Privacy Policy &amp; GDPR Information</a>
     </div>
   </div>
 </footer>
 
 <!-- MOBILE BAR -->
 <div class="mobile-bar">
-  <a class="call" href="tel:+447775877746" data-i18n="mobile_call">📞 Call</a>
-  <a class="app" href="#services" data-i18n="mobile_app">🔧 Services</a>
+  <a class="call" href="tel:+447775877746">📞 Call</a>
+  <a class="app" href="apps.html">📱 Apps</a>
 </div>
-
-<script>
-const translations = {
-  en: {},
-  ro: {
-    topbar_hours: "Rugby, Warwickshire · Lun–Sâm, 8:00–18:00",
-    nav_care: "Furnizori de îngrijire",
-        nav_services: "Servicii",
-    nav_trust: "De ce noi",
-    nav_faq: "Întrebări",
-        nav_contact: "Contact",
-    nav_cta: "Cere o ofertă →",
-    hero_eyebrow: "Întreținere multi-meșteșug",
-    hero_h1: "Întreținere multi-meșteșug de încredere pentru locuințe, proprietari și afaceri.",
-    hero_lead: "Pro APEX oferă reparații, întreținere și îmbunătățiri multi-meșteșug pentru locuințe, proprietari, agenții și afaceri din zonă.",
-    hero_cta1: "Vezi serviciile mele →",
-    hero_cta2: "📞 Cere o ofertă",
-    hero_badge1: "Companie Ltd complet asigurată",
-    hero_badge2: "Întreținere multi-meșteșug",
-    hero_badge3: "Rugby & Warwickshire",
-    partner1_title: "Furnizori de îngrijire",
-    partner1_desc: "Întreținere de încredere și suport practic pentru proprietăți.",
-    partner2_title: "Proprietari & agenți",
-    partner2_desc: "Reparații, decorațiuni și pregătirea proprietăților.",
-    partner3_title: "Afaceri",
-    partner3_desc: "Un singur punct local de contact pentru lucrări de proprietate.",
-    care_eyebrow: "Furnizori de îngrijire & locuințe protejate",
-    care_h2: "Un partener de întreținere care înțelege locuințele ocupate.",
-    care_p: "Când un îngrijitor, un manager de îngrijire sau un membru al familiei identifică o problemă de întreținere, ai nevoie de cineva de încredere, care poate răspunde profesionist și trata persoana și locuința sa cu respect.",
-    care_item1: "Îmbunătățiri de siguranță în locuință",
-    care_item2: "Bare de sprijin & accesibilitate",
-    care_item3: "Adaptări minore de baie",
-    care_item4: "Reparații electrice & iluminat",
-    care_item5: "Uși, încuietori & tâmplărie",
-    care_item6: "Vopsire & decorare",
-    care_item7: "Reparații generale de proprietate",
-    care_item8: "Inspecții de întreținere",
-    care_panel_h3: "Evidențe clare după lucrare",
-    care_panel_p1: "Pentru clienții business, Pro APEX poate furniza o evidență simplă a lucrărilor efectuate, incluzând ce a fost reparat, data și fotografii, unde este cazul.",
-    care_panel_p2_strong: "Ai nevoie de un partener local de întreținere?",
-    care_panel_p2_rest: "Hai să discutăm cum ar putea funcționa recomandările și întreținerea repetată pentru organizația ta.",
-    care_panel_btn: "Discută un parteneriat",
-    app_eyebrow: "Extra opțional",
-    app_h2: "Ai nevoie de ceva în plus pentru afacerea ta?",
-    app_lead: "Activitatea mea principală este întreținerea multi-meșteșug. La cerere, pot crea și un site simplu sau o aplicație pentru afacerea ta, ca serviciu extra.",
-    app_label: "SERVICIU EXTRA, LA CERERE",
-    app_h3_p: "O aplicație simplă de urmărire a pauzelor personalului, creată pentru cămine de îngrijire, case de bătrâni și medii de îngrijire similare.",
-    app_feat1: "✓ Urmărire simplă a pauzelor",
-    app_feat2: "✓ Creată pentru medii de îngrijire",
-    app_feat3: "✓ Ușor de folosit de către personal",
-    app_feat4: "✓ Informații clare pentru manageri",
-    app_cta: "Vezi aplicația →",
-    preview_title: "Pauze personal",
-    preview_row_head1: "Angajat",
-    preview_row_head2: "Stare pauză",
-    preview_member: "Membru echipă",
-    badge_on_break: "În pauză",
-    badge_available: "Disponibil",
-    preview_button: "Începe pauza",
-    app_card_link: "Vezi aplicația →",
-    safety_eyebrow: "Siguranță & accesibilitate în locuință",
-    safety_h2: "Mici schimbări pot face o locuință mai sigură și mai ușor de folosit.",
-    safety_p: "Întreținere practică și îmbunătățiri de accesibilitate pentru persoane vârstnice, familii și oricine are nevoie de puțin sprijin în plus în locuință.",
-    safety1_title: "Bare de sprijin & accesorii",
-    safety1_desc: "Montare practică a barelor de sprijin potrivite și a accesoriilor de siguranță, unde este cazul.",
-    safety2_title: "Siguranța băii",
-    safety2_desc: "Reparații minore, montaje, pardoseli și îmbunătățiri care pot face băile mai ușor și mai sigur de folosit.",
-    safety3_title: "Iluminat & electrice",
-    safety3_desc: "Iluminat, prize, întrerupătoare, depanare și alte lucrări electrice în limita calificării.",
-    safety4_title: "Uși & acces",
-    safety4_desc: "Reparații uși, mânere, încuietori, ajustări și tâmplărie pentru un acces mai bun zilnic.",
-    report_strong: "Lucru respectuos în locuințe ocupate",
-    report_p: "Pro APEX urmărește să reducă disconfortul la minimum, să protejeze zona de lucru și să lase proprietatea curată și sigură la finalul lucrării.",
-    services_eyebrow: "Întreținere multi-meșteșug",
-    services_h2: "Un singur punct local de contact pentru o gamă largă de lucrări.",
-    services_p: "Potrivit pentru proprietari de locuințe, proprietari care închiriază, agenții și clienți business care preferă un singur partener local de încredere, nu mai mulți contractori diferiți.",
-    serv1_title: "Lucrări electrice",
-    serv1_desc: "Prize, iluminat, întrerupătoare, testare, depanare și alte lucrări electrice în limita calificării.",
-    serv2_title: "Vopsire & decorare",
-    serv2_desc: "Vopsire interioară și exterioară, tencuială, glet și finisaje. Opțiuni cu miros redus pot fi discutate pentru proprietăți ocupate.",
-    serv2_tag: "Opțiuni cu miros redus",
-    serv3_title: "Tâmplărie & reparații",
-    serv3_desc: "Uși, plinte, rafturi, garduri, montaj mobilier și reparații generale de proprietate.",
-    serv4_title: "Gresie & pardoseli",
-    serv4_desc: "Gresie și faianță, laminat, vinil, pregătirea și repararea pardoselii.",
-    serv5_title: "Bucătării & băi",
-    serv5_desc: "Montaj, upgrade-uri, gresie, chiuvete, toalete și lucrări asociate, în limita convenită.",
-    serv6_title: "Întreținerea proprietății",
-    serv6_desc: "Reparații generale, verificări de proprietate, jgheaburi, lucrări de final de contract și mici renovări.",
-    outside_scope_strong: "În afara ariei mele de lucru?",
-    outside_scope_p: "Nu efectuez lucrări de gaz sau de aer condiționat F-Gas. Unde este cazul, pot recomanda specialiști autorizați corespunzător.",
-    why_eyebrow: "De ce Pro APEX",
-    why_h2: "Construit pe încredere, comunicare clară și responsabilitate.",
-    why1_strong: "Un singur punct local de contact.",
-    why1_rest: "Reduce nevoia de a coordona mai mulți contractori diferiți pentru lucrări mici de întreținere.",
-    why2_strong: "Calificare electrică Ediția 18.",
-    why2_rest: "Lucrările electrice sunt efectuate în limita calificării și ariei corespunzătoare.",
-    why3_strong: "Confortabil în locuințe ocupate.",
-    why3_rest: "Experiența anterioară în domeniul sănătății mă ajută să înțeleg importanța unui lucru respectuos.",
-    why4_strong: "Contracte scrise.",
-    why4_rest: "Aria lucrării, finisajul și prețul sunt convenite înainte de începerea lucrării.",
-    why5_strong: "Garanție de 12 luni pentru manoperă.",
-    why5_rest: "Dacă lucrarea finalizată nu corespunde cu ce s-a convenit, revin să o repar, în limitele garanției.",
-    steps_eyebrow: "Cum pot funcționa recomandările de afaceri",
-    steps_h2: "Simplu pentru echipa ta. Clar pentru client.",
-    step1_title: "Identifică problema",
-    step1_desc: "Echipa ta, clientul sau un membru al familiei identifică o problemă de întreținere sau siguranță.",
-    step2_title: "Contactează Pro APEX",
-    step2_desc: "Trimite detaliile sau roagă clientul să contacteze direct Pro APEX.",
-    step3_title: "Evaluare & acord",
-    step3_desc: "Lucrarea este evaluată, iar aria, prețul și cerințele sunt convenite în scris.",
-    step4_title: "Finalizare & raport",
-    step4_desc: "Lucrarea este finalizată profesionist, cu o evidență simplă de finalizare pentru clienții business, la cerere.",
-    terms_eyebrow: "Condiții clare",
-    terms_h2: "Aranjamente profesionale, fără complicații inutile.",
-    terms1_title: "📝 Arie de lucru scrisă înainte de start",
-    terms1_desc: "Lucrările sunt convenite în scris înainte de a începe, incluzând lucrarea de efectuat și prețul convenit.",
-    terms2_title: "📋 Evidențe pentru business",
-    terms2_desc: "Pentru furnizori de îngrijire, proprietari și administratori de proprietăți, se poate furniza o evidență simplă de finalizare după lucrările convenite, inclusiv fotografii, unde este cazul.",
-    terms3_title: "🛡️ Asigurare & calificări",
-    terms3_desc: "Pro APEX este o companie Ltd complet asigurată. Lucrările electrice sunt efectuate în limita calificărilor și reglementărilor relevante.",
-    faq_eyebrow: "Întrebări",
-    faq_h2: "Întrebări frecvente",
-    faq1_q: "Lucrați cu furnizori de îngrijire?",
-    faq1_a: "Da. Pro APEX este disponibil pentru întreținere, reparații și îmbunătățiri practice de siguranță pentru furnizori de îngrijire, medii de tip locuință protejată, proprietari și locuințe ocupate.",
-    faq2_q: "Puteți furniza o evidență a lucrărilor finalizate?",
-    faq2_a: "Pentru clienții business, se poate furniza o evidență simplă de finalizare, incluzând lucrarea efectuată, data și fotografii, unde este cazul.",
-    faq3_q: "Furnizați materiale?",
-    faq3_a: "Pentru clienți privați, serviciul standard este doar manoperă, dacă nu se convine altfel. Pentru aranjamente de întreținere business, furnizarea materialelor poate fi discutată ca parte a lucrării convenite.",
-    faq4_q: "Cât de repede puteți veni?",
-    faq4_a: "De obicei încerc să vin în 48 de ore pentru o evaluare inițială, în funcție de disponibilitate și de natura lucrării.",
-    faq5_q: "Faceți lucrări de gaz sau aer condiționat F-Gas?",
-    faq5_a: "Nu. Aceste servicii sunt în afara calificărilor mele. Unde este cazul, pot recomanda specialiști autorizați corespunzător.",
-    faq6_q: "Ce este Staff Break Manager?",
-    faq6_a: "Staff Break Manager este un instrument digital simplu, creat pentru a ajuta afacerile, în special mediile de îngrijire, să țină evidența pauzelor personalului într-un mod simplu.",
-    business_eyebrow: "Furnizori de îngrijire · proprietari · afaceri",
-    business_h2: "Cauți un partener local de încredere?",
-    business_p: "Hai să discutăm cum ar putea Pro APEX să sprijine echipa ta cu întreținerea proprietăților, instrumente digitale practice și servicii repetate pentru afaceri.",
-    business_call: "📞 Sună la 07775 877 746",
-    business_whatsapp: "💬 WhatsApp",
-    contact_h2: "Ai nevoie de o reparație sau vizită de întreținere?",
-    contact_sub: "Sună, scrie sau trimite mesaj pe WhatsApp. De obicei încerc să vin în 48 de ore pentru o evaluare inițială.",
-    contact_call: "Sună acum",
-    contact_whatsapp: "WhatsApp",
-    area_list: "Deservim Rugby, Coventry, Leamington Spa, Daventry, Bedworth & Nuneaton",
-    footer_copyright: "© 2026 Pro APEX. Toate drepturile rezervate.",
-    footer_reg: "Ltd înregistrată în Anglia & Țara Galilor. Complet asigurată.",
-    footer_privacy: "Politica de confidențialitate & informații GDPR",
-    mobile_call: "📞 Sună",
-    mobile_app: "🔧 Servicii"
-  }
-};
-
-const englishDefaults = {};
-
-function applyLang(lang){
-  document.querySelectorAll('[data-i18n]').forEach(function(el){
-    const key = el.getAttribute('data-i18n');
-    if(lang === 'en'){
-      if(englishDefaults[key] !== undefined) el.innerHTML = englishDefaults[key];
-    } else {
-      const dict = translations[lang] || {};
-      if(dict[key]) el.innerHTML = dict[key];
-    }
-  });
-  document.documentElement.lang = lang === 'ro' ? 'ro' : 'en-GB';
-  document.querySelectorAll('.lang-btn').forEach(function(b){
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
-  try{ localStorage.setItem('proapex_lang', lang); }catch(e){}
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('[data-i18n]').forEach(function(el){
-    englishDefaults[el.getAttribute('data-i18n')] = el.innerHTML;
-  });
-  let saved = 'en';
-  try{ saved = localStorage.getItem('proapex_lang') || 'en'; }catch(e){}
-  applyLang(saved);
-  document.querySelectorAll('.lang-btn').forEach(function(b){
-    b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
-  });
-});
-</script>
 
 </body>
 </html>

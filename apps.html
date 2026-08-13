@@ -67,15 +67,6 @@ nav.main .container{display:flex;align-items:center;justify-content:space-betwee
 .nav-cta{background:var(--amber);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.9rem;white-space:nowrap;}
 @media(max-width:850px){.navlinks{display:none;}}
 
-/* LANGUAGE SWITCH */
-.lang-switch{display:flex;align-items:center;gap:2px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px;}
-.lang-btn{border:none;background:transparent;color:var(--ink-soft);font-weight:800;font-size:.76rem;letter-spacing:.02em;padding:6px 11px;border-radius:999px;cursor:pointer;font-family:inherit;}
-.lang-btn.active{background:var(--ink);color:#fff;}
-.lang-btn:not(.active):hover{color:var(--teal-dark);}
-.topbar .lang-switch{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);}
-.topbar .lang-btn{color:#C9D2DE;}
-.topbar .lang-btn.active{background:var(--amber);color:var(--ink);}
-
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid transparent;transition:.18s;cursor:pointer;font-size:.95rem;font-family:inherit;}
 .btn-primary{background:var(--amber);color:var(--ink);}
@@ -153,8 +144,6 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
   .hero{padding:44px 0 56px;}
   .hero h1{font-size:1.9rem;}
   .contact{border-radius:0;}
-  .lang-switch{padding:2px;}
-  .lang-btn{padding:5px 9px;font-size:.72rem;}
 }
 </style>
 </head>
@@ -165,13 +154,9 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 
 <div class="topbar">
   <div class="container">
-    <span data-i18n="topbar_hours">Rugby, Warwickshire · Mon–Sat, 8am–6pm</span>
+    <span>Rugby, Warwickshire · Mon–Sat, 8am–6pm</span>
     <div style="display:flex;align-items:center;gap:14px;">
       <a class="call" href="tel:+447775877746">📞 07775 877 746</a>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button class="lang-btn" data-lang="en" type="button">EN</button>
-        <button class="lang-btn" data-lang="ro" type="button">RO</button>
-      </div>
     </div>
   </div>
 </div>
@@ -188,15 +173,15 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
     </a>
 
     <div class="navlinks">
-      <a href="index.html" data-i18n="nav_home">Home</a>
-      <a href="index.html#services" data-i18n="nav_services">Services</a>
-      <a href="#apps" data-i18n="nav_apps_current">Apps</a>
-      <a href="#install" data-i18n="nav_install">How to install</a>
-      <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="#apps">Apps</a>
+      <a href="#install">How to install</a>
+      <a href="index.html#contact">Contact</a>
     </div>
 
     <div class="nav-right">
-      <a class="nav-cta" href="index.html#business" data-i18n="nav_cta">Partnership →</a>
+      <a class="nav-cta" href="index.html#business">Partnership →</a>
     </div>
 
   </div>
@@ -207,11 +192,11 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <header class="hero">
   <div class="container hero-inner">
 
-    <div class="eyebrow" data-i18n="apps_hero_eyebrow">Digital Solutions · Pro APEX</div>
+    <div class="eyebrow">Digital Solutions · Pro APEX</div>
 
-    <h1 data-i18n="apps_hero_h1">The apps we build, ready to install.</h1>
+    <h1>The apps we build, ready to install.</h1>
 
-    <p class="lead" data-i18n="apps_hero_lead">Simple tools built for real business problems. Available for Android and the web — install in seconds, no app store needed.</p>
+    <p class="lead">Simple tools built for real business problems. Available for Android and the web — install in seconds, no app store needed.</p>
 
   </div>
 </header>
@@ -221,9 +206,9 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
   <div class="container">
 
     <div class="section-head">
-      <div class="eyebrow" data-i18n="apps_eyebrow">Available apps</div>
-      <h2 data-i18n="apps_h2">Pick an app and install it in seconds.</h2>
-      <p data-i18n="apps_p">Every app runs in the browser and works on Android and desktop. Add it to your home screen just like a regular app.</p>
+      <div class="eyebrow">Available apps</div>
+      <h2>Pick an app and install it in seconds.</h2>
+      <p>Every app runs in the browser and works on Android and desktop. Add it to your home screen just like a regular app.</p>
     </div>
 
     <div class="apps-grid">
@@ -232,22 +217,22 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
       <div class="app-card">
         <div class="app-card-head">
           <div class="app-icon">⏱️</div>
-          <span class="status-badge status-live" data-i18n="card1_status">Live now</span>
+          <span class="status-badge status-live">Live now</span>
         </div>
 
         <h3>Staff Break Manager</h3>
 
-        <p class="app-desc" data-i18n="card1_desc">A simple staff break tracking app, built for care homes, nursing homes and similar care environments.</p>
+        <p class="app-desc">A simple staff break tracking app, built for care homes, nursing homes and similar care environments.</p>
 
         <div class="app-tags">
-          <span data-i18n="card1_tag1">Break tracking</span>
-          <span data-i18n="card1_tag2">Built for care teams</span>
-          <span data-i18n="card1_tag3">Easy to use</span>
-          <span data-i18n="card1_tag4">Android & Web</span>
+          <span>Break tracking</span>
+          <span>Built for care teams</span>
+          <span>Easy to use</span>
+          <span>Android &amp; Web</span>
         </div>
 
         <div class="app-actions">
-          <a class="btn btn-primary" href="https://breakclock.app/" target="_blank" rel="noopener" data-i18n="card1_cta">Open & install →</a>
+          <a class="btn btn-primary" href="https://breakclock.app/" target="_blank" rel="noopener">Open &amp; install →</a>
         </div>
       </div>
 
@@ -255,19 +240,19 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
       <div class="app-card is-soon">
         <div class="app-card-head">
           <div class="app-icon">🛠️</div>
-          <span class="status-badge status-soon" data-i18n="card2_status">In development</span>
+          <span class="status-badge status-soon">In development</span>
         </div>
 
-        <h3 data-i18n="card2_title">Next app</h3>
+        <h3>Next app</h3>
 
-        <p class="app-desc" data-i18n="card2_desc">Working on a new digital tool. Details will appear here as soon as it's ready to test.</p>
+        <p class="app-desc">Working on a new digital tool. Details will appear here as soon as it's ready to test.</p>
 
         <div class="app-tags">
-          <span data-i18n="card2_tag">Coming soon</span>
+          <span>Coming soon</span>
         </div>
 
         <div class="app-actions">
-          <button class="btn btn-outline" disabled data-i18n="card2_btn">Coming soon</button>
+          <button class="btn btn-outline" disabled>Coming soon</button>
         </div>
       </div>
 
@@ -275,15 +260,15 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
       <div class="app-card is-soon">
         <div class="app-card-head">
           <div class="app-icon">💡</div>
-          <span class="status-badge status-soon" data-i18n="card3_status">Idea in progress</span>
+          <span class="status-badge status-soon">Idea in progress</span>
         </div>
 
-        <h3 data-i18n="card3_title">Got an idea for an app?</h3>
+        <h3>Got an idea for an app?</h3>
 
-        <p class="app-desc" data-i18n="card3_desc">If your team has a repetitive problem that a simple tool could solve, let me know — it could become the next project.</p>
+        <p class="app-desc">If your team has a repetitive problem that a simple tool could solve, let me know — it could become the next project.</p>
 
         <div class="app-actions">
-          <a class="btn btn-outline" href="index.html#contact" data-i18n="card3_btn">Suggest an idea →</a>
+          <a class="btn btn-outline" href="index.html#contact">Suggest an idea →</a>
         </div>
       </div>
 
@@ -297,30 +282,30 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
   <div class="container">
 
     <div class="section-head">
-      <div class="eyebrow" data-i18n="install_eyebrow">Quick guide</div>
-      <h2 data-i18n="install_h2">How to install an app on your phone or computer</h2>
-      <p data-i18n="install_p">Pro APEX apps are web apps — Android and desktop only for now, installed straight from the browser, no App Store or Google Play needed.</p>
+      <div class="eyebrow">Quick guide</div>
+      <h2>How to install an app on your phone or computer</h2>
+      <p>Pro APEX apps are web apps — Android and desktop only for now, installed straight from the browser, no App Store or Google Play needed.</p>
     </div>
 
     <div class="install-grid">
 
       <div class="install-card">
         <span class="num">🤖</span>
-        <h3 data-i18n="install1_title">On Android (Chrome)</h3>
-        <p data-i18n="install1_p">Open the app, tap the menu (⋮) in the top-right corner, then tap "Add to Home screen" or "Install app".</p>
+        <h3>On Android (Chrome)</h3>
+        <p>Open the app, tap the menu (⋮) in the top-right corner, then tap "Add to Home screen" or "Install app".</p>
       </div>
 
       <div class="install-card">
         <span class="num">💻</span>
-        <h3 data-i18n="install2_title">On desktop (Chrome/Edge)</h3>
-        <p data-i18n="install2_p">Open the app and look for the install icon (⊕) in the address bar, then click "Install".</p>
+        <h3>On desktop (Chrome/Edge)</h3>
+        <p>Open the app and look for the install icon (⊕) in the address bar, then click "Install".</p>
       </div>
 
     </div>
 
     <div class="note">
-      <strong data-i18n="install_note_strong">Why isn't there an iOS version?</strong>
-      <span data-i18n="install_note_p">These apps are currently built and tested for Android and the web. Get in touch if iOS support would help your team.</span>
+      <strong>Why isn't there an iOS version?</strong>
+      <span>These apps are currently built and tested for Android and the web. Get in touch if iOS support would help your team.</span>
     </div>
 
   </div>
@@ -330,12 +315,12 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 <section class="container">
   <div class="contact">
 
-    <h2 data-i18n="apps_contact_h2">Want an app for your business?</h2>
-    <p class="sub" data-i18n="apps_contact_sub">I build simple digital tools for real problems. Tell me what's slowing your team down and we'll see if it's worth solving.</p>
+    <h2>Want an app for your business?</h2>
+    <p class="sub">I build simple digital tools for real problems. Tell me what's slowing your team down and we'll see if it's worth solving.</p>
 
     <div class="contact-actions">
-      <a class="btn btn-primary" href="tel:+447775877746" data-i18n="contact_call">📞 Call now</a>
-      <a class="btn btn-ghost" href="https://wa.me/447775877746" target="_blank" rel="noopener" data-i18n="contact_whatsapp">💬 WhatsApp</a>
+      <a class="btn btn-primary" href="tel:+447775877746">📞 Call now</a>
+      <a class="btn btn-ghost" href="https://wa.me/447775877746" target="_blank" rel="noopener">💬 WhatsApp</a>
     </div>
 
   </div>
@@ -345,104 +330,19 @@ footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 
 <footer>
   <div class="container">
-    <span data-i18n="footer_copyright">© 2026 Pro APEX. All rights reserved.</span>
+    <span>© 2026 Pro APEX. All rights reserved.</span>
     <br>
-    <span data-i18n="footer_reg">Ltd registered in England &amp; Wales. Fully insured.</span>
+    <span>Ltd registered in England &amp; Wales. Fully insured.</span>
     <div style="margin-top:7px">
-      <a href="index.html" data-i18n="footer_back">← Back to homepage</a>
+      <a href="index.html">← Back to homepage</a>
     </div>
   </div>
 </footer>
 
 <div class="mobile-bar">
-  <a class="call" href="tel:+447775877746" data-i18n="mobile_call">📞 Call</a>
-  <a class="app" href="https://breakclock.app/" target="_blank" rel="noopener" data-i18n="mobile_app_open">⏱️ Open app</a>
+  <a class="call" href="tel:+447775877746">📞 Call</a>
+  <a class="app" href="https://breakclock.app/" target="_blank" rel="noopener">⏱️ Open app</a>
 </div>
-
-<script>
-const translations = {
-  ro: {
-    topbar_hours: "Rugby, Warwickshire · Lun–Sâm, 8:00–18:00",
-    nav_home: "Acasă",
-    nav_services: "Servicii",
-    nav_apps_current: "Aplicații",
-    nav_install: "Cum instalez",
-    nav_contact: "Contact",
-    nav_cta: "Parteneriat →",
-    apps_hero_eyebrow: "Soluții digitale · Pro APEX",
-    apps_hero_h1: "Aplicațiile pe care le construim, gata de instalat.",
-    apps_hero_lead: "Instrumente simple, create pentru probleme reale de afaceri. Disponibile pentru Android și web — se instalează în câteva secunde, fără magazin de aplicații.",
-    apps_eyebrow: "Aplicații disponibile",
-    apps_h2: "Alege o aplicație și instaleaz-o în câteva secunde.",
-    apps_p: "Fiecare aplicație rulează în browser și funcționează pe Android și pe calculator. Adaug-o pe ecranul principal, la fel ca o aplicație obișnuită.",
-    card1_status: "Disponibilă acum",
-    card1_desc: "Aplicație simplă pentru urmărirea pauzelor angajaților, creată pentru cămine de îngrijire, case de bătrâni și medii de îngrijire similare.",
-    card1_tag1: "Urmărire pauze",
-    card1_tag2: "Pentru echipe de îngrijire",
-    card1_tag3: "Ușor de folosit",
-    card1_tag4: "Android & Web",
-    card1_cta: "Deschide & instalează →",
-    card2_status: "În dezvoltare",
-    card2_title: "Următoarea aplicație",
-    card2_desc: "Lucrez la o nouă soluție digitală. Detaliile vor apărea aici de îndată ce aplicația este gata de testare.",
-    card2_tag: "În curând",
-    card2_btn: "În curând",
-    card3_status: "Idee în lucru",
-    card3_title: "Ai o idee pentru o aplicație?",
-    card3_desc: "Dacă echipa ta are o problemă repetitivă care ar putea fi rezolvată printr-un instrument simplu, spune-mi — poate deveni următorul proiect.",
-    card3_btn: "Propune o idee →",
-    install_eyebrow: "Ghid rapid",
-    install_h2: "Cum instalezi o aplicație pe telefon sau calculator",
-    install_p: "Aplicațiile Pro APEX sunt aplicații web — deocamdată doar pentru Android și calculator, instalate direct din browser, fără App Store sau Google Play.",
-    install1_title: "Pe Android (Chrome)",
-    install1_p: "Deschide aplicația, apasă meniul (⋮) din colțul din dreapta sus, apoi „Adaugă pe ecranul principal” sau „Instalează aplicația”.",
-    install2_title: "Pe calculator (Chrome/Edge)",
-    install2_p: "Deschide aplicația și caută iconița de instalare (⊕) din bara de adrese, apoi apasă „Instalează”.",
-    install_note_strong: "De ce nu există o versiune pentru iOS?",
-    install_note_p: "Aplicațiile sunt momentan construite și testate pentru Android și web. Scrie-mi dacă suportul pentru iOS ar ajuta echipa ta.",
-    apps_contact_h2: "Vrei o aplicație pentru afacerea ta?",
-    apps_contact_sub: "Construiesc instrumente digitale simple pentru probleme reale. Spune-mi ce încetinește echipa ta și vedem dacă merită rezolvat.",
-    contact_call: "📞 Sună acum",
-    contact_whatsapp: "💬 WhatsApp",
-    footer_copyright: "© 2026 Pro APEX. Toate drepturile rezervate.",
-    footer_reg: "Ltd înregistrată în Anglia & Țara Galilor. Complet asigurată.",
-    footer_back: "← Înapoi la pagina principală",
-    mobile_call: "📞 Sună",
-    mobile_app_open: "⏱️ Deschide aplicația"
-  }
-};
-
-const englishDefaults = {};
-
-function applyLang(lang){
-  document.querySelectorAll('[data-i18n]').forEach(function(el){
-    const key = el.getAttribute('data-i18n');
-    if(lang === 'en'){
-      if(englishDefaults[key] !== undefined) el.innerHTML = englishDefaults[key];
-    } else {
-      const dict = translations[lang] || {};
-      if(dict[key]) el.innerHTML = dict[key];
-    }
-  });
-  document.documentElement.lang = lang === 'ro' ? 'ro' : 'en-GB';
-  document.querySelectorAll('.lang-btn').forEach(function(b){
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
-  try{ localStorage.setItem('proapex_lang', lang); }catch(e){}
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('[data-i18n]').forEach(function(el){
-    englishDefaults[el.getAttribute('data-i18n')] = el.innerHTML;
-  });
-  let saved = 'en';
-  try{ saved = localStorage.getItem('proapex_lang') || 'en'; }catch(e){}
-  applyLang(saved);
-  document.querySelectorAll('.lang-btn').forEach(function(b){
-    b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
-  });
-});
-</script>
 
 </body>
 </html>
