@@ -30,15 +30,8 @@
   --max:1120px;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
 body{
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
@@ -49,909 +42,207 @@ body{
   padding-bottom:70px;
 }
 
-h1,h2,h3,h4{
-  font-family:Georgia,"Times New Roman",serif;
-  line-height:1.2;
-  color:var(--ink);
-}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(--ink);}
+.container{max-width:var(--max);margin:auto;padding:0 22px;}
+a{color:inherit;}
 
-.container{
-  max-width:var(--max);
-  margin:auto;
-  padding:0 22px;
-}
-
-a{
-  color:inherit;
-}
-
-.skip-link{
-  position:absolute;
-  left:-999px;
-  background:var(--amber);
-  padding:10px 16px;
-  z-index:999;
-}
-
-.skip-link:focus{
-  left:16px;
-  top:16px;
-}
+.skip-link{position:absolute;left:-999px;background:var(--amber);padding:10px 16px;z-index:999;}
+.skip-link:focus{left:16px;top:16px;}
 
 /* TOP BAR */
+.topbar{background:var(--ink);color:#fff;font-size:.85rem;}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap;}
+.topbar a{text-decoration:none;color:#fff;}
+.topbar .call{color:var(--amber);font-weight:800;}
 
-.topbar{
-  background:var(--ink);
-  color:#fff;
-  font-size:.85rem;
-}
+/* NAV */
+nav.main{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+nav.main .container{display:flex;align-items:center;justify-content:space-between;padding-top:13px;padding-bottom:13px;gap:14px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.25rem Georgia,serif;flex-shrink:0;}
+.brand-mark{width:34px;height:34px;}
+.navlinks{display:flex;gap:20px;font-size:.9rem;font-weight:700;}
+.navlinks a{text-decoration:none;color:var(--ink-soft);}
+.navlinks a:hover{color:var(--teal);}
+.nav-right{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+.nav-cta{background:var(--amber);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.9rem;white-space:nowrap;}
+@media(max-width:850px){.navlinks{display:none;}}
 
-.topbar .container{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:8px;
-  padding-top:8px;
-  padding-bottom:8px;
-  flex-wrap:wrap;
-}
-
-.topbar a{
-  text-decoration:none;
-  color:#fff;
-}
-
-.topbar .call{
-  color:var(--amber);
-  font-weight:800;
-}
-
-/* NAVIGATION */
-
-nav.main{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(251,248,242,.97);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-
-nav.main .container{
+/* LANGUAGE SWITCH */
+.lang-switch{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  padding-top:13px;
-  padding-bottom:13px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  font:700 1.25rem Georgia,serif;
-}
-
-.brand-mark{
-  width:34px;
-  height:34px;
-}
-
-.navlinks{
-  display:flex;
-  gap:20px;
-  font-size:.9rem;
-  font-weight:700;
-}
-
-.navlinks a{
-  text-decoration:none;
-  color:var(--ink-soft);
-}
-
-.navlinks a:hover{
-  color:var(--teal);
-}
-
-.nav-cta{
-  background:var(--amber);
-  padding:10px 18px;
+  gap:2px;
+  background:var(--soft);
+  border:1px solid var(--line);
   border-radius:999px;
-  text-decoration:none;
+  padding:3px;
+}
+.lang-btn{
+  border:none;
+  background:transparent;
+  color:var(--ink-soft);
   font-weight:800;
-  font-size:.9rem;
+  font-size:.76rem;
+  letter-spacing:.02em;
+  padding:6px 11px;
+  border-radius:999px;
+  cursor:pointer;
+  font-family:inherit;
 }
-
-@media(max-width:850px){
-  .navlinks{
-    display:none;
-  }
-}
+.lang-btn.active{background:var(--ink);color:#fff;}
+.lang-btn:not(.active):hover{color:var(--teal-dark);}
+.topbar .lang-switch{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);}
+.topbar .lang-btn{color:#C9D2DE;}
+.topbar .lang-btn.active{background:var(--amber);color:var(--ink);}
 
 /* BUTTONS */
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:13px 22px;
-  border-radius:999px;
-  font-weight:800;
-  text-decoration:none;
-  border:2px solid transparent;
-  transition:.18s;
-}
-
-.btn-primary{
-  background:var(--amber);
-  color:var(--ink);
-}
-
-.btn-primary:hover{
-  background:#ffc34c;
-  transform:translateY(-1px);
-}
-
-.btn-outline{
-  border-color:rgba(255,255,255,.4);
-  color:#fff;
-}
-
-.btn-outline:hover{
-  border-color:#fff;
-}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid transparent;transition:.18s;}
+.btn-primary{background:var(--amber);color:var(--ink);}
+.btn-primary:hover{background:#ffc34c;transform:translateY(-1px);}
+.btn-outline{border-color:rgba(255,255,255,.4);color:#fff;}
+.btn-outline:hover{border-color:#fff;}
 
 /* HERO */
-
-.hero{
-  background:var(--ink);
-  color:#fff;
-  padding:66px 0 72px;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  border-radius:50%;
-  right:-160px;
-  top:-180px;
-  background:rgba(255,176,32,.08);
-}
-
-.hero-inner{
-  position:relative;
-  z-index:2;
-  max-width:850px;
-}
-
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  font-size:.78rem;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--amber);
-  font-weight:800;
-  margin-bottom:16px;
-}
-
-.eyebrow:before{
-  content:"";
-  width:22px;
-  height:2px;
-  background:var(--amber);
-}
-
-.hero h1{
-  font-size:clamp(2.25rem,5vw,3.55rem);
-  color:#fff;
-  margin-bottom:18px;
-  max-width:800px;
-}
-
-.hero .lead{
-  font-size:1.12rem;
-  color:#C9D2DE;
-  max-width:690px;
-  margin-bottom:28px;
-}
-
-.hero-ctas{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.hero-badges{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  margin-top:28px;
-  color:#AEB9C6;
-  font-size:.85rem;
-}
-
-.hero-badges span{
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-
-.dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--teal);
-  display:inline-block;
-}
+.hero{background:var(--ink);color:#fff;padding:66px 0 72px;position:relative;overflow:hidden;}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-180px;background:rgba(255,176,32,.08);}
+.hero-inner{position:relative;z-index:2;max-width:850px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:800;margin-bottom:16px;}
+.eyebrow:before{content:"";width:22px;height:2px;background:var(--amber);}
+.hero h1{font-size:clamp(2.25rem,5vw,3.55rem);color:#fff;margin-bottom:18px;max-width:800px;}
+.hero .lead{font-size:1.12rem;color:#C9D2DE;max-width:690px;margin-bottom:28px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-badges{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;color:#AEB9C6;font-size:.85rem;}
+.hero-badges span{display:flex;align-items:center;gap:7px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--teal);display:inline-block;}
 
 /* PARTNER STRIP */
-
-.partner-strip{
-  margin:-30px auto 0;
-  position:relative;
-  z-index:4;
-  max-width:calc(var(--max) - 44px);
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  box-shadow:0 10px 35px rgba(14,26,43,.08);
-  padding:22px 26px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.partner-strip strong{
-  display:block;
-  margin-bottom:3px;
-}
-
-.partner-strip span{
-  font-size:.9rem;
-  color:var(--slate);
-}
-
-@media(max-width:700px){
-  .partner-strip{
-    grid-template-columns:1fr;
-    margin-left:16px;
-    margin-right:16px;
-  }
-}
+.partner-strip{margin:-30px auto 0;position:relative;z-index:4;max-width:calc(var(--max) - 44px);background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 35px rgba(14,26,43,.08);padding:22px 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.partner-strip strong{display:block;margin-bottom:3px;}
+.partner-strip span{font-size:.9rem;color:var(--slate);}
+@media(max-width:700px){.partner-strip{grid-template-columns:1fr;margin-left:16px;margin-right:16px;}}
 
 /* GENERAL SECTIONS */
-
-section{
-  padding:66px 0;
-}
-
-.section-alt{
-  background:var(--soft);
-}
-
-.section-head{
-  max-width:700px;
-  margin-bottom:34px;
-}
-
-.section-head h2{
-  font-size:clamp(1.8rem,3vw,2.35rem);
-}
-
-.section-head p{
-  color:var(--slate);
-  margin-top:10px;
-  font-size:1.03rem;
-}
+section{padding:66px 0;}
+.section-alt{background:var(--soft);}
+.section-head{max-width:700px;margin-bottom:34px;}
+.section-head h2{font-size:clamp(1.8rem,3vw,2.35rem);}
+.section-head p{color:var(--slate);margin-top:10px;font-size:1.03rem;}
 
 /* CARE SECTION */
-
-.care-section{
-  background:var(--ink);
-  color:#fff;
-}
-
-.care-section h2,
-.care-section h3{
-  color:#fff;
-}
-
-.care-section .section-head p{
-  color:#C9D2DE;
-}
-
-.care-grid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:30px;
-  align-items:start;
-}
-
-.care-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:20px;
-}
-
-.care-list div{
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:12px;
-  padding:13px 15px;
-}
-
-.care-list div:before{
-  content:"✓";
-  color:var(--amber);
-  font-weight:900;
-  margin-right:8px;
-}
-
-.care-panel{
-  background:#fff;
-  color:var(--ink);
-  border-radius:var(--radius);
-  padding:27px;
-}
-
-.care-panel h3{
-  color:var(--ink);
-  margin-bottom:10px;
-}
-
-.care-panel p{
-  color:var(--slate);
-  font-size:.95rem;
-  margin-bottom:15px;
-}
-
-.care-panel .btn{
-  width:100%;
-}
-
-@media(max-width:800px){
-  .care-grid{
-    grid-template-columns:1fr;
-  }
-
-  .care-list{
-    grid-template-columns:1fr;
-  }
-}
+.care-section{background:var(--ink);color:#fff;}
+.care-section h2,.care-section h3{color:#fff;}
+.care-section .section-head p{color:#C9D2DE;}
+.care-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start;}
+.care-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+.care-list div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:13px 15px;}
+.care-list div:before{content:"✓";color:var(--amber);font-weight:900;margin-right:8px;}
+.care-panel{background:#fff;color:var(--ink);border-radius:var(--radius);padding:27px;}
+.care-panel h3{color:var(--ink);margin-bottom:10px;}
+.care-panel p{color:var(--slate);font-size:.95rem;margin-bottom:15px;}
+.care-panel .btn{width:100%;}
+@media(max-width:800px){.care-grid{grid-template-columns:1fr;}.care-list{grid-template-columns:1fr;}}
 
 /* DIGITAL APP SECTION */
-
-.app-section{
-  background:var(--soft);
-  padding:76px 0;
-}
-
-.app-grid{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:50px;
-  align-items:center;
-}
-
-.app-content{
-  max-width:650px;
-}
-
-.app-content h2{
-  font-size:clamp(2rem,4vw,2.8rem);
-  margin-bottom:16px;
-}
-
-.app-lead{
-  color:var(--slate);
-  font-size:1.08rem;
-  max-width:600px;
-  margin-bottom:25px;
-}
-
-.app-label{
-  display:inline-block;
-  color:var(--teal);
-  font-size:.75rem;
-  font-weight:900;
-  letter-spacing:.1em;
-  margin-bottom:8px;
-}
-
-.app-content h3{
-  font-family:inherit;
-  font-size:1.45rem;
-  margin-bottom:8px;
-}
-
-.app-content h3 + p{
-  color:var(--slate);
-  max-width:560px;
-}
-
-.app-features{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin:22px 0 27px;
-}
-
-.app-features div{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:11px 13px;
-  font-size:.9rem;
-  font-weight:700;
-  color:var(--ink-soft);
-}
-
-.app-card{
-  background:var(--ink);
-  border-radius:20px;
-  padding:20px;
-  box-shadow:0 18px 45px rgba(14,26,43,.16);
-  max-width:480px;
-  width:100%;
-  margin-left:auto;
-}
-
-.app-card-top{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  color:#fff;
-  font-weight:800;
-  padding:4px 5px 18px;
-}
-
-.app-status{
-  width:9px;
-  height:9px;
-  background:var(--teal);
-  border-radius:50%;
-  display:inline-block;
-}
-
-.app-preview{
-  background:#fff;
-  border-radius:14px;
-  padding:22px;
-}
-
-.preview-title{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:1.35rem;
-  font-weight:700;
-  color:var(--ink);
-  margin-bottom:18px;
-}
-
-.preview-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-  font-size:.88rem;
-}
-
-.preview-row strong{
-  color:var(--slate);
-  font-size:.78rem;
-}
-
-.break-badge,
-.available-badge{
-  padding:5px 9px;
-  border-radius:999px;
-  font-size:.72rem;
-  font-weight:800;
-}
-
-.break-badge{
-  background:var(--soft-amber);
-  color:var(--amber-deep);
-}
-
-.available-badge{
-  background:var(--soft-teal);
-  color:var(--teal-dark);
-}
-
-.preview-button{
-  margin-top:18px;
-  background:var(--amber);
-  color:var(--ink);
-  text-align:center;
-  padding:12px;
-  border-radius:10px;
-  font-weight:900;
-}
-
-.app-card-link{
-  display:block;
-  color:var(--amber);
-  text-decoration:none;
-  font-weight:800;
-  text-align:center;
-  padding:17px 5px 3px;
-}
-
-.app-card-link:hover{
-  color:#fff;
-}
-
-@media(max-width:800px){
-  .app-grid{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
-
-  .app-card{
-    margin:0 auto;
-  }
-}
-
-@media(max-width:600px){
-  .app-section{
-    padding:55px 0;
-  }
-
-  .app-features{
-    grid-template-columns:1fr;
-  }
-
-  .app-card{
-    padding:14px;
-    border-radius:16px;
-  }
-}
+.app-section{background:var(--soft);padding:76px 0;}
+.app-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;}
+.app-content{max-width:650px;}
+.app-content h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:16px;}
+.app-lead{color:var(--slate);font-size:1.08rem;max-width:600px;margin-bottom:25px;}
+.app-label{display:inline-block;color:var(--teal);font-size:.75rem;font-weight:900;letter-spacing:.1em;margin-bottom:8px;}
+.app-content h3{font-family:inherit;font-size:1.45rem;margin-bottom:8px;}
+.app-content h3 + p{color:var(--slate);max-width:560px;}
+.app-features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 27px;}
+.app-features div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:.9rem;font-weight:700;color:var(--ink-soft);}
+.app-card{background:var(--ink);border-radius:20px;padding:20px;box-shadow:0 18px 45px rgba(14,26,43,.16);max-width:480px;width:100%;margin-left:auto;}
+.app-card-top{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;padding:4px 5px 18px;}
+.app-status{width:9px;height:9px;background:var(--teal);border-radius:50%;display:inline-block;}
+.app-preview{background:#fff;border-radius:14px;padding:22px;}
+.preview-title{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:18px;}
+.preview-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.88rem;}
+.preview-row strong{color:var(--slate);font-size:.78rem;}
+.break-badge,.available-badge{padding:5px 9px;border-radius:999px;font-size:.72rem;font-weight:800;}
+.break-badge{background:var(--soft-amber);color:var(--amber-deep);}
+.available-badge{background:var(--soft-teal);color:var(--teal-dark);}
+.preview-button{margin-top:18px;background:var(--amber);color:var(--ink);text-align:center;padding:12px;border-radius:10px;font-weight:900;}
+.app-card-link{display:block;color:var(--amber);text-decoration:none;font-weight:800;text-align:center;padding:17px 5px 3px;}
+.app-card-link:hover{color:#fff;}
+@media(max-width:800px){.app-grid{grid-template-columns:1fr;gap:35px;}.app-card{margin:0 auto;}}
+@media(max-width:600px){.app-section{padding:55px 0;}.app-features{grid-template-columns:1fr;}.app-card{padding:14px;border-radius:16px;}}
 
 /* SERVICES */
-
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.service-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:25px;
-  border-top:4px solid var(--teal);
-}
-
-.service-card h3{
-  font-family:inherit;
-  font-size:1.1rem;
-  margin-bottom:8px;
-}
-
-.service-card p{
-  color:var(--slate);
-  font-size:.95rem;
-}
-
-.icon{
-  font-size:1.65rem;
-  margin-bottom:9px;
-  display:block;
-}
-
-.service-tag{
-  display:inline-block;
-  margin-top:11px;
-  background:var(--soft-teal);
-  color:var(--teal-dark);
-  padding:4px 10px;
-  border-radius:999px;
-  font-size:.76rem;
-  font-weight:800;
-}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;border-top:4px solid var(--teal);}
+.service-card h3{font-family:inherit;font-size:1.1rem;margin-bottom:8px;}
+.service-card p{color:var(--slate);font-size:.95rem;}
+.icon{font-size:1.65rem;margin-bottom:9px;display:block;}
+.service-tag{display:inline-block;margin-top:11px;background:var(--soft-teal);color:var(--teal-dark);padding:4px 10px;border-radius:999px;font-size:.76rem;font-weight:800;}
 
 /* REPORT */
-
-.report{
-  background:var(--soft-teal);
-  border-left:4px solid var(--teal);
-  border-radius:12px;
-  padding:22px 24px;
-  margin-top:24px;
-}
-
-.report strong{
-  display:block;
-  margin-bottom:5px;
-}
-
-.report p{
-  color:var(--ink-soft);
-}
+.report{background:var(--soft-teal);border-left:4px solid var(--teal);border-radius:12px;padding:22px 24px;margin-top:24px;}
+.report strong{display:block;margin-bottom:5px;}
+.report p{color:var(--ink-soft);}
 
 /* WHY */
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.why-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:25px;
-  min-height:145px;
-}
-
-.why-card .num{
-  display:block;
-  color:var(--amber-deep);
-  font:700 1.1rem Georgia,serif;
-  margin-bottom:8px;
-}
-
-.why-card p{
-  color:var(--slate);
-  font-size:.95rem;
-}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;min-height:145px;}
+.why-card .num{display:block;color:var(--amber-deep);font:700 1.1rem Georgia,serif;margin-bottom:8px;}
+.why-card p{color:var(--slate);font-size:.95rem;}
 
 /* STEPS */
-
-.steps-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
-}
-
-.step-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:25px;
-}
-
-.step-card .num{
-  color:var(--teal);
-  font:700 1.5rem Georgia,serif;
-  margin-bottom:10px;
-  display:block;
-}
-
-.step-card h3{
-  font-family:inherit;
-  font-size:1.05rem;
-  margin-bottom:7px;
-}
-
-.step-card p{
-  color:var(--slate);
-  font-size:.95rem;
-}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.step-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;}
+.step-card .num{color:var(--teal);font:700 1.5rem Georgia,serif;margin-bottom:10px;display:block;}
+.step-card h3{font-family:inherit;font-size:1.05rem;margin-bottom:7px;}
+.step-card p{color:var(--slate);font-size:.95rem;}
 
 /* INFO */
-
-.info-stack{
-  display:grid;
-  gap:18px;
-}
-
-.info-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:25px;
-  border-left:4px solid var(--amber);
-}
-
-.info-card.teal{
-  border-left-color:var(--teal);
-}
-
-.info-card h3{
-  font-family:inherit;
-  font-size:1.05rem;
-  margin-bottom:9px;
-}
-
-.info-card p{
-  color:var(--slate);
-  font-size:.95rem;
-}
+.info-stack{display:grid;gap:18px;}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;border-left:4px solid var(--amber);}
+.info-card.teal{border-left-color:var(--teal);}
+.info-card h3{font-family:inherit;font-size:1.05rem;margin-bottom:9px;}
+.info-card p{color:var(--slate);font-size:.95rem;}
 
 /* FAQ */
-
-.faq-item{
-  border-bottom:1px solid var(--line);
-  padding:18px 0;
-}
-
-.faq-item summary{
-  font-weight:800;
-  cursor:pointer;
-  list-style:none;
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.faq-item summary::-webkit-details-marker{
-  display:none;
-}
-
-.faq-item summary:after{
-  content:"+";
-  color:var(--amber-deep);
-  font-size:1.35rem;
-}
-
-.faq-item[open] summary:after{
-  content:"–";
-}
-
-.faq-item p{
-  margin-top:10px;
-  color:var(--slate);
-  max-width:760px;
-}
+.faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
+.faq-item summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:15px;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary:after{content:"+";color:var(--amber-deep);font-size:1.35rem;}
+.faq-item[open] summary:after{content:"–";}
+.faq-item p{margin-top:10px;color:var(--slate);max-width:760px;}
 
 /* CTA */
-
-.business-cta{
-  background:linear-gradient(135deg,var(--ink),var(--ink-soft));
-  border-radius:20px;
-  padding:54px 30px;
-  text-align:center;
-  color:#fff;
-}
-
-.business-cta h2{
-  color:#fff;
-  font-size:2rem;
-  margin-bottom:10px;
-}
-
-.business-cta p{
-  color:#C9D2DE;
-  max-width:650px;
-  margin:0 auto 24px;
-}
+.business-cta{background:linear-gradient(135deg,var(--ink),var(--ink-soft));border-radius:20px;padding:54px 30px;text-align:center;color:#fff;}
+.business-cta h2{color:#fff;font-size:2rem;margin-bottom:10px;}
+.business-cta p{color:#C9D2DE;max-width:650px;margin:0 auto 24px;}
 
 /* CONTACT */
-
-.contact{
-  background:var(--ink);
-  color:#fff;
-  border-radius:20px;
-  padding:55px 26px;
-  text-align:center;
-}
-
-.contact h2{
-  color:#fff;
-  font-size:2rem;
-  margin-bottom:9px;
-}
-
-.contact .sub{
-  color:#C9D2DE;
-  margin-bottom:23px;
-}
-
-.phone-big{
-  font:700 2rem Georgia,serif;
-  color:var(--amber);
-  text-decoration:none;
-}
-
-.contact-actions{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:20px;
-}
-
-.area-list{
-  margin-top:24px;
-  color:#AEB9C6;
-  font-size:.9rem;
-}
+.contact{background:var(--ink);color:#fff;border-radius:20px;padding:55px 26px;text-align:center;}
+.contact h2{color:#fff;font-size:2rem;margin-bottom:9px;}
+.contact .sub{color:#C9D2DE;margin-bottom:23px;}
+.phone-big{font:700 2rem Georgia,serif;color:var(--amber);text-decoration:none;}
+.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px;}
+.area-list{margin-top:24px;color:#AEB9C6;font-size:.9rem;}
 
 /* FOOTER */
-
-footer{
-  text-align:center;
-  padding:34px 20px 25px;
-  color:var(--slate);
-  font-size:.84rem;
-}
-
-footer a{
-  color:var(--teal);
-  font-weight:700;
-  text-decoration:none;
-}
+footer{text-align:center;padding:34px 20px 25px;color:var(--slate);font-size:.84rem;}
+footer a{color:var(--teal);font-weight:700;text-decoration:none;}
 
 /* MOBILE BAR */
+.mobile-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:100;background:var(--ink);padding:9px 12px calc(9px + env(safe-area-inset-bottom));gap:9px;}
+.mobile-bar a{flex:1;text-align:center;padding:11px;border-radius:10px;text-decoration:none;font-weight:800;}
+.mobile-bar .call{background:var(--amber);color:var(--ink);}
+.mobile-bar .app{background:var(--teal);color:#fff;}
+@media(max-width:780px){.mobile-bar{display:flex;}}
 
-.mobile-bar{
-  display:none;
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index:100;
-  background:var(--ink);
-  padding:9px 12px calc(9px + env(safe-area-inset-bottom));
-  gap:9px;
-}
-
-.mobile-bar a{
-  flex:1;
-  text-align:center;
-  padding:11px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:800;
-}
-
-.mobile-bar .call{
-  background:var(--amber);
-  color:var(--ink);
-}
-
-.mobile-bar .app{
-  background:var(--teal);
-  color:#fff;
-}
-
-@media(max-width:780px){
-  .mobile-bar{
-    display:flex;
-  }
-}
-
-/* FOCUS */
-
-:focus-visible{
-  outline:3px solid var(--amber);
-  outline-offset:3px;
-}
-
-/* MOBILE */
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
 
 @media(max-width:600px){
-
-  section{
-    padding:48px 0;
-  }
-
-  .hero{
-    padding:48px 0 62px;
-  }
-
-  .hero h1{
-    font-size:2.15rem;
-  }
-
-  .contact,
-  .business-cta{
-    border-radius:0;
-  }
+  section{padding:48px 0;}
+  .hero{padding:48px 0 62px;}
+  .hero h1{font-size:2.15rem;}
+  .contact,.business-cta{border-radius:0;}
+  .lang-switch{padding:2px;}
+  .lang-btn{padding:5px 9px;font-size:.72rem;}
 }
 </style>
 </head>
@@ -961,42 +252,44 @@ footer a{
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- TOP BAR -->
-
 <div class="topbar">
   <div class="container">
-    <span>Rugby, Warwickshire · Mon–Sat, 8am–6pm</span>
-    <a class="call" href="tel:+447775877746">📞 07775 877 746</a>
+    <span data-i18n="topbar_hours">Rugby, Warwickshire · Mon–Sat, 8am–6pm</span>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a class="call" href="tel:+447775877746">📞 07775 877 746</a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="ro" type="button">RO</button>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- NAVIGATION -->
-
 <nav class="main">
   <div class="container">
 
     <a class="brand" href="#main" aria-label="Pro APEX home">
-
       <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
         <rect width="100" height="100" rx="20" fill="#0E1A2B"/>
         <path d="M55 15 L30 55 L48 55 L42 85 L72 42 L52 42 Z" fill="#FFB020"/>
       </svg>
-
       Pro APEX
-
     </a>
 
     <div class="navlinks">
-      <a href="#care">Care Providers</a>
-      <a href="#app">Staff Break App</a>
-      <a href="#services">Services</a>
-      <a href="#trust">Why Us</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="#care" data-i18n="nav_care">Care Providers</a>
+      <a href="#app" data-i18n="nav_app">Staff Break App</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#trust" data-i18n="nav_trust">Why Us</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="apps.html" data-i18n="nav_apps">Apps</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
 
-    <a class="nav-cta" href="#app">
-      View App →
-    </a>
+    <div class="nav-right">
+      <a class="nav-cta" href="#app" data-i18n="nav_cta">View App →</a>
+    </div>
 
   </div>
 </nav>
@@ -1004,1064 +297,640 @@ footer a{
 <main id="main">
 
 <!-- HERO -->
-
 <header class="hero">
-
   <div class="container hero-inner">
 
-    <div class="eyebrow">
-      Property Maintenance · Digital Solutions
-    </div>
+    <div class="eyebrow" data-i18n="hero_eyebrow">Property Maintenance · Digital Solutions</div>
 
-    <h1>
-      Reliable services and practical digital solutions for businesses.
-    </h1>
+    <h1 data-i18n="hero_h1">Reliable services and practical digital solutions for businesses.</h1>
 
-    <p class="lead">
-      Pro APEX provides professional property maintenance for care providers,
-      landlords and homes, alongside simple digital tools designed to solve
-      real business problems.
-    </p>
+    <p class="lead" data-i18n="hero_lead">Pro APEX provides professional property maintenance for care providers, landlords and homes, alongside simple digital tools designed to solve real business problems.</p>
 
     <div class="hero-ctas">
-
-      <a class="btn btn-primary" href="#app">
-        View Staff Break App →
-      </a>
-
-      <a class="btn btn-outline" href="#business">
-        🤝 Business Partnership
-      </a>
-
+      <a class="btn btn-primary" href="#app" data-i18n="hero_cta1">View Staff Break App →</a>
+      <a class="btn btn-outline" href="#business" data-i18n="hero_cta2">🤝 Business Partnership</a>
     </div>
 
     <div class="hero-badges">
-
-      <span>
-        <i class="dot"></i>
-        Fully insured Ltd company
-      </span>
-
-      <span>
-        <i class="dot"></i>
-        Practical business solutions
-      </span>
-
-      <span>
-        <i class="dot"></i>
-        Rugby & Warwickshire
-      </span>
-
+      <span><i class="dot"></i><span data-i18n="hero_badge1">Fully insured Ltd company</span></span>
+      <span><i class="dot"></i><span data-i18n="hero_badge2">Practical business solutions</span></span>
+      <span><i class="dot"></i><span data-i18n="hero_badge3">Rugby & Warwickshire</span></span>
     </div>
 
   </div>
-
 </header>
 
 <!-- PARTNER STRIP -->
-
 <div class="container">
-
   <div class="partner-strip">
-
     <div>
-      <strong>Care providers</strong>
-      <span>
-        Maintenance and practical digital tools for care environments.
-      </span>
+      <strong data-i18n="partner1_title">Care providers</strong>
+      <span data-i18n="partner1_desc">Maintenance and practical digital tools for care environments.</span>
     </div>
-
     <div>
-      <strong>Landlords & agents</strong>
-      <span>
-        Repairs, decorating and property turnarounds.
-      </span>
+      <strong data-i18n="partner2_title">Landlords & agents</strong>
+      <span data-i18n="partner2_desc">Repairs, decorating and property turnarounds.</span>
     </div>
-
     <div>
-      <strong>Businesses</strong>
-      <span>
-        Simple digital solutions designed around real problems.
-      </span>
+      <strong data-i18n="partner3_title">Businesses</strong>
+      <span data-i18n="partner3_desc">Simple digital solutions designed around real problems.</span>
     </div>
-
   </div>
-
 </div>
 
 <!-- CARE PROVIDERS -->
-
 <section id="care" class="care-section">
-
   <div class="container">
-
     <div class="care-grid">
 
       <div>
-
         <div class="section-head">
-
-          <div class="eyebrow">
-            Care providers & supported living
-          </div>
-
-          <h2>
-            A maintenance partner who understands occupied homes.
-          </h2>
-
-          <p>
-            When a carer, care manager or family member identifies a
-            maintenance problem, you need someone dependable who can respond
-            professionally and treat the person and their home with respect.
-          </p>
-
+          <div class="eyebrow" data-i18n="care_eyebrow">Care providers & supported living</div>
+          <h2 data-i18n="care_h2">A maintenance partner who understands occupied homes.</h2>
+          <p data-i18n="care_p">When a carer, care manager or family member identifies a maintenance problem, you need someone dependable who can respond professionally and treat the person and their home with respect.</p>
         </div>
 
         <div class="care-list">
-
-          <div>Home safety improvements</div>
-          <div>Grab rails & accessibility</div>
-          <div>Minor bathroom adaptations</div>
-          <div>Electrical & lighting repairs</div>
-          <div>Doors, locks & carpentry</div>
-          <div>Painting & decorating</div>
-          <div>General property repairs</div>
-          <div>Maintenance inspections</div>
-
+          <div data-i18n="care_item1">Home safety improvements</div>
+          <div data-i18n="care_item2">Grab rails & accessibility</div>
+          <div data-i18n="care_item3">Minor bathroom adaptations</div>
+          <div data-i18n="care_item4">Electrical & lighting repairs</div>
+          <div data-i18n="care_item5">Doors, locks & carpentry</div>
+          <div data-i18n="care_item6">Painting & decorating</div>
+          <div data-i18n="care_item7">General property repairs</div>
+          <div data-i18n="care_item8">Maintenance inspections</div>
         </div>
-
       </div>
 
       <div class="care-panel">
-
-        <h3>
-          Clear records after the work
-        </h3>
-
-        <p>
-          For business clients, Pro APEX can provide a simple record of
-          completed works, including what was repaired, the date and
-          photographs where appropriate.
-        </p>
-
-        <p>
-          <strong>
-            Need a local maintenance partner?
-          </strong>
-          Let's discuss how referrals and repeat maintenance could work for
-          your organisation.
-        </p>
-
-        <a class="btn btn-primary" href="#business">
-          Discuss a partnership
-        </a>
-
+        <h3 data-i18n="care_panel_h3">Clear records after the work</h3>
+        <p data-i18n="care_panel_p1">For business clients, Pro APEX can provide a simple record of completed works, including what was repaired, the date and photographs where appropriate.</p>
+        <p><strong data-i18n="care_panel_p2_strong">Need a local maintenance partner?</strong> <span data-i18n="care_panel_p2_rest">Let's discuss how referrals and repeat maintenance could work for your organisation.</span></p>
+        <a class="btn btn-primary" href="#business" data-i18n="care_panel_btn">Discuss a partnership</a>
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 <!-- STAFF BREAK APP -->
-
 <section id="app" class="app-section">
-
   <div class="container">
-
     <div class="app-grid">
 
       <div class="app-content">
+        <div class="eyebrow" data-i18n="app_eyebrow">Digital solutions for businesses</div>
+        <h2 data-i18n="app_h2">Simple software for real business problems.</h2>
+        <p class="app-lead" data-i18n="app_lead">Alongside websites and digital services, I build practical tools designed to make everyday business tasks easier.</p>
 
-        <div class="eyebrow">
-          Digital solutions for businesses
-        </div>
-
-        <h2>
-          Simple software for real business problems.
-        </h2>
-
-        <p class="app-lead">
-          Alongside websites and digital services, I build practical tools
-          designed to make everyday business tasks easier.
-        </p>
-
-        <div class="app-label">
-          FIRST DIGITAL SOLUTION
-        </div>
-
-        <h3>
-          Staff Break Manager
-        </h3>
-
-        <p>
-          A simple staff break tracking application designed with care homes,
-          nursing homes and similar care environments in mind.
-        </p>
+        <div class="app-label" data-i18n="app_label">FIRST DIGITAL SOLUTION</div>
+        <h3>Staff Break Manager</h3>
+        <p data-i18n="app_h3_p">A simple staff break tracking application designed with care homes, nursing homes and similar care environments in mind.</p>
 
         <div class="app-features">
-
-          <div>✓ Simple break tracking</div>
-          <div>✓ Designed for care environments</div>
-          <div>✓ Easy to use for staff</div>
-          <div>✓ Clear information for managers</div>
-
+          <div data-i18n="app_feat1">✓ Simple break tracking</div>
+          <div data-i18n="app_feat2">✓ Designed for care environments</div>
+          <div data-i18n="app_feat3">✓ Easy to use for staff</div>
+          <div data-i18n="app_feat4">✓ Clear information for managers</div>
         </div>
 
-        <a
-          class="btn btn-primary"
-          href="https://breakclock.app/"
-          target="_blank"
-          rel="noopener"
-        >
-          Open Staff Break Manager →
-        </a>
-
+        <a class="btn btn-primary" href="https://breakclock.app/" target="_blank" rel="noopener" data-i18n="app_cta">Open Staff Break Manager →</a>
       </div>
 
-      <!-- APP PREVIEW -->
-
       <div class="app-card">
-
         <div class="app-card-top">
-
           <span class="app-status"></span>
-
-          <span>
-            Staff Break Manager
-          </span>
-
+          <span>Staff Break Manager</span>
         </div>
 
         <div class="app-preview">
+          <div class="preview-title" data-i18n="preview_title">Staff Breaks</div>
 
-          <div class="preview-title">
-            Staff Breaks
+          <div class="preview-row">
+            <span data-i18n="preview_row_head1">Staff member</span>
+            <strong data-i18n="preview_row_head2">Break status</strong>
           </div>
 
           <div class="preview-row">
-
-            <span>
-              Staff member
-            </span>
-
-            <strong>
-              Break status
-            </strong>
-
+            <span data-i18n="preview_member">Team member</span>
+            <span class="break-badge" data-i18n="badge_on_break">On Break</span>
           </div>
 
           <div class="preview-row">
-
-            <span>
-              Team member
-            </span>
-
-            <span class="break-badge">
-              On Break
-            </span>
-
+            <span data-i18n="preview_member">Team member</span>
+            <span class="available-badge" data-i18n="badge_available">Available</span>
           </div>
 
           <div class="preview-row">
-
-            <span>
-              Team member
-            </span>
-
-            <span class="available-badge">
-              Available
-            </span>
-
+            <span data-i18n="preview_member">Team member</span>
+            <span class="available-badge" data-i18n="badge_available">Available</span>
           </div>
 
-          <div class="preview-row">
-
-            <span>
-              Team member
-            </span>
-
-            <span class="available-badge">
-              Available
-            </span>
-
-          </div>
-
-          <div class="preview-button">
-            Start Break
-          </div>
-
+          <div class="preview-button" data-i18n="preview_button">Start Break</div>
         </div>
 
-        <a
-          class="app-card-link"
-          href="https://breakclock.app/"
-          target="_blank"
-          rel="noopener"
-        >
-          Visit the application →
-        </a>
-
+        <a class="app-card-link" href="https://breakclock.app/" target="_blank" rel="noopener" data-i18n="app_card_link">Visit the application →</a>
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 <!-- HOME SAFETY -->
-
 <section class="container">
 
   <div class="section-head">
-
-    <div class="eyebrow">
-      Home safety & accessibility
-    </div>
-
-    <h2>
-      Small changes can make a home safer and easier to use.
-    </h2>
-
-    <p>
-      Practical maintenance and accessibility improvements for older people,
-      families and anyone who needs a little extra support around the home.
-    </p>
-
+    <div class="eyebrow" data-i18n="safety_eyebrow">Home safety & accessibility</div>
+    <h2 data-i18n="safety_h2">Small changes can make a home safer and easier to use.</h2>
+    <p data-i18n="safety_p">Practical maintenance and accessibility improvements for older people, families and anyone who needs a little extra support around the home.</p>
   </div>
 
   <div class="services-grid">
 
     <div class="service-card">
-
       <span class="icon">🛟</span>
-
-      <h3>
-        Grab rails & support fittings
-      </h3>
-
-      <p>
-        Practical fitting of suitable support rails and safety accessories
-        where appropriate.
-      </p>
-
+      <h3 data-i18n="safety1_title">Grab rails & support fittings</h3>
+      <p data-i18n="safety1_desc">Practical fitting of suitable support rails and safety accessories where appropriate.</p>
     </div>
 
     <div class="service-card">
-
       <span class="icon">🚿</span>
-
-      <h3>
-        Bathroom safety
-      </h3>
-
-      <p>
-        Minor repairs, fittings, flooring and improvements that can make
-        bathrooms easier and safer to use.
-      </p>
-
+      <h3 data-i18n="safety2_title">Bathroom safety</h3>
+      <p data-i18n="safety2_desc">Minor repairs, fittings, flooring and improvements that can make bathrooms easier and safer to use.</p>
     </div>
 
     <div class="service-card">
-
       <span class="icon">💡</span>
-
-      <h3>
-        Lighting & electrical
-      </h3>
-
-      <p>
-        Lighting, sockets, switches, fault-finding and other electrical work
-        within the appropriate scope.
-      </p>
-
+      <h3 data-i18n="safety3_title">Lighting & electrical</h3>
+      <p data-i18n="safety3_desc">Lighting, sockets, switches, fault-finding and other electrical work within the appropriate scope.</p>
     </div>
 
     <div class="service-card">
-
       <span class="icon">🚪</span>
-
-      <h3>
-        Doors & access
-      </h3>
-
-      <p>
-        Door repairs, handles, locks, adjustments and carpentry to improve
-        everyday access.
-      </p>
-
+      <h3 data-i18n="safety4_title">Doors & access</h3>
+      <p data-i18n="safety4_desc">Door repairs, handles, locks, adjustments and carpentry to improve everyday access.</p>
     </div>
 
   </div>
 
   <div class="report">
-
-    <strong>
-      Respectful working in occupied homes
-    </strong>
-
-    <p>
-      Pro APEX aims to keep disruption to a minimum, protect the working area
-      and leave the property clean and safe when the job is finished.
-    </p>
-
+    <strong data-i18n="report_strong">Respectful working in occupied homes</strong>
+    <p data-i18n="report_p">Pro APEX aims to keep disruption to a minimum, protect the working area and leave the property clean and safe when the job is finished.</p>
   </div>
 
 </section>
 
 <!-- SERVICES -->
-
 <section id="services" class="section-alt">
-
   <div class="container">
 
     <div class="section-head">
-
-      <div class="eyebrow">
-        Multi-trade maintenance
-      </div>
-
-      <h2>
-        One local point of contact for a wide range of jobs.
-      </h2>
-
-      <p>
-        Suitable for homeowners, landlords, letting agents and business
-        clients who want one dependable local maintenance partner rather than
-        several different contractors.
-      </p>
-
+      <div class="eyebrow" data-i18n="services_eyebrow">Multi-trade maintenance</div>
+      <h2 data-i18n="services_h2">One local point of contact for a wide range of jobs.</h2>
+      <p data-i18n="services_p">Suitable for homeowners, landlords, letting agents and business clients who want one dependable local maintenance partner rather than several different contractors.</p>
     </div>
 
     <div class="services-grid">
 
       <div class="service-card">
-
         <span class="icon">🔌</span>
-
-        <h3>
-          Electrical works
-        </h3>
-
-        <p>
-          Sockets, lighting, switches, testing, fault-finding and other
-          electrical work within qualifications and scope.
-        </p>
-
+        <h3 data-i18n="serv1_title">Electrical works</h3>
+        <p data-i18n="serv1_desc">Sockets, lighting, switches, testing, fault-finding and other electrical work within qualifications and scope.</p>
       </div>
 
       <div class="service-card">
-
         <span class="icon">🎨</span>
-
-        <h3>
-          Painting & decorating
-        </h3>
-
-        <p>
-          Interior and exterior painting, plastering, skimming and finishing.
-          Low-odour options can be discussed for occupied properties.
-        </p>
-
-        <span class="service-tag">
-          Low-odour options
-        </span>
-
+        <h3 data-i18n="serv2_title">Painting & decorating</h3>
+        <p data-i18n="serv2_desc">Interior and exterior painting, plastering, skimming and finishing. Low-odour options can be discussed for occupied properties.</p>
+        <span class="service-tag" data-i18n="serv2_tag">Low-odour options</span>
       </div>
 
       <div class="service-card">
-
         <span class="icon">🪚</span>
-
-        <h3>
-          Carpentry & repairs
-        </h3>
-
-        <p>
-          Doors, skirting, shelving, fencing, flat-pack assembly and general
-          property repairs.
-        </p>
-
+        <h3 data-i18n="serv3_title">Carpentry & repairs</h3>
+        <p data-i18n="serv3_desc">Doors, skirting, shelving, fencing, flat-pack assembly and general property repairs.</p>
       </div>
 
       <div class="service-card">
-
         <span class="icon">🧱</span>
-
-        <h3>
-          Tiling & flooring
-        </h3>
-
-        <p>
-          Wall and floor tiling, laminate, vinyl, sub-floor preparation and
-          repairs.
-        </p>
-
+        <h3 data-i18n="serv4_title">Tiling & flooring</h3>
+        <p data-i18n="serv4_desc">Wall and floor tiling, laminate, vinyl, sub-floor preparation and repairs.</p>
       </div>
 
       <div class="service-card">
-
         <span class="icon">🚿</span>
-
-        <h3>
-          Kitchens & bathrooms
-        </h3>
-
-        <p>
-          Fitting, upgrades, tiling, sinks, toilets and associated work within
-          the agreed scope.
-        </p>
-
+        <h3 data-i18n="serv5_title">Kitchens & bathrooms</h3>
+        <p data-i18n="serv5_desc">Fitting, upgrades, tiling, sinks, toilets and associated work within the agreed scope.</p>
       </div>
 
       <div class="service-card">
-
         <span class="icon">🏠</span>
-
-        <h3>
-          Property maintenance
-        </h3>
-
-        <p>
-          General repairs, property checks, gutters, end-of-tenancy work and
-          small renovations.
-        </p>
-
+        <h3 data-i18n="serv6_title">Property maintenance</h3>
+        <p data-i18n="serv6_desc">General repairs, property checks, gutters, end-of-tenancy work and small renovations.</p>
       </div>
 
     </div>
 
-    <div
-      class="report"
-      style="border-left-color:var(--amber);background:var(--soft-amber)"
-    >
-
-      <strong>
-        Outside my scope?
-      </strong>
-
-      <p>
-        I do not carry out Gas or F-Gas air-conditioning work. Where
-        appropriate, I can recommend suitably registered specialists for
-        those jobs.
-      </p>
-
+    <div class="report" style="border-left-color:var(--amber);background:var(--soft-amber)">
+      <strong data-i18n="outside_scope_strong">Outside my scope?</strong>
+      <p data-i18n="outside_scope_p">I do not carry out Gas or F-Gas air-conditioning work. Where appropriate, I can recommend suitably registered specialists for those jobs.</p>
     </div>
 
   </div>
-
 </section>
 
 <!-- WHY US -->
-
 <section id="trust" class="container">
 
   <div class="section-head">
-
-    <div class="eyebrow">
-      Why Pro APEX
-    </div>
-
-    <h2>
-      Built around trust, clear communication and accountability.
-    </h2>
-
+    <div class="eyebrow" data-i18n="why_eyebrow">Why Pro APEX</div>
+    <h2 data-i18n="why_h2">Built around trust, clear communication and accountability.</h2>
   </div>
 
   <div class="why-grid">
 
     <div class="why-card">
-
-      <span class="num">
-        01
-      </span>
-
-      <p>
-        <strong>
-          One local point of contact.
-        </strong>
-        Reduce the need to coordinate several different contractors for
-        smaller maintenance jobs.
-      </p>
-
+      <span class="num">01</span>
+      <p><strong data-i18n="why1_strong">One local point of contact.</strong> <span data-i18n="why1_rest">Reduce the need to coordinate several different contractors for smaller maintenance jobs.</span></p>
     </div>
 
     <div class="why-card">
-
-      <span class="num">
-        02
-      </span>
-
-      <p>
-        <strong>
-          18th Edition electrical qualification.
-        </strong>
-        Electrical work is carried out within the appropriate qualification
-        and scope.
-      </p>
-
+      <span class="num">02</span>
+      <p><strong data-i18n="why2_strong">18th Edition electrical qualification.</strong> <span data-i18n="why2_rest">Electrical work is carried out within the appropriate qualification and scope.</span></p>
     </div>
 
     <div class="why-card">
-
-      <span class="num">
-        03
-      </span>
-
-      <p>
-        <strong>
-          Comfortable around occupied homes.
-        </strong>
-        Previous healthcare experience helps me understand the importance of
-        respectful working.
-      </p>
-
+      <span class="num">03</span>
+      <p><strong data-i18n="why3_strong">Comfortable around occupied homes.</strong> <span data-i18n="why3_rest">Previous healthcare experience helps me understand the importance of respectful working.</span></p>
     </div>
 
     <div class="why-card">
-
-      <span class="num">
-        04
-      </span>
-
-      <p>
-        <strong>
-          Written agreements.
-        </strong>
-        Scope, finish and price are agreed before work starts.
-      </p>
-
+      <span class="num">04</span>
+      <p><strong data-i18n="why4_strong">Written agreements.</strong> <span data-i18n="why4_rest">Scope, finish and price are agreed before work starts.</span></p>
     </div>
 
     <div class="why-card">
-
-      <span class="num">
-        05
-      </span>
-
-      <p>
-        <strong>
-          12-month workmanship guarantee.
-        </strong>
-        If completed work does not match what was agreed, I will return to
-        put it right within the guarantee terms.
-      </p>
-
+      <span class="num">05</span>
+      <p><strong data-i18n="why5_strong">12-month workmanship guarantee.</strong> <span data-i18n="why5_rest">If completed work does not match what was agreed, I will return to put it right within the guarantee terms.</span></p>
     </div>
 
   </div>
-
 </section>
 
 <!-- BUSINESS PROCESS -->
-
 <section class="section-alt">
-
   <div class="container">
 
     <div class="section-head">
-
-      <div class="eyebrow">
-        How business referrals can work
-      </div>
-
-      <h2>
-        Simple for your team. Clear for the customer.
-      </h2>
-
+      <div class="eyebrow" data-i18n="steps_eyebrow">How business referrals can work</div>
+      <h2 data-i18n="steps_h2">Simple for your team. Clear for the customer.</h2>
     </div>
 
     <div class="steps-grid">
 
       <div class="step-card">
-
-        <span class="num">
-          01
-        </span>
-
-        <h3>
-          Identify the problem
-        </h3>
-
-        <p>
-          Your team, customer or family member identifies a maintenance or
-          safety issue.
-        </p>
-
+        <span class="num">01</span>
+        <h3 data-i18n="step1_title">Identify the problem</h3>
+        <p data-i18n="step1_desc">Your team, customer or family member identifies a maintenance or safety issue.</p>
       </div>
 
       <div class="step-card">
-
-        <span class="num">
-          02
-        </span>
-
-        <h3>
-          Contact Pro APEX
-        </h3>
-
-        <p>
-          Send the details or ask the customer to contact Pro APEX directly.
-        </p>
-
+        <span class="num">02</span>
+        <h3 data-i18n="step2_title">Contact Pro APEX</h3>
+        <p data-i18n="step2_desc">Send the details or ask the customer to contact Pro APEX directly.</p>
       </div>
 
       <div class="step-card">
-
-        <span class="num">
-          03
-        </span>
-
-        <h3>
-          Assess & agree
-        </h3>
-
-        <p>
-          The job is assessed and the scope, price and requirements are agreed
-          in writing.
-        </p>
-
+        <span class="num">03</span>
+        <h3 data-i18n="step3_title">Assess & agree</h3>
+        <p data-i18n="step3_desc">The job is assessed and the scope, price and requirements are agreed in writing.</p>
       </div>
 
       <div class="step-card">
-
-        <span class="num">
-          04
-        </span>
-
-        <h3>
-          Complete & report
-        </h3>
-
-        <p>
-          The work is completed professionally, with a simple completion
-          record for business clients where requested.
-        </p>
-
+        <span class="num">04</span>
+        <h3 data-i18n="step4_title">Complete & report</h3>
+        <p data-i18n="step4_desc">The work is completed professionally, with a simple completion record for business clients where requested.</p>
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 <!-- TERMS -->
-
 <section>
-
   <div class="container">
 
     <div class="section-head">
-
-      <div class="eyebrow">
-        Clear terms
-      </div>
-
-      <h2>
-        Professional arrangements without unnecessary complexity.
-      </h2>
-
+      <div class="eyebrow" data-i18n="terms_eyebrow">Clear terms</div>
+      <h2 data-i18n="terms_h2">Professional arrangements without unnecessary complexity.</h2>
     </div>
 
     <div class="info-stack">
 
       <div class="info-card">
-
-        <h3>
-          📝 Written scope before work
-        </h3>
-
-        <p>
-          Jobs are agreed in writing before work starts, including the work to
-          be completed and the agreed price.
-        </p>
-
+        <h3 data-i18n="terms1_title">📝 Written scope before work</h3>
+        <p data-i18n="terms1_desc">Jobs are agreed in writing before work starts, including the work to be completed and the agreed price.</p>
       </div>
 
       <div class="info-card teal">
-
-        <h3>
-          📋 Business records
-        </h3>
-
-        <p>
-          For care providers, landlords and property managers, a simple
-          completion record can be supplied after agreed works, including
-          photographs where appropriate.
-        </p>
-
+        <h3 data-i18n="terms2_title">📋 Business records</h3>
+        <p data-i18n="terms2_desc">For care providers, landlords and property managers, a simple completion record can be supplied after agreed works, including photographs where appropriate.</p>
       </div>
 
       <div class="info-card">
-
-        <h3>
-          🛡️ Insurance & qualifications
-        </h3>
-
-        <p>
-          Pro APEX is a fully insured Ltd company. Electrical work is
-          undertaken within the relevant qualifications and regulations.
-        </p>
-
+        <h3 data-i18n="terms3_title">🛡️ Insurance & qualifications</h3>
+        <p data-i18n="terms3_desc">Pro APEX is a fully insured Ltd company. Electrical work is undertaken within the relevant qualifications and regulations.</p>
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 <!-- FAQ -->
-
 <section id="faq" class="container">
 
   <div class="section-head">
-
-    <div class="eyebrow">
-      Questions
-    </div>
-
-    <h2>
-      Frequently asked questions
-    </h2>
-
+    <div class="eyebrow" data-i18n="faq_eyebrow">Questions</div>
+    <h2 data-i18n="faq_h2">Frequently asked questions</h2>
   </div>
 
   <div>
 
     <details class="faq-item">
-
-      <summary>
-        Do you work with care providers?
-      </summary>
-
-      <p>
-        Yes. Pro APEX is available for maintenance, repairs and practical
-        home safety improvements for care providers, supported living
-        environments, landlords and occupied homes.
-      </p>
-
+      <summary data-i18n="faq1_q">Do you work with care providers?</summary>
+      <p data-i18n="faq1_a">Yes. Pro APEX is available for maintenance, repairs and practical home safety improvements for care providers, supported living environments, landlords and occupied homes.</p>
     </details>
 
     <details class="faq-item">
-
-      <summary>
-        Can you provide a record of completed work?
-      </summary>
-
-      <p>
-        For business clients, a simple completion record can be provided,
-        including the work carried out, date and photographs where
-        appropriate.
-      </p>
-
+      <summary data-i18n="faq2_q">Can you provide a record of completed work?</summary>
+      <p data-i18n="faq2_a">For business clients, a simple completion record can be provided, including the work carried out, date and photographs where appropriate.</p>
     </details>
 
     <details class="faq-item">
-
-      <summary>
-        Do you supply materials?
-      </summary>
-
-      <p>
-        For private customers, the standard service is labour-only unless
-        otherwise agreed. For business maintenance arrangements, the supply
-        of materials can be discussed as part of the agreed job.
-      </p>
-
+      <summary data-i18n="faq3_q">Do you supply materials?</summary>
+      <p data-i18n="faq3_a">For private customers, the standard service is labour-only unless otherwise agreed. For business maintenance arrangements, the supply of materials can be discussed as part of the agreed job.</p>
     </details>
 
     <details class="faq-item">
-
-      <summary>
-        How quickly can you visit?
-      </summary>
-
-      <p>
-        I usually aim to visit within 48 hours for an initial assessment,
-        subject to availability and the nature of the job.
-      </p>
-
+      <summary data-i18n="faq4_q">How quickly can you visit?</summary>
+      <p data-i18n="faq4_a">I usually aim to visit within 48 hours for an initial assessment, subject to availability and the nature of the job.</p>
     </details>
 
     <details class="faq-item">
-
-      <summary>
-        Do you do gas or F-Gas air-conditioning work?
-      </summary>
-
-      <p>
-        No. These services are outside my qualifications. Where appropriate,
-        I can recommend suitably registered specialists.
-      </p>
-
+      <summary data-i18n="faq5_q">Do you do gas or F-Gas air-conditioning work?</summary>
+      <p data-i18n="faq5_a">No. These services are outside my qualifications. Where appropriate, I can recommend suitably registered specialists.</p>
     </details>
 
     <details class="faq-item">
-
-      <summary>
-        What is the Staff Break Manager?
-      </summary>
-
-      <p>
-        Staff Break Manager is a simple digital tool designed to help
-        businesses, particularly care environments, keep track of staff
-        breaks in a straightforward way.
-      </p>
-
+      <summary data-i18n="faq6_q">What is the Staff Break Manager?</summary>
+      <p data-i18n="faq6_a">Staff Break Manager is a simple digital tool designed to help businesses, particularly care environments, keep track of staff breaks in a straightforward way.</p>
     </details>
 
   </div>
-
 </section>
 
 <!-- BUSINESS CTA -->
-
 <section id="business">
-
   <div class="container">
-
     <div class="business-cta">
 
-      <div class="eyebrow">
-        Care providers · landlords · businesses
-      </div>
-
-      <h2>
-        Looking for a reliable local partner?
-      </h2>
-
-      <p>
-        Let's talk about how Pro APEX could support your team with property
-        maintenance, practical digital tools and repeat business services.
-      </p>
+      <div class="eyebrow" data-i18n="business_eyebrow">Care providers · landlords · businesses</div>
+      <h2 data-i18n="business_h2">Looking for a reliable local partner?</h2>
+      <p data-i18n="business_p">Let's talk about how Pro APEX could support your team with property maintenance, practical digital tools and repeat business services.</p>
 
       <div class="contact-actions">
-
-        <a
-          class="btn btn-primary"
-          href="tel:+447775877746"
-        >
-          📞 Call 07775 877 746
-        </a>
-
-        <a
-          class="btn btn-outline"
-          href="https://wa.me/447775877746"
-          target="_blank"
-          rel="noopener"
-        >
-          💬 WhatsApp
-        </a>
-
+        <a class="btn btn-primary" href="tel:+447775877746" data-i18n="business_call">📞 Call 07775 877 746</a>
+        <a class="btn btn-outline" href="https://wa.me/447775877746" target="_blank" rel="noopener" data-i18n="business_whatsapp">💬 WhatsApp</a>
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact" class="container">
-
   <div class="contact">
 
-    <h2>
-      Need a repair or maintenance visit?
-    </h2>
+    <h2 data-i18n="contact_h2">Need a repair or maintenance visit?</h2>
+    <p class="sub" data-i18n="contact_sub">Call, text or WhatsApp. I usually aim to visit within 48 hours for an initial assessment.</p>
 
-    <p class="sub">
-      Call, text or WhatsApp. I usually aim to visit within 48 hours for an
-      initial assessment.
-    </p>
-
-    <a
-      class="phone-big"
-      href="tel:+447775877746"
-    >
-      07775 877 746
-    </a>
+    <a class="phone-big" href="tel:+447775877746">07775 877 746</a>
 
     <div class="contact-actions">
-
-      <a
-        class="btn btn-primary"
-        href="tel:+447775877746"
-      >
-        Call now
-      </a>
-
-      <a
-        class="btn btn-outline"
-        href="https://wa.me/447775877746"
-        target="_blank"
-        rel="noopener"
-      >
-        WhatsApp
-      </a>
-
+      <a class="btn btn-primary" href="tel:+447775877746" data-i18n="contact_call">Call now</a>
+      <a class="btn btn-outline" href="https://wa.me/447775877746" target="_blank" rel="noopener" data-i18n="contact_whatsapp">WhatsApp</a>
     </div>
 
-    <div class="area-list">
-      Serving Rugby, Coventry, Leamington Spa, Daventry, Bedworth & Nuneaton
-    </div>
+    <div class="area-list" data-i18n="area_list">Serving Rugby, Coventry, Leamington Spa, Daventry, Bedworth & Nuneaton</div>
 
   </div>
-
 </section>
 
 </main>
 
 <!-- FOOTER -->
-
 <footer>
-
   <div class="container">
-
-    © 2026 Pro APEX. All rights reserved.
+    <span data-i18n="footer_copyright">© 2026 Pro APEX. All rights reserved.</span>
     <br>
-
-    Ltd registered in England &amp; Wales. Fully insured.
-
+    <span data-i18n="footer_reg">Ltd registered in England &amp; Wales. Fully insured.</span>
     <div style="margin-top:7px">
-
-      <a href="privacy.html">
-        Privacy Policy &amp; GDPR Information
-      </a>
-
+      <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy &amp; GDPR Information</a>
     </div>
-
   </div>
-
 </footer>
 
 <!-- MOBILE BAR -->
-
 <div class="mobile-bar">
-
-  <a
-    class="call"
-    href="tel:+447775877746"
-  >
-    📞 Call
-  </a>
-
-  <a
-    class="app"
-    href="https://breakclock.app/"
-    target="_blank"
-    rel="noopener"
-  >
-    ⏱️ Break App
-  </a>
-
+  <a class="call" href="tel:+447775877746" data-i18n="mobile_call">📞 Call</a>
+  <a class="app" href="https://breakclock.app/" target="_blank" rel="noopener" data-i18n="mobile_app">⏱️ Break App</a>
 </div>
+
+<script>
+const translations = {
+  en: {},
+  ro: {
+    topbar_hours: "Rugby, Warwickshire · Lun–Sâm, 8:00–18:00",
+    nav_care: "Furnizori de îngrijire",
+    nav_app: "Aplicație pauze",
+    nav_services: "Servicii",
+    nav_trust: "De ce noi",
+    nav_faq: "Întrebări",
+    nav_apps: "Aplicații",
+    nav_contact: "Contact",
+    nav_cta: "Vezi aplicația →",
+    hero_eyebrow: "Întreținere proprietăți · Soluții digitale",
+    hero_h1: "Servicii de încredere și soluții digitale practice pentru afaceri.",
+    hero_lead: "Pro APEX oferă întreținere profesională a proprietăților pentru furnizori de îngrijire, proprietari și locuințe, alături de instrumente digitale simple, create pentru probleme reale de afaceri.",
+    hero_cta1: "Vezi aplicația de pauze →",
+    hero_cta2: "🤝 Parteneriat de afaceri",
+    hero_badge1: "Companie Ltd complet asigurată",
+    hero_badge2: "Soluții practice pentru afaceri",
+    hero_badge3: "Rugby & Warwickshire",
+    partner1_title: "Furnizori de îngrijire",
+    partner1_desc: "Întreținere și instrumente digitale practice pentru medii de îngrijire.",
+    partner2_title: "Proprietari & agenți",
+    partner2_desc: "Reparații, decorațiuni și pregătirea proprietăților.",
+    partner3_title: "Afaceri",
+    partner3_desc: "Soluții digitale simple, create pentru probleme reale.",
+    care_eyebrow: "Furnizori de îngrijire & locuințe protejate",
+    care_h2: "Un partener de întreținere care înțelege locuințele ocupate.",
+    care_p: "Când un îngrijitor, un manager de îngrijire sau un membru al familiei identifică o problemă de întreținere, ai nevoie de cineva de încredere, care poate răspunde profesionist și trata persoana și locuința sa cu respect.",
+    care_item1: "Îmbunătățiri de siguranță în locuință",
+    care_item2: "Bare de sprijin & accesibilitate",
+    care_item3: "Adaptări minore de baie",
+    care_item4: "Reparații electrice & iluminat",
+    care_item5: "Uși, încuietori & tâmplărie",
+    care_item6: "Vopsire & decorare",
+    care_item7: "Reparații generale de proprietate",
+    care_item8: "Inspecții de întreținere",
+    care_panel_h3: "Evidențe clare după lucrare",
+    care_panel_p1: "Pentru clienții business, Pro APEX poate furniza o evidență simplă a lucrărilor efectuate, incluzând ce a fost reparat, data și fotografii, unde este cazul.",
+    care_panel_p2_strong: "Ai nevoie de un partener local de întreținere?",
+    care_panel_p2_rest: "Hai să discutăm cum ar putea funcționa recomandările și întreținerea repetată pentru organizația ta.",
+    care_panel_btn: "Discută un parteneriat",
+    app_eyebrow: "Soluții digitale pentru afaceri",
+    app_h2: "Software simplu pentru probleme reale de afaceri.",
+    app_lead: "Pe lângă site-uri și servicii digitale, construiesc instrumente practice, create pentru a ușura sarcinile zilnice ale afacerii tale.",
+    app_label: "PRIMA SOLUȚIE DIGITALĂ",
+    app_h3_p: "O aplicație simplă de urmărire a pauzelor personalului, creată pentru cămine de îngrijire, case de bătrâni și medii de îngrijire similare.",
+    app_feat1: "✓ Urmărire simplă a pauzelor",
+    app_feat2: "✓ Creată pentru medii de îngrijire",
+    app_feat3: "✓ Ușor de folosit de către personal",
+    app_feat4: "✓ Informații clare pentru manageri",
+    app_cta: "Deschide aplicația de pauze →",
+    preview_title: "Pauze personal",
+    preview_row_head1: "Angajat",
+    preview_row_head2: "Stare pauză",
+    preview_member: "Membru echipă",
+    badge_on_break: "În pauză",
+    badge_available: "Disponibil",
+    preview_button: "Începe pauza",
+    app_card_link: "Vizitează aplicația →",
+    safety_eyebrow: "Siguranță & accesibilitate în locuință",
+    safety_h2: "Mici schimbări pot face o locuință mai sigură și mai ușor de folosit.",
+    safety_p: "Întreținere practică și îmbunătățiri de accesibilitate pentru persoane vârstnice, familii și oricine are nevoie de puțin sprijin în plus în locuință.",
+    safety1_title: "Bare de sprijin & accesorii",
+    safety1_desc: "Montare practică a barelor de sprijin potrivite și a accesoriilor de siguranță, unde este cazul.",
+    safety2_title: "Siguranța băii",
+    safety2_desc: "Reparații minore, montaje, pardoseli și îmbunătățiri care pot face băile mai ușor și mai sigur de folosit.",
+    safety3_title: "Iluminat & electrice",
+    safety3_desc: "Iluminat, prize, întrerupătoare, depanare și alte lucrări electrice în limita calificării.",
+    safety4_title: "Uși & acces",
+    safety4_desc: "Reparații uși, mânere, încuietori, ajustări și tâmplărie pentru un acces mai bun zilnic.",
+    report_strong: "Lucru respectuos în locuințe ocupate",
+    report_p: "Pro APEX urmărește să reducă disconfortul la minimum, să protejeze zona de lucru și să lase proprietatea curată și sigură la finalul lucrării.",
+    services_eyebrow: "Întreținere multi-meșteșug",
+    services_h2: "Un singur punct local de contact pentru o gamă largă de lucrări.",
+    services_p: "Potrivit pentru proprietari de locuințe, proprietari care închiriază, agenții și clienți business care preferă un singur partener local de încredere, nu mai mulți contractori diferiți.",
+    serv1_title: "Lucrări electrice",
+    serv1_desc: "Prize, iluminat, întrerupătoare, testare, depanare și alte lucrări electrice în limita calificării.",
+    serv2_title: "Vopsire & decorare",
+    serv2_desc: "Vopsire interioară și exterioară, tencuială, glet și finisaje. Opțiuni cu miros redus pot fi discutate pentru proprietăți ocupate.",
+    serv2_tag: "Opțiuni cu miros redus",
+    serv3_title: "Tâmplărie & reparații",
+    serv3_desc: "Uși, plinte, rafturi, garduri, montaj mobilier și reparații generale de proprietate.",
+    serv4_title: "Gresie & pardoseli",
+    serv4_desc: "Gresie și faianță, laminat, vinil, pregătirea și repararea pardoselii.",
+    serv5_title: "Bucătării & băi",
+    serv5_desc: "Montaj, upgrade-uri, gresie, chiuvete, toalete și lucrări asociate, în limita convenită.",
+    serv6_title: "Întreținerea proprietății",
+    serv6_desc: "Reparații generale, verificări de proprietate, jgheaburi, lucrări de final de contract și mici renovări.",
+    outside_scope_strong: "În afara ariei mele de lucru?",
+    outside_scope_p: "Nu efectuez lucrări de gaz sau de aer condiționat F-Gas. Unde este cazul, pot recomanda specialiști autorizați corespunzător.",
+    why_eyebrow: "De ce Pro APEX",
+    why_h2: "Construit pe încredere, comunicare clară și responsabilitate.",
+    why1_strong: "Un singur punct local de contact.",
+    why1_rest: "Reduce nevoia de a coordona mai mulți contractori diferiți pentru lucrări mici de întreținere.",
+    why2_strong: "Calificare electrică Ediția 18.",
+    why2_rest: "Lucrările electrice sunt efectuate în limita calificării și ariei corespunzătoare.",
+    why3_strong: "Confortabil în locuințe ocupate.",
+    why3_rest: "Experiența anterioară în domeniul sănătății mă ajută să înțeleg importanța unui lucru respectuos.",
+    why4_strong: "Contracte scrise.",
+    why4_rest: "Aria lucrării, finisajul și prețul sunt convenite înainte de începerea lucrării.",
+    why5_strong: "Garanție de 12 luni pentru manoperă.",
+    why5_rest: "Dacă lucrarea finalizată nu corespunde cu ce s-a convenit, revin să o repar, în limitele garanției.",
+    steps_eyebrow: "Cum pot funcționa recomandările de afaceri",
+    steps_h2: "Simplu pentru echipa ta. Clar pentru client.",
+    step1_title: "Identifică problema",
+    step1_desc: "Echipa ta, clientul sau un membru al familiei identifică o problemă de întreținere sau siguranță.",
+    step2_title: "Contactează Pro APEX",
+    step2_desc: "Trimite detaliile sau roagă clientul să contacteze direct Pro APEX.",
+    step3_title: "Evaluare & acord",
+    step3_desc: "Lucrarea este evaluată, iar aria, prețul și cerințele sunt convenite în scris.",
+    step4_title: "Finalizare & raport",
+    step4_desc: "Lucrarea este finalizată profesionist, cu o evidență simplă de finalizare pentru clienții business, la cerere.",
+    terms_eyebrow: "Condiții clare",
+    terms_h2: "Aranjamente profesionale, fără complicații inutile.",
+    terms1_title: "📝 Arie de lucru scrisă înainte de start",
+    terms1_desc: "Lucrările sunt convenite în scris înainte de a începe, incluzând lucrarea de efectuat și prețul convenit.",
+    terms2_title: "📋 Evidențe pentru business",
+    terms2_desc: "Pentru furnizori de îngrijire, proprietari și administratori de proprietăți, se poate furniza o evidență simplă de finalizare după lucrările convenite, inclusiv fotografii, unde este cazul.",
+    terms3_title: "🛡️ Asigurare & calificări",
+    terms3_desc: "Pro APEX este o companie Ltd complet asigurată. Lucrările electrice sunt efectuate în limita calificărilor și reglementărilor relevante.",
+    faq_eyebrow: "Întrebări",
+    faq_h2: "Întrebări frecvente",
+    faq1_q: "Lucrați cu furnizori de îngrijire?",
+    faq1_a: "Da. Pro APEX este disponibil pentru întreținere, reparații și îmbunătățiri practice de siguranță pentru furnizori de îngrijire, medii de tip locuință protejată, proprietari și locuințe ocupate.",
+    faq2_q: "Puteți furniza o evidență a lucrărilor finalizate?",
+    faq2_a: "Pentru clienții business, se poate furniza o evidență simplă de finalizare, incluzând lucrarea efectuată, data și fotografii, unde este cazul.",
+    faq3_q: "Furnizați materiale?",
+    faq3_a: "Pentru clienți privați, serviciul standard este doar manoperă, dacă nu se convine altfel. Pentru aranjamente de întreținere business, furnizarea materialelor poate fi discutată ca parte a lucrării convenite.",
+    faq4_q: "Cât de repede puteți veni?",
+    faq4_a: "De obicei încerc să vin în 48 de ore pentru o evaluare inițială, în funcție de disponibilitate și de natura lucrării.",
+    faq5_q: "Faceți lucrări de gaz sau aer condiționat F-Gas?",
+    faq5_a: "Nu. Aceste servicii sunt în afara calificărilor mele. Unde este cazul, pot recomanda specialiști autorizați corespunzător.",
+    faq6_q: "Ce este Staff Break Manager?",
+    faq6_a: "Staff Break Manager este un instrument digital simplu, creat pentru a ajuta afacerile, în special mediile de îngrijire, să țină evidența pauzelor personalului într-un mod simplu.",
+    business_eyebrow: "Furnizori de îngrijire · proprietari · afaceri",
+    business_h2: "Cauți un partener local de încredere?",
+    business_p: "Hai să discutăm cum ar putea Pro APEX să sprijine echipa ta cu întreținerea proprietăților, instrumente digitale practice și servicii repetate pentru afaceri.",
+    business_call: "📞 Sună la 07775 877 746",
+    business_whatsapp: "💬 WhatsApp",
+    contact_h2: "Ai nevoie de o reparație sau vizită de întreținere?",
+    contact_sub: "Sună, scrie sau trimite mesaj pe WhatsApp. De obicei încerc să vin în 48 de ore pentru o evaluare inițială.",
+    contact_call: "Sună acum",
+    contact_whatsapp: "WhatsApp",
+    area_list: "Deservim Rugby, Coventry, Leamington Spa, Daventry, Bedworth & Nuneaton",
+    footer_copyright: "© 2026 Pro APEX. Toate drepturile rezervate.",
+    footer_reg: "Ltd înregistrată în Anglia & Țara Galilor. Complet asigurată.",
+    footer_privacy: "Politica de confidențialitate & informații GDPR",
+    mobile_call: "📞 Sună",
+    mobile_app: "⏱️ Aplicație pauze"
+  }
+};
+
+const englishDefaults = {};
+
+function applyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    const key = el.getAttribute('data-i18n');
+    if(lang === 'en'){
+      if(englishDefaults[key] !== undefined) el.innerHTML = englishDefaults[key];
+    } else {
+      const dict = translations[lang] || {};
+      if(dict[key]) el.innerHTML = dict[key];
+    }
+  });
+  document.documentElement.lang = lang === 'ro' ? 'ro' : 'en-GB';
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  try{ localStorage.setItem('proapex_lang', lang); }catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    englishDefaults[el.getAttribute('data-i18n')] = el.innerHTML;
+  });
+  let saved = 'en';
+  try{ saved = localStorage.getItem('proapex_lang') || 'en'; }catch(e){}
+  applyLang(saved);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
+  });
+});
+</script>
 
 </body>
 </html>
-```

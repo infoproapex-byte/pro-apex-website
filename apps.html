@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Apps | Pro APEX Digital Solutions</title>
+
+<meta name="description" content="Digital tools built by Pro APEX — simple apps for businesses, available to install on Android and the web.">
+
+<meta name="theme-color" content="#0E1A2B">
+<meta name="robots" content="index, follow">
+
+<style>
+:root{
+  --ink:#0E1A2B;
+  --ink-soft:#16263D;
+  --ivory:#FBF8F2;
+  --white:#fff;
+  --amber:#FFB020;
+  --amber-deep:#D88700;
+  --teal:#127C71;
+  --teal-dark:#0D625A;
+  --slate:#5C6B7A;
+  --line:#E4E0D6;
+  --soft:#F3EFE5;
+  --soft-teal:#EFF6F5;
+  --soft-amber:#FFF6E4;
+  --radius:16px;
+  --max:1120px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--ivory);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:70px;
+}
+
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(--ink);}
+.container{max-width:var(--max);margin:auto;padding:0 22px;}
+a{color:inherit;}
+
+.skip-link{position:absolute;left:-999px;background:var(--amber);padding:10px 16px;z-index:999;}
+.skip-link:focus{left:16px;top:16px;}
+
+/* TOP BAR */
+.topbar{background:var(--ink);color:#fff;font-size:.85rem;}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap;}
+.topbar a{text-decoration:none;color:#fff;}
+.topbar .call{color:var(--amber);font-weight:800;}
+
+/* NAV */
+nav.main{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+nav.main .container{display:flex;align-items:center;justify-content:space-between;padding-top:13px;padding-bottom:13px;gap:14px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.25rem Georgia,serif;flex-shrink:0;}
+.brand-mark{width:34px;height:34px;}
+.navlinks{display:flex;gap:20px;font-size:.9rem;font-weight:700;}
+.navlinks a{text-decoration:none;color:var(--ink-soft);}
+.navlinks a:hover{color:var(--teal);}
+.nav-right{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+.nav-cta{background:var(--amber);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.9rem;white-space:nowrap;}
+@media(max-width:850px){.navlinks{display:none;}}
+
+/* LANGUAGE SWITCH */
+.lang-switch{display:flex;align-items:center;gap:2px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px;}
+.lang-btn{border:none;background:transparent;color:var(--ink-soft);font-weight:800;font-size:.76rem;letter-spacing:.02em;padding:6px 11px;border-radius:999px;cursor:pointer;font-family:inherit;}
+.lang-btn.active{background:var(--ink);color:#fff;}
+.lang-btn:not(.active):hover{color:var(--teal-dark);}
+.topbar .lang-switch{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);}
+.topbar .lang-btn{color:#C9D2DE;}
+.topbar .lang-btn.active{background:var(--amber);color:var(--ink);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid transparent;transition:.18s;cursor:pointer;font-size:.95rem;font-family:inherit;}
+.btn-primary{background:var(--amber);color:var(--ink);}
+.btn-primary:hover{background:#ffc34c;transform:translateY(-1px);}
+.btn-outline{border-color:var(--line);color:var(--ink);background:#fff;}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal-dark);}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;}
+.btn-ghost:hover{border-color:#fff;}
+.btn[disabled]{opacity:.5;cursor:not-allowed;}
+.btn[disabled]:hover{transform:none;}
+
+/* HERO */
+.hero{background:var(--ink);color:#fff;padding:60px 0 66px;position:relative;overflow:hidden;}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-180px;background:rgba(255,176,32,.08);}
+.hero-inner{position:relative;z-index:2;max-width:780px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:800;margin-bottom:16px;}
+.eyebrow:before{content:"";width:22px;height:2px;background:var(--amber);}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.1rem);color:#fff;margin-bottom:16px;max-width:760px;}
+.hero .lead{font-size:1.08rem;color:#C9D2DE;max-width:650px;margin-bottom:8px;}
+
+/* SECTIONS */
+section{padding:60px 0;}
+.section-alt{background:var(--soft);}
+.section-head{max-width:700px;margin-bottom:32px;}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.2rem);}
+.section-head p{color:var(--slate);margin-top:10px;font-size:1.02rem;}
+
+/* APP GRID */
+.apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;}
+.app-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:14px;}
+.app-card.is-soon{background:var(--soft);border-style:dashed;}
+.app-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;}
+.app-icon{width:52px;height:52px;border-radius:14px;background:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.app-card.is-soon .app-icon{background:var(--line);}
+.status-badge{padding:5px 10px;border-radius:999px;font-size:.72rem;font-weight:800;white-space:nowrap;}
+.status-live{background:var(--soft-teal);color:var(--teal-dark);}
+.status-soon{background:var(--soft-amber);color:var(--amber-deep);}
+.app-card h3{font-family:inherit;font-size:1.2rem;}
+.app-card .app-desc{color:var(--slate);font-size:.94rem;flex-grow:1;}
+.app-card .app-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
+.app-card .app-tags span{background:var(--soft);border:1px solid var(--line);color:var(--ink-soft);font-size:.76rem;font-weight:700;padding:4px 9px;border-radius:999px;}
+.app-card.is-soon .app-tags span{background:#fff;}
+.app-card .app-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
+
+/* INSTALL STEPS */
+.install-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.install-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;}
+.install-card .num{color:var(--teal);font:700 1.4rem Georgia,serif;margin-bottom:8px;display:block;}
+.install-card h3{font-family:inherit;font-size:1.02rem;margin-bottom:7px;}
+.install-card p{color:var(--slate);font-size:.92rem;}
+
+.note{background:var(--soft-teal);border-left:4px solid var(--teal);border-radius:12px;padding:18px 20px;margin-top:26px;font-size:.92rem;color:var(--ink-soft);}
+.note strong{display:block;margin-bottom:5px;}
+
+/* CONTACT */
+.contact{background:var(--ink);color:#fff;border-radius:20px;padding:50px 26px;text-align:center;}
+.contact h2{color:#fff;font-size:1.9rem;margin-bottom:9px;}
+.contact .sub{color:#C9D2DE;margin-bottom:23px;max-width:560px;margin-left:auto;margin-right:auto;}
+.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px;}
+
+/* FOOTER */
+footer{text-align:center;padding:34px 20px 25px;color:var(--slate);font-size:.84rem;}
+footer a{color:var(--teal);font-weight:700;text-decoration:none;}
+
+.mobile-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:100;background:var(--ink);padding:9px 12px calc(9px + env(safe-area-inset-bottom));gap:9px;}
+.mobile-bar a{flex:1;text-align:center;padding:11px;border-radius:10px;text-decoration:none;font-weight:800;}
+.mobile-bar .call{background:var(--amber);color:var(--ink);}
+.mobile-bar .app{background:var(--teal);color:#fff;}
+@media(max-width:780px){.mobile-bar{display:flex;}}
+
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
+
+@media(max-width:600px){
+  section{padding:44px 0;}
+  .hero{padding:44px 0 56px;}
+  .hero h1{font-size:1.9rem;}
+  .contact{border-radius:0;}
+  .lang-switch{padding:2px;}
+  .lang-btn{padding:5px 9px;font-size:.72rem;}
+}
+</style>
+</head>
+
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+  <div class="container">
+    <span data-i18n="topbar_hours">Rugby, Warwickshire · Mon–Sat, 8am–6pm</span>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a class="call" href="tel:+447775877746">📞 07775 877 746</a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="ro" type="button">RO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="main">
+  <div class="container">
+
+    <a class="brand" href="index.html" aria-label="Pro APEX home">
+      <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" rx="20" fill="#0E1A2B"/>
+        <path d="M55 15 L30 55 L48 55 L42 85 L72 42 L52 42 Z" fill="#FFB020"/>
+      </svg>
+      Pro APEX
+    </a>
+
+    <div class="navlinks">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="index.html#services" data-i18n="nav_services">Services</a>
+      <a href="#apps" data-i18n="nav_apps_current">Apps</a>
+      <a href="#install" data-i18n="nav_install">How to install</a>
+      <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <a class="nav-cta" href="index.html#business" data-i18n="nav_cta">Partnership →</a>
+    </div>
+
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="hero">
+  <div class="container hero-inner">
+
+    <div class="eyebrow" data-i18n="apps_hero_eyebrow">Digital Solutions · Pro APEX</div>
+
+    <h1 data-i18n="apps_hero_h1">The apps we build, ready to install.</h1>
+
+    <p class="lead" data-i18n="apps_hero_lead">Simple tools built for real business problems. Available for Android and the web — install in seconds, no app store needed.</p>
+
+  </div>
+</header>
+
+<!-- APPS GRID -->
+<section id="apps">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="apps_eyebrow">Available apps</div>
+      <h2 data-i18n="apps_h2">Pick an app and install it in seconds.</h2>
+      <p data-i18n="apps_p">Every app runs in the browser and works on Android and desktop. Add it to your home screen just like a regular app.</p>
+    </div>
+
+    <div class="apps-grid">
+
+      <!-- LIVE APP -->
+      <div class="app-card">
+        <div class="app-card-head">
+          <div class="app-icon">⏱️</div>
+          <span class="status-badge status-live" data-i18n="card1_status">Live now</span>
+        </div>
+
+        <h3>Staff Break Manager</h3>
+
+        <p class="app-desc" data-i18n="card1_desc">A simple staff break tracking app, built for care homes, nursing homes and similar care environments.</p>
+
+        <div class="app-tags">
+          <span data-i18n="card1_tag1">Break tracking</span>
+          <span data-i18n="card1_tag2">Built for care teams</span>
+          <span data-i18n="card1_tag3">Easy to use</span>
+          <span data-i18n="card1_tag4">Android & Web</span>
+        </div>
+
+        <div class="app-actions">
+          <a class="btn btn-primary" href="https://breakclock.app/" target="_blank" rel="noopener" data-i18n="card1_cta">Open & install →</a>
+        </div>
+      </div>
+
+      <!-- IN DEVELOPMENT -->
+      <div class="app-card is-soon">
+        <div class="app-card-head">
+          <div class="app-icon">🛠️</div>
+          <span class="status-badge status-soon" data-i18n="card2_status">In development</span>
+        </div>
+
+        <h3 data-i18n="card2_title">Next app</h3>
+
+        <p class="app-desc" data-i18n="card2_desc">Working on a new digital tool. Details will appear here as soon as it's ready to test.</p>
+
+        <div class="app-tags">
+          <span data-i18n="card2_tag">Coming soon</span>
+        </div>
+
+        <div class="app-actions">
+          <button class="btn btn-outline" disabled data-i18n="card2_btn">Coming soon</button>
+        </div>
+      </div>
+
+      <!-- IDEA -->
+      <div class="app-card is-soon">
+        <div class="app-card-head">
+          <div class="app-icon">💡</div>
+          <span class="status-badge status-soon" data-i18n="card3_status">Idea in progress</span>
+        </div>
+
+        <h3 data-i18n="card3_title">Got an idea for an app?</h3>
+
+        <p class="app-desc" data-i18n="card3_desc">If your team has a repetitive problem that a simple tool could solve, let me know — it could become the next project.</p>
+
+        <div class="app-actions">
+          <a class="btn btn-outline" href="index.html#contact" data-i18n="card3_btn">Suggest an idea →</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW TO INSTALL -->
+<section id="install" class="section-alt">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="install_eyebrow">Quick guide</div>
+      <h2 data-i18n="install_h2">How to install an app on your phone or computer</h2>
+      <p data-i18n="install_p">Pro APEX apps are web apps — Android and desktop only for now, installed straight from the browser, no App Store or Google Play needed.</p>
+    </div>
+
+    <div class="install-grid">
+
+      <div class="install-card">
+        <span class="num">🤖</span>
+        <h3 data-i18n="install1_title">On Android (Chrome)</h3>
+        <p data-i18n="install1_p">Open the app, tap the menu (⋮) in the top-right corner, then tap "Add to Home screen" or "Install app".</p>
+      </div>
+
+      <div class="install-card">
+        <span class="num">💻</span>
+        <h3 data-i18n="install2_title">On desktop (Chrome/Edge)</h3>
+        <p data-i18n="install2_p">Open the app and look for the install icon (⊕) in the address bar, then click "Install".</p>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <strong data-i18n="install_note_strong">Why isn't there an iOS version?</strong>
+      <span data-i18n="install_note_p">These apps are currently built and tested for Android and the web. Get in touch if iOS support would help your team.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="container">
+  <div class="contact">
+
+    <h2 data-i18n="apps_contact_h2">Want an app for your business?</h2>
+    <p class="sub" data-i18n="apps_contact_sub">I build simple digital tools for real problems. Tell me what's slowing your team down and we'll see if it's worth solving.</p>
+
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="tel:+447775877746" data-i18n="contact_call">📞 Call now</a>
+      <a class="btn btn-ghost" href="https://wa.me/447775877746" target="_blank" rel="noopener" data-i18n="contact_whatsapp">💬 WhatsApp</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span data-i18n="footer_copyright">© 2026 Pro APEX. All rights reserved.</span>
+    <br>
+    <span data-i18n="footer_reg">Ltd registered in England &amp; Wales. Fully insured.</span>
+    <div style="margin-top:7px">
+      <a href="index.html" data-i18n="footer_back">← Back to homepage</a>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="call" href="tel:+447775877746" data-i18n="mobile_call">📞 Call</a>
+  <a class="app" href="https://breakclock.app/" target="_blank" rel="noopener" data-i18n="mobile_app_open">⏱️ Open app</a>
+</div>
+
+<script>
+const translations = {
+  ro: {
+    topbar_hours: "Rugby, Warwickshire · Lun–Sâm, 8:00–18:00",
+    nav_home: "Acasă",
+    nav_services: "Servicii",
+    nav_apps_current: "Aplicații",
+    nav_install: "Cum instalez",
+    nav_contact: "Contact",
+    nav_cta: "Parteneriat →",
+    apps_hero_eyebrow: "Soluții digitale · Pro APEX",
+    apps_hero_h1: "Aplicațiile pe care le construim, gata de instalat.",
+    apps_hero_lead: "Instrumente simple, create pentru probleme reale de afaceri. Disponibile pentru Android și web — se instalează în câteva secunde, fără magazin de aplicații.",
+    apps_eyebrow: "Aplicații disponibile",
+    apps_h2: "Alege o aplicație și instaleaz-o în câteva secunde.",
+    apps_p: "Fiecare aplicație rulează în browser și funcționează pe Android și pe calculator. Adaug-o pe ecranul principal, la fel ca o aplicație obișnuită.",
+    card1_status: "Disponibilă acum",
+    card1_desc: "Aplicație simplă pentru urmărirea pauzelor angajaților, creată pentru cămine de îngrijire, case de bătrâni și medii de îngrijire similare.",
+    card1_tag1: "Urmărire pauze",
+    card1_tag2: "Pentru echipe de îngrijire",
+    card1_tag3: "Ușor de folosit",
+    card1_tag4: "Android & Web",
+    card1_cta: "Deschide & instalează →",
+    card2_status: "În dezvoltare",
+    card2_title: "Următoarea aplicație",
+    card2_desc: "Lucrez la o nouă soluție digitală. Detaliile vor apărea aici de îndată ce aplicația este gata de testare.",
+    card2_tag: "În curând",
+    card2_btn: "În curând",
+    card3_status: "Idee în lucru",
+    card3_title: "Ai o idee pentru o aplicație?",
+    card3_desc: "Dacă echipa ta are o problemă repetitivă care ar putea fi rezolvată printr-un instrument simplu, spune-mi — poate deveni următorul proiect.",
+    card3_btn: "Propune o idee →",
+    install_eyebrow: "Ghid rapid",
+    install_h2: "Cum instalezi o aplicație pe telefon sau calculator",
+    install_p: "Aplicațiile Pro APEX sunt aplicații web — deocamdată doar pentru Android și calculator, instalate direct din browser, fără App Store sau Google Play.",
+    install1_title: "Pe Android (Chrome)",
+    install1_p: "Deschide aplicația, apasă meniul (⋮) din colțul din dreapta sus, apoi „Adaugă pe ecranul principal” sau „Instalează aplicația”.",
+    install2_title: "Pe calculator (Chrome/Edge)",
+    install2_p: "Deschide aplicația și caută iconița de instalare (⊕) din bara de adrese, apoi apasă „Instalează”.",
+    install_note_strong: "De ce nu există o versiune pentru iOS?",
+    install_note_p: "Aplicațiile sunt momentan construite și testate pentru Android și web. Scrie-mi dacă suportul pentru iOS ar ajuta echipa ta.",
+    apps_contact_h2: "Vrei o aplicație pentru afacerea ta?",
+    apps_contact_sub: "Construiesc instrumente digitale simple pentru probleme reale. Spune-mi ce încetinește echipa ta și vedem dacă merită rezolvat.",
+    contact_call: "📞 Sună acum",
+    contact_whatsapp: "💬 WhatsApp",
+    footer_copyright: "© 2026 Pro APEX. Toate drepturile rezervate.",
+    footer_reg: "Ltd înregistrată în Anglia & Țara Galilor. Complet asigurată.",
+    footer_back: "← Înapoi la pagina principală",
+    mobile_call: "📞 Sună",
+    mobile_app_open: "⏱️ Deschide aplicația"
+  }
+};
+
+const englishDefaults = {};
+
+function applyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    const key = el.getAttribute('data-i18n');
+    if(lang === 'en'){
+      if(englishDefaults[key] !== undefined) el.innerHTML = englishDefaults[key];
+    } else {
+      const dict = translations[lang] || {};
+      if(dict[key]) el.innerHTML = dict[key];
+    }
+  });
+  document.documentElement.lang = lang === 'ro' ? 'ro' : 'en-GB';
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  try{ localStorage.setItem('proapex_lang', lang); }catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    englishDefaults[el.getAttribute('data-i18n')] = el.innerHTML;
+  });
+  let saved = 'en';
+  try{ saved = localStorage.getItem('proapex_lang') || 'en'; }catch(e){}
+  applyLang(saved);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.dataset.lang); });
+  });
+});
+</script>
+
+</body>
+</html>
