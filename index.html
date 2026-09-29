@@ -2,690 +2,520 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-<title>Pro APEX | Commercial & Care Property Maintenance</title>
-
-<meta name="description" content="Pro APEX provides reliable property maintenance and practical digital solutions for care providers, landlords, property managers and businesses across Rugby and Warwickshire.">
-
-<meta name="theme-color" content="#0E1A2B">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pro APEX | Composite Door & Window Fitting | Rugby & Warwickshire</title>
+<meta name="description" content="Pro APEX fits composite doors, bi-fold doors, patio doors and windows across Rugby, Coventry and Warwickshire. 10 years' fitting experience and a clean, tidy finish.">
+<meta name="theme-color" content="#101820">
 <meta name="robots" content="index, follow">
 
 <style>
 :root{
-  --ink:#0E1A2B;
-  --ink-soft:#16263D;
-  --ivory:#FBF8F2;
-  --white:#fff;
-  --amber:#FFB020;
-  --amber-deep:#D88700;
-  --teal:#127C71;
-  --teal-dark:#0D625A;
-  --slate:#5C6B7A;
-  --line:#E4E0D6;
-  --soft:#F3EFE5;
-  --soft-teal:#EFF6F5;
-  --soft-amber:#FFF6E4;
-  --radius:16px;
-  --max:1120px;
+  --ink:#101820;
+  --text:#2a343c;
+  --muted:#6b767e;
+  --line:#e4e3de;
+  --bg:#ffffff;
+  --soft:#f6f5f1;
+  --gold:#b8872f;
+  --gold-light:#e2bd70;
+  --max:1100px;
 }
-
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  color:var(--ink);
-  background:var(--ivory);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  padding-bottom:70px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text);background:var(--bg);line-height:1.65;
+  padding-bottom:calc(72px + env(safe-area-inset-bottom));
+}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--ink);line-height:1.2;font-weight:700}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+section{padding:64px 0}
+.soft{background:var(--soft)}
+.center{text-align:center}
+.lead{color:var(--muted);font-size:1.05rem;max-width:620px}
+.center .lead{margin-left:auto;margin-right:auto}
+h2{font-size:clamp(1.7rem,6vw,2.6rem);margin-bottom:14px}
+.kicker{color:var(--gold);font-size:.85rem;font-weight:700;margin-bottom:10px;letter-spacing:.04em}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:15px 26px;border-radius:6px;font-weight:700;font-size:1rem;
+  text-decoration:none;border:2px solid transparent;cursor:pointer;
+  font-family:inherit;transition:background .2s,color .2s;min-height:50px;
+}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#9d7226}
+.btn-outline{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-outline:hover{background:#fff;color:var(--ink)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#1d2b38}
+.btn-line{border-color:var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+
+/* Header */
+header.site{
+  position:sticky;top:0;z-index:60;background:#fff;
+  border-bottom:1px solid var(--line);
+  padding-top:env(safe-area-inset-top);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.3rem Georgia,serif;color:var(--ink)}
+.brand svg{width:34px;height:34px}
+.menu-btn{
+  background:none;border:0;width:44px;height:44px;cursor:pointer;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;
+}
+.menu-btn span{width:24px;height:2px;background:var(--ink);transition:.25s}
+.menu-btn.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.nav{
+  display:none;flex-direction:column;background:#fff;
+  border-top:1px solid var(--line);padding:8px 22px 20px;
+}
+.nav.open{display:flex}
+.nav a{padding:15px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600;color:var(--ink)}
+.nav a.btn{margin-top:16px;border:0;color:#fff;text-align:center}
+@media(min-width:900px){
+  .menu-btn{display:none}
+  .nav,.nav.open{display:flex;flex-direction:row;align-items:center;gap:28px;border:0;padding:0}
+  .nav a{border:0;padding:0;font-size:.95rem}
+  .nav a.btn{margin:0;padding:11px 20px;min-height:0}
+  header.site .wrap{position:relative}
+  .bar{gap:30px}
+  .nav-holder{display:flex}
 }
 
-h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(--ink);}
-.container{max-width:var(--max);margin:auto;padding:0 22px;}
-a{color:inherit;}
-
-.skip-link{position:absolute;left:-999px;background:var(--amber);padding:10px 16px;z-index:999;}
-.skip-link:focus{left:16px;top:16px;}
-
-/* TOP BAR */
-.topbar{background:var(--ink);color:#fff;font-size:.85rem;}
-.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap;}
-.topbar a{text-decoration:none;color:#fff;}
-.topbar .call{color:var(--amber);font-weight:800;}
-
-/* NAV */
-nav.main{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-nav.main .container{display:flex;align-items:center;justify-content:space-between;padding-top:13px;padding-bottom:13px;gap:14px;}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.25rem Georgia,serif;flex-shrink:0;}
-.brand-mark{width:34px;height:34px;}
-.navlinks{display:flex;gap:20px;font-size:.9rem;font-weight:700;}
-.navlinks a{text-decoration:none;color:var(--ink-soft);}
-.navlinks a:hover{color:var(--teal);}
-.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
-.nav-apps{border:2px solid var(--line);background:#fff;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.9rem;white-space:nowrap;color:var(--ink-soft);transition:.18s;}
-.nav-apps:hover{border-color:var(--teal);color:var(--teal-dark);}
-.nav-cta{background:var(--amber);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.9rem;white-space:nowrap;}
-@media(max-width:850px){.navlinks{display:none;}}
-@media(max-width:520px){
-  .nav-apps,.nav-cta{padding:8px 13px;font-size:.82rem;}
-  .brand{font-size:1.1rem;}
+/* Hero */
+.hero{
+  background:
+    linear-gradient(180deg,rgba(16,24,32,.55),rgba(16,24,32,.88)),
+    url("images/hero-door.jpg") center/cover no-repeat,
+    linear-gradient(135deg,#1d2b38,#101820);
+  color:#fff;padding:84px 0 72px;
 }
+.hero h1{color:#fff;font-size:clamp(2.1rem,8vw,3.8rem);margin-bottom:18px;max-width:720px}
+.hero p{color:#dfe4e8;font-size:1.08rem;max-width:560px;margin-bottom:28px}
+.hero .btns{display:flex;flex-direction:column;gap:12px;max-width:340px}
+.partner-note{margin-top:30px;font-size:.9rem;color:#c3cbd1;border-top:1px solid rgba(255,255,255,.2);padding-top:18px;max-width:520px}
+@media(min-width:600px){.hero .btns{flex-direction:row;max-width:none}}
 
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid transparent;transition:.18s;}
-.btn-primary{background:var(--amber);color:var(--ink);}
-.btn-primary:hover{background:#ffc34c;transform:translateY(-1px);}
-.btn-outline{border-color:rgba(255,255,255,.4);color:#fff;}
-.btn-outline:hover{border-color:#fff;}
+/* Feature row */
+.features{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.feat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 16px;text-align:center}
+.feat svg{width:34px;height:34px;margin:0 auto 12px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-family:inherit;font-size:1rem;margin-bottom:4px}
+.feat p{font-size:.85rem;color:var(--muted);line-height:1.5}
+@media(min-width:800px){.features{grid-template-columns:repeat(4,1fr)}}
 
-/* HERO */
-.hero{background:var(--ink);color:#fff;padding:66px 0 72px;position:relative;overflow:hidden;}
-.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-180px;background:rgba(255,176,32,.08);}
-.hero-inner{position:relative;z-index:2;max-width:850px;}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:800;margin-bottom:16px;}
-.eyebrow:before{content:"";width:22px;height:2px;background:var(--amber);}
-.hero h1{font-size:clamp(2.25rem,5vw,3.55rem);color:#fff;margin-bottom:18px;max-width:800px;}
-.hero .lead{font-size:1.12rem;color:#C9D2DE;max-width:690px;margin-bottom:28px;}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
-.hero-badges{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;color:#AEB9C6;font-size:.85rem;}
-.hero-badges span{display:flex;align-items:center;gap:7px;}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--teal);display:inline-block;}
-
-/* PARTNER STRIP */
-.partner-strip{margin:-30px auto 0;position:relative;z-index:4;max-width:calc(var(--max) - 44px);background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 35px rgba(14,26,43,.08);padding:22px 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.partner-strip strong{display:block;margin-bottom:3px;}
-.partner-strip span{font-size:.9rem;color:var(--slate);}
-@media(max-width:700px){.partner-strip{grid-template-columns:1fr;margin-left:16px;margin-right:16px;}}
-
-/* GENERAL SECTIONS */
-section{padding:66px 0;}
-.section-alt{background:var(--soft);}
-.section-head{max-width:700px;margin-bottom:34px;}
-.section-head h2{font-size:clamp(1.8rem,3vw,2.35rem);}
-.section-head p{color:var(--slate);margin-top:10px;font-size:1.03rem;}
-
-/* CARE SECTION */
-.care-section{background:var(--ink);color:#fff;}
-.care-section h2,.care-section h3{color:#fff;}
-.care-section .section-head p{color:#C9D2DE;}
-.care-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start;}
-.care-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
-.care-list div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:13px 15px;}
-.care-list div:before{content:"✓";color:var(--amber);font-weight:900;margin-right:8px;}
-.care-panel{background:#fff;color:var(--ink);border-radius:var(--radius);padding:27px;}
-.care-panel h3{color:var(--ink);margin-bottom:10px;}
-.care-panel p{color:var(--slate);font-size:.95rem;margin-bottom:15px;}
-.care-panel .btn{width:100%;}
-@media(max-width:800px){.care-grid{grid-template-columns:1fr;}.care-list{grid-template-columns:1fr;}}
-
-/* DIGITAL APP SECTION */
-.app-section{background:var(--soft);padding:58px 0;border-top:1px solid var(--line);}
-.app-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;}
-.app-content{max-width:650px;}
-.optional-extra .app-content h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:16px;}
-.app-lead{color:var(--slate);font-size:1.08rem;max-width:600px;margin-bottom:25px;}
-.app-label{display:inline-block;color:var(--teal);font-size:.75rem;font-weight:900;letter-spacing:.1em;margin-bottom:8px;}
-.app-content h3{font-family:inherit;font-size:1.45rem;margin-bottom:8px;}
-.app-content h3 + p{color:var(--slate);max-width:560px;}
-.app-features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 27px;}
-.app-features div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:.9rem;font-weight:700;color:var(--ink-soft);}
-.app-ctas{display:flex;gap:12px;flex-wrap:wrap;}
-.app-ctas .btn-outline{border-color:var(--line);background:#fff;color:var(--ink);}
-.app-ctas .btn-outline:hover{border-color:var(--teal);color:var(--teal-dark);}
-.optional-extra .app-card{background:var(--ink);border-radius:20px;padding:20px;box-shadow:0 18px 45px rgba(14,26,43,.16);max-width:480px;width:100%;margin-left:auto;}
-.app-card-top{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;padding:4px 5px 18px;}
-.app-status{width:9px;height:9px;background:var(--teal);border-radius:50%;display:inline-block;}
-.app-preview{background:#fff;border-radius:14px;padding:22px;}
-.preview-title{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:18px;}
-.preview-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.88rem;}
-.preview-row strong{color:var(--slate);font-size:.78rem;}
-.break-badge,.available-badge{padding:5px 9px;border-radius:999px;font-size:.72rem;font-weight:800;}
-.break-badge{background:var(--soft-amber);color:var(--amber-deep);}
-.available-badge{background:var(--soft-teal);color:var(--teal-dark);}
-.preview-button{margin-top:18px;background:var(--amber);color:var(--ink);text-align:center;padding:12px;border-radius:10px;font-weight:900;}
-.app-card-link{display:block;color:var(--amber);text-decoration:none;font-weight:800;text-align:center;padding:17px 5px 3px;}
-.app-card-link:hover{color:#fff;}
-@media(max-width:800px){.app-grid{grid-template-columns:1fr;gap:35px;}.app-card{margin:0 auto;}}
-@media(max-width:600px){.app-section{padding:55px 0;}.app-features{grid-template-columns:1fr;}.app-card{padding:14px;border-radius:16px;}}
-
-/* SERVICES */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;border-top:4px solid var(--teal);}
-.service-card h3{font-family:inherit;font-size:1.1rem;margin-bottom:8px;}
-.service-card p{color:var(--slate);font-size:.95rem;}
-.icon{font-size:1.65rem;margin-bottom:9px;display:block;}
-.service-tag{display:inline-block;margin-top:11px;background:var(--soft-teal);color:var(--teal-dark);padding:4px 10px;border-radius:999px;font-size:.76rem;font-weight:800;}
-
-/* REPORT */
-.report{background:var(--soft-teal);border-left:4px solid var(--teal);border-radius:12px;padding:22px 24px;margin-top:24px;}
-.report strong{display:block;margin-bottom:5px;}
-.report p{color:var(--ink-soft);}
-
-/* WHY */
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
-.why-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;min-height:145px;}
-.why-card .num{display:block;color:var(--amber-deep);font:700 1.1rem Georgia,serif;margin-bottom:8px;}
-.why-card p{color:var(--slate);font-size:.95rem;}
-
-/* STEPS */
-.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
-.step-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;}
-.step-card .num{color:var(--teal);font:700 1.5rem Georgia,serif;margin-bottom:10px;display:block;}
-.step-card h3{font-family:inherit;font-size:1.05rem;margin-bottom:7px;}
-.step-card p{color:var(--slate);font-size:.95rem;}
-
-/* INFO */
-.info-stack{display:grid;gap:18px;}
-.info-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;border-left:4px solid var(--amber);}
-.info-card.teal{border-left-color:var(--teal);}
-.info-card h3{font-family:inherit;font-size:1.05rem;margin-bottom:9px;}
-.info-card p{color:var(--slate);font-size:.95rem;}
-
-/* FAQ */
-.faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
-.faq-item summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:15px;}
-.faq-item summary::-webkit-details-marker{display:none;}
-.faq-item summary:after{content:"+";color:var(--amber-deep);font-size:1.35rem;}
-.faq-item[open] summary:after{content:"–";}
-.faq-item p{margin-top:10px;color:var(--slate);max-width:760px;}
-
-/* CTA */
-.business-cta{background:linear-gradient(135deg,var(--ink),var(--ink-soft));border-radius:20px;padding:54px 30px;text-align:center;color:#fff;}
-.business-cta h2{color:#fff;font-size:2rem;margin-bottom:10px;}
-.business-cta p{color:#C9D2DE;max-width:650px;margin:0 auto 24px;}
-
-/* CONTACT */
-.contact{background:var(--ink);color:#fff;border-radius:20px;padding:55px 26px;text-align:center;}
-.contact h2{color:#fff;font-size:2rem;margin-bottom:9px;}
-.contact .sub{color:#C9D2DE;margin-bottom:23px;}
-.phone-big{font:700 2rem Georgia,serif;color:var(--amber);text-decoration:none;}
-.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px;}
-.area-list{margin-top:24px;color:#AEB9C6;font-size:.9rem;}
-
-/* FOOTER */
-footer{text-align:center;padding:34px 20px 25px;color:var(--slate);font-size:.84rem;}
-footer a{color:var(--teal);font-weight:700;text-decoration:none;}
-
-/* MOBILE BAR */
-.mobile-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:100;background:var(--ink);padding:9px 12px calc(9px + env(safe-area-inset-bottom));gap:9px;}
-.mobile-bar a{flex:1;text-align:center;padding:11px;border-radius:10px;text-decoration:none;font-weight:800;}
-.mobile-bar .call{background:var(--amber);color:var(--ink);}
-.mobile-bar .app{background:var(--teal);color:#fff;}
-@media(max-width:780px){.mobile-bar{display:flex;}}
-
-:focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
-
-@media(max-width:600px){
-  section{padding:48px 0;}
-  .hero{padding:48px 0 62px;}
-  .hero h1{font-size:2.15rem;}
-  .contact,.business-cta{border-radius:0;}
+/* Product list */
+.products{display:grid;gap:18px;margin-top:34px}
+.product{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.product .img{
+  aspect-ratio:4/3;
+  background:linear-gradient(135deg,#e9e7e0,#d8d5cb);
+  background-size:cover;background-position:center;
+  display:flex;align-items:center;justify-content:center;color:#9b978b;font-size:.85rem;
 }
+.product .body{padding:22px}
+.product h3{font-size:1.3rem;margin-bottom:6px}
+.product p{color:var(--muted);font-size:.95rem}
+.product a.more{display:inline-block;margin-top:12px;font-weight:700;color:var(--gold);text-decoration:none}
+@media(min-width:700px){.products{grid-template-columns:repeat(3,1fr)}}
+
+/* Colours */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;margin:28px 0 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto;padding:10px 18px;border-radius:999px;border:1px solid var(--line);
+  background:#fff;font:600 .9rem inherit;font-family:inherit;color:var(--ink);cursor:pointer;
+}
+.tab.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 10px}
+.sw{text-align:center}
+.sw i{
+  display:block;width:100%;max-width:84px;aspect-ratio:1;border-radius:50%;
+  margin:0 auto 8px;border:1px solid rgba(0,0,0,.12);
+  box-shadow:inset 0 0 0 3px rgba(255,255,255,.35);
+}
+.sw span{font-size:.82rem;font-weight:600;color:var(--ink)}
+@media(min-width:700px){.swatches{grid-template-columns:repeat(6,1fr)}}
+.small-note{margin-top:22px;font-size:.85rem;color:var(--muted)}
+
+/* Steps */
+.steps{display:grid;gap:14px;margin-top:32px;counter-reset:s}
+.step{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px}
+.step:before{
+  counter-increment:s;content:counter(s);flex:0 0 36px;height:36px;border-radius:50%;
+  background:var(--ink);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-weight:700;
+}
+.step h3{font-family:inherit;font-size:1.05rem;margin-bottom:2px}
+.step p{color:var(--muted);font-size:.93rem}
+@media(min-width:800px){.steps{grid-template-columns:repeat(4,1fr)}.step{flex-direction:column}}
+
+/* Fitting promise */
+.dark{background:var(--ink);color:#fff}
+.dark h2{color:#fff}
+.dark .lead{color:#c3cbd1}
+.tick-list{list-style:none;margin-top:26px;display:grid;gap:12px}
+.tick-list li{padding-left:32px;position:relative;color:#e2e7ea}
+.tick-list li:before{content:"✓";position:absolute;left:0;top:0;color:var(--gold-light);font-weight:800}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.gallery div{
+  aspect-ratio:1;border-radius:10px;
+  background:linear-gradient(135deg,#ecebe5,#dcd9cf);
+  background-size:cover;background-position:center;
+}
+@media(min-width:800px){.gallery{grid-template-columns:repeat(4,1fr)}}
+
+/* Areas */
+.areas{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+.areas span{background:#fff;border:1px solid var(--line);padding:9px 16px;border-radius:999px;font-size:.9rem;font-weight:600}
+
+/* Contact */
+.contact-grid{display:grid;gap:22px;margin-top:32px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px}
+.card h3{font-size:1.25rem;margin-bottom:8px}
+.card p{color:var(--muted);margin-bottom:16px;font-size:.95rem}
+.phone{display:block;font:700 1.9rem Georgia,serif;color:var(--gold);text-decoration:none;margin-bottom:16px}
+label{display:block;font-weight:600;font-size:.9rem;color:var(--ink);margin-bottom:6px}
+input,select{
+  width:100%;padding:14px;border:1px solid #cfcdc5;border-radius:8px;
+  font:1rem inherit;font-family:inherit;background:#fff;margin-bottom:14px;color:var(--text);
+}
+.card .btn{width:100%}
+@media(min-width:800px){.contact-grid{grid-template-columns:1fr 1fr}}
+
+/* Footer */
+footer{background:var(--ink);color:#aeb7be;text-align:center;padding:34px 20px;font-size:.85rem}
+footer strong{color:#fff;font-size:1rem}
+footer p{margin-top:6px}
+footer a{color:var(--gold-light);text-decoration:none}
+
+/* Mobile bar */
+.mobile-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:80;background:var(--ink);
+  display:flex;gap:8px;padding:9px 10px calc(9px + env(safe-area-inset-bottom));
+}
+.mobile-bar a{flex:1;text-align:center;padding:14px 8px;border-radius:6px;font-weight:700;text-decoration:none;font-size:.95rem}
+.mobile-bar .call{background:var(--gold);color:#fff}
+.mobile-bar .wa{background:#fff;color:var(--ink)}
+@media(min-width:900px){.mobile-bar{display:none}body{padding-bottom:0}}
+
+:focus-visible{outline:3px solid var(--gold-light);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="container">
-    <span>Rugby, Warwickshire · Mon–Sat, 8am–6pm</span>
-    <div style="display:flex;align-items:center;gap:14px;">
-      <a class="call" href="tel:+447775877746">📞 07775 877 746</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#top" aria-label="Pro APEX home">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <rect width="100" height="100" rx="16" fill="#101820"/>
+          <path d="M55 15 L30 55 L48 55 L42 85 L72 42 L52 42 Z" fill="#C99A3E"/>
+        </svg>
+        Pro APEX
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="#doors">Doors</a>
+        <a href="#windows">Windows</a>
+        <a href="#colours">Colours</a>
+        <a href="#fitting">Our fitting</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-gold" href="#contact">Get a quote</a>
+      </nav>
     </div>
-  </div>
-</div>
-
-<!-- NAVIGATION -->
-<nav class="main">
-  <div class="container">
-
-    <a class="brand" href="#main" aria-label="Pro APEX home">
-      <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
-        <rect width="100" height="100" rx="20" fill="#0E1A2B"/>
-        <path d="M55 15 L30 55 L48 55 L42 85 L72 42 L52 42 Z" fill="#FFB020"/>
-      </svg>
-      Pro APEX
-    </a>
-
-    <div class="navlinks">
-      <a href="#care">Care Providers</a>
-      <a href="#services">Services</a>
-      <a href="#trust">Why Us</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <div class="nav-right">
-      <a class="nav-apps" href="apps.html">📱 Apps</a>
-      <a class="nav-cta" href="#contact">Get a Quote →</a>
-    </div>
-
-  </div>
-</nav>
-
-<main id="main">
-
-<!-- HERO -->
-<header class="hero">
-  <div class="container hero-inner">
-
-    <div class="eyebrow">Commercial & Care Property Maintenance</div>
-
-    <h1>Reliable property maintenance for care homes, nursing homes and businesses.</h1>
-
-    <p class="lead">Pro APEX provides practical property maintenance, repairs and minor improvements for care homes, nursing homes, supported living properties, landlords, property managers and businesses across the local area.</p>
-
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#services">View My Services →</a>
-      <a class="btn btn-outline" href="apps.html">📱 View Our Apps</a>
-      <a class="btn btn-outline" href="#contact">📞 Get a Quote</a>
-    </div>
-
-    <div class="hero-badges">
-      <span><i class="dot"></i><span>Fully insured Ltd company</span></span>
-      <span><i class="dot"></i><span>General property maintenance</span></span>
-      <span><i class="dot"></i><span>Rugby & Warwickshire</span></span>
-    </div>
-
   </div>
 </header>
 
-<!-- PARTNER STRIP -->
-<div class="container">
-  <div class="partner-strip">
-    <div>
-      <strong>Care providers</strong>
-      <span>Reliable maintenance and practical property support.</span>
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <h1>Create the perfect first impression.</h1>
+    <p>Composite doors, bi-fold doors, patio doors and windows, fitted with care by Pro APEX. Ten years of fitting experience and a clean, tidy finish.</p>
+    <div class="btns">
+      <a class="btn btn-gold" href="#contact">Get a quote</a>
+      <a class="btn btn-outline" href="tel:+447775877746">Call 07775 877 746</a>
     </div>
-    <div>
-      <strong>Landlords &amp; agents</strong>
-      <span>Repairs, decorating and property turnarounds.</span>
-    </div>
-    <div>
-      <strong>Businesses</strong>
-      <span>A dependable local point of contact for property work.</span>
-    </div>
+    <p class="partner-note">Fitting partner for Future Homes by Nationwide, Rugby.</p>
   </div>
 </div>
 
-<!-- CARE PROVIDERS -->
-<section id="care" class="care-section">
-  <div class="container">
-    <div class="care-grid">
+<!-- FEATURES -->
+<section style="padding:44px 0">
+  <div class="wrap">
+    <div class="features">
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="15.5" cy="12" r=".8"/></svg>
+        <h3>Wide range</h3><p>Many colours and styles</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <h3>Multi-point locking</h3><p>Peace of mind</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><path d="M4 20l4-1L19 8l-3-3L5 16z"/><path d="M14 7l3 3"/></svg>
+        <h3>Your door, your way</h3><p>Choose your accessories</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>
+        <h3>Fitted properly</h3><p>Clean, tidy finish</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div>
-        <div class="section-head">
-          <div class="eyebrow">Care homes · Nursing homes · Supported living</div>
-          <h2>A practical maintenance partner for occupied care environments.</h2>
-          <p>When your team identifies a maintenance problem, you need a dependable contractor who can respond professionally while working respectfully around residents, staff and visitors.</p>
+<!-- DOORS -->
+<section id="doors" class="soft">
+  <div class="wrap">
+    <h2>Doors</h2>
+    <p class="lead">Your door should be as individual as you are. Bold or reserved, classic or contemporary, we fit it neatly and make sure it works perfectly.</p>
+
+    <div class="products">
+      <article class="product">
+        <div class="img" data-img="images/composite-door.jpg">Photo coming soon</div>
+        <div class="body">
+          <h3>Composite doors</h3>
+          <p>Strong, secure front doors in a huge choice of styles, colours and glass.</p>
+          <a class="more" href="#contact">Ask about this door</a>
         </div>
-
-        <div class="care-list">
-          <div>Home safety improvements</div>
-          <div>Grab rails &amp; accessibility</div>
-          <div>Minor bathroom adaptations</div>
-          <div>Doors, locks &amp; carpentry</div>
-          <div>Painting &amp; decorating</div>
-          <div>General property repairs</div>
-          <div>Maintenance inspections</div>
-          <div>DBS check: [add your status here]</div>
+      </article>
+      <article class="product">
+        <div class="img" data-img="images/bifold-door.jpg">Photo coming soon</div>
+        <div class="body">
+          <h3>Bi-fold doors</h3>
+          <p>Open up your home to the garden with smooth, accurate fitting.</p>
+          <a class="more" href="#contact">Ask about this door</a>
         </div>
-      </div>
+      </article>
+      <article class="product">
+        <div class="img" data-img="images/patio-door.jpg">Photo coming soon</div>
+        <div class="body">
+          <h3>Patio &amp; French doors</h3>
+          <p>Sliding patio and French doors that glide, lock and seal properly.</p>
+          <a class="more" href="#contact">Ask about this door</a>
+        </div>
+      </article>
+    </div>
 
-      <div class="care-panel">
-        <h3>Clear records after the work</h3>
-        <p>For business clients, Pro APEX can provide a simple record of completed works, including what was repaired, the date and photographs where appropriate.</p>
-        <p><strong>Need a local maintenance partner?</strong> Let's discuss how referrals and repeat maintenance could work for your organisation.</p>
-        <a class="btn btn-primary" href="#business">Discuss a partnership</a>
-      </div>
-
+    <div style="margin-top:30px;display:flex;flex-direction:column;gap:12px;max-width:340px">
+      <a class="btn btn-dark" href="https://futurehomesbynwd.co.uk/DesignCentre/DoorBuilder/nw/" target="_blank" rel="noopener">Design your door</a>
+      <a class="btn btn-line" href="https://futurehomesbynwd.co.uk/file/2024/08/Composite-Door-Brochure-Reduced-Size.pdf" target="_blank" rel="noopener">Download the brochure</a>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="section-alt">
-  <div class="container">
+<!-- WINDOWS -->
+<section id="windows">
+  <div class="wrap">
+    <h2>Windows</h2>
+    <p class="lead">Replacement or new windows, fitted accurately and finished neatly around the frame.</p>
 
-    <div class="section-head">
-      <div class="eyebrow">General property maintenance</div>
-      <h2>Practical maintenance for care and business properties.</h2>
-      <p>General repair, decorating and non-structural maintenance work for care homes, nursing homes, supported living properties, landlords, property managers and businesses.</p>
-    </div>
-
-    <div class="services-grid">
-
-      <div class="service-card">
-        <span class="icon">🎨</span>
-        <h3>Painting &amp; decorating</h3>
-        <p>Interior and exterior painting, decorating repairs, surface preparation and finishing. Low-odour options can be discussed for occupied properties.</p>
-        <span class="service-tag">Low-odour options</span>
-      </div>
-
-      <div class="service-card">
-        <span class="icon">🪚</span>
-        <h3>Carpentry &amp; repairs</h3>
-        <p>Minor carpentry, doors, skirting, shelving, handles, flat-pack assembly and general non-structural repairs.</p>
-      </div>
-
-      <div class="service-card">
-        <span class="icon">🧱</span>
-        <h3>Tiling &amp; flooring</h3>
-        <p>Wall and floor tiling, laminate, vinyl, minor preparation work and repairs.</p>
-      </div>
-
-      <div class="service-card">
-        <span class="icon">🚿</span>
-        <h3>Minor bathroom maintenance</h3>
-        <p>Like-for-like replacement of baths, toilets, basins and sinks, sealant, tiling repairs and other minor non-structural maintenance.</p>
-      </div>
-
-      <div class="service-card">
-        <span class="icon">🛠️</span>
-        <h3>General property repairs</h3>
-        <p>Fixtures and fittings, shelves, brackets, handles, locks, minor repairs and practical property maintenance.</p>
-      </div>
-
-      <div class="service-card">
-        <span class="icon">🌧️</span>
-        <h3>Gutters &amp; external maintenance</h3>
-        <p>Gutter and downpipe maintenance, external painting and other straightforward external property maintenance.</p>
-      </div>
-
-    </div>
-
-    <div class="report" style="border-left-color:var(--amber);background:var(--soft-amber)">
-      <strong>Work outside this service list?</strong>
-       <p>Pro APEX does not advertise or undertake gas, heating systems, fixed air-conditioning, electrical work of any kind (installation, repair, testing or fault-finding), fuse boards, roofing replacement, structural work or other regulated/specialist work. Where specialist work is required, an appropriately qualified and certified contractor should be used.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- WHY US -->
-<section id="trust" class="container">
-
-  <div class="section-head">
-    <div class="eyebrow">Why Pro APEX</div>
-    <h2>Built around trust, clear communication and accountability.</h2>
-  </div>
-
-  <div class="why-grid">
-
-    <div class="why-card">
-      <span class="num">01</span>
-      <p><strong>One local point of contact.</strong> Reduce the need to coordinate several different contractors for smaller maintenance jobs.</p>
-    </div>
-
-    <div class="why-card">
-      <span class="num">02</span>
-      <p><strong>[Add your nursing home / care home experience here once confirmed]</strong> e.g. "Completed maintenance work for [named client]" — only add a specific claim once you can back it up if asked.</p>
-    </div>
-
-    <div class="why-card">
-      <span class="num">03</span>
-      <p><strong>Comfortable around occupied homes.</strong> Previous healthcare experience helps me understand the importance of respectful working.</p>
-    </div>
-
-    <div class="why-card">
-      <span class="num">04</span>
-      <p><strong>Written agreements.</strong> Scope, finish and price are agreed before work starts.</p>
-    </div>
-
-    <div class="why-card">
-      <span class="num">05</span>
-      <p><strong>12-month workmanship guarantee.</strong> If completed work does not match what was agreed, I will return to put it right within the guarantee terms.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- BUSINESS PROCESS -->
-<section class="section-alt">
-  <div class="container">
-
-    <div class="section-head">
-      <div class="eyebrow">How business referrals can work</div>
-      <h2>Simple for your team. Clear for the customer.</h2>
-    </div>
-
-    <div class="steps-grid">
-
-      <div class="step-card">
-        <span class="num">01</span>
-        <h3>Identify the problem</h3>
-        <p>Your team, customer or family member identifies a maintenance or safety issue.</p>
-      </div>
-
-      <div class="step-card">
-        <span class="num">02</span>
-        <h3>Contact Pro APEX</h3>
-        <p>Send the details or ask the customer to contact Pro APEX directly.</p>
-      </div>
-
-      <div class="step-card">
-        <span class="num">03</span>
-        <h3>Assess &amp; agree</h3>
-        <p>The job is assessed and the scope, price and requirements are agreed in writing.</p>
-      </div>
-
-      <div class="step-card">
-        <span class="num">04</span>
-        <h3>Complete &amp; report</h3>
-        <p>The work is completed professionally, with a simple completion record for business clients where requested.</p>
-      </div>
-
+    <div class="products">
+      <article class="product">
+        <div class="img" data-img="images/casement-window.jpg">Photo coming soon</div>
+        <div class="body"><h3>Casement windows</h3><p>Classic, reliable and easy to live with.</p>
+        <a class="more" href="#contact">Ask about windows</a></div>
+      </article>
+      <article class="product">
+        <div class="img" data-img="images/bay-window.jpg">Photo coming soon</div>
+        <div class="body"><h3>Bay &amp; bow windows</h3><p>Careful fitting for bay and bow units.</p>
+        <a class="more" href="#contact">Ask about windows</a></div>
+      </article>
+      <article class="product">
+        <div class="img" data-img="images/replacement-window.jpg">Photo coming soon</div>
+        <div class="body"><h3>Replacement windows</h3><p>Clean removal, accurate fitting, tidy finish.</p>
+        <a class="more" href="#contact">Ask about windows</a></div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- TERMS -->
+<!-- COLOURS -->
+<section id="colours" class="soft">
+  <div class="wrap">
+    <h2>A world of colour</h2>
+    <p class="lead">From rich and vibrant to soft and subtle, the best colour is the one that looks good on your home.</p>
+
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="swatches" id="swatches"></div>
+
+    <p class="small-note">Colours shown are a guide only and may look different on your screen. See the brochure or ask us for the real samples.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
 <section>
-  <div class="container">
-
-    <div class="section-head">
-      <div class="eyebrow">Clear terms</div>
-      <h2>Professional arrangements without unnecessary complexity.</h2>
-    </div>
-
-    <div class="info-stack">
-
-      <div class="info-card">
-        <h3>📝 Written scope before work</h3>
-        <p>Jobs are agreed in writing before work starts, including the work to be completed and the agreed price.</p>
-      </div>
-
-      <div class="info-card teal">
-        <h3>📋 Business records</h3>
-        <p>For care providers, landlords and property managers, a simple completion record can be supplied after agreed works, including photographs where appropriate.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>🛡️ Insurance &amp; scope of work</h3>
-        <p>Pro APEX is a fully insured Ltd company. Work is only carried out within the relevant skills, qualifications and insurance cover — electrical, gas and other regulated work is outside scope and is not offered.</p>
-      </div>
-
-      <div class="info-card teal">
-        <h3>🪪 DBS check</h3>
-        <p>[Add your DBS status here once confirmed — e.g. "Basic DBS check held, certificate available on request." Only state this once you actually hold the certificate and can show it if asked.]</p>
-      </div>
-
+  <div class="wrap">
+    <h2>Simple from quote to finish</h2>
+    <div class="steps">
+      <div class="step"><div><h3>Get in touch</h3><p>Call or message us with your project.</p></div></div>
+      <div class="step"><div><h3>Choose your design</h3><p>Pick your style, colour, glass and handles.</p></div></div>
+      <div class="step"><div><h3>We fit it</h3><p>Careful, professional installation.</p></div></div>
+      <div class="step"><div><h3>Clean finish</h3><p>We tidy up and show you the finished job.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="container">
-
-  <div class="section-head">
-    <div class="eyebrow">Questions</div>
-    <h2>Frequently asked questions</h2>
-  </div>
-
-  <div>
-
-    <details class="faq-item">
-      <summary>Do you work with care providers?</summary>
-      <p>Yes. Pro APEX is available for general maintenance, repairs and practical property improvements for care homes, nursing homes, supported living properties, landlords, property managers and businesses.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Can you provide a record of completed work?</summary>
-      <p>For business clients, a simple completion record can be provided, including the work carried out, date and photographs where appropriate.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Do you supply materials?</summary>
-      <p>Materials can be supplied where agreed in advance as part of the job.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>How quickly can you visit?</summary>
-      <p>I usually aim to visit within 48 hours for an initial assessment, subject to availability and the nature of the job.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Do you do gas, electrical or F-Gas air-conditioning work?</summary>
-      <p>No. These services are outside my qualifications. Where appropriate, I can recommend suitably registered specialists.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>What is the Staff Break Manager?</summary>
-      <p>Staff Break Manager is a simple digital tool designed to help businesses, particularly care environments, keep track of staff breaks in a straightforward way.</p>
-    </details>
-
+<!-- FITTING PROMISE -->
+<section id="fitting" class="dark">
+  <div class="wrap">
+    <h2>We don't leave your home looking like a building site.</h2>
+    <p class="lead">A great door is only as good as its fitting. We take pride in leaving the work area clean and presentable.</p>
+    <ul class="tick-list">
+      <li>Careful preparation before we start</li>
+      <li>Accurate alignment, levels and finish</li>
+      <li>Floors, walls and furniture protected</li>
+      <li>All installation waste removed</li>
+      <li>Final check with you before we leave</li>
+    </ul>
   </div>
 </section>
 
-<!-- STAFF BREAK APP -->
-<section id="app" class="app-section optional-extra">
-  <div class="container">
-    <div class="app-grid">
-
-      <div class="app-content">
-        <div class="eyebrow">Optional digital extras</div>
-        <h2>Need something extra for your business?</h2>
-        <p class="app-lead">My main work is multi-trade property maintenance. If you need a simple website or business app as an extra service, I can build that too.</p>
-
-        <div class="app-label">OPTIONAL EXTRA SERVICE</div>
-        <h3>Staff Break Manager</h3>
-        <p>A simple staff break tracking application designed with care homes, nursing homes and similar care environments in mind.</p>
-
-        <div class="app-features">
-          <div>✓ Simple break tracking</div>
-          <div>✓ Designed for care environments</div>
-          <div>✓ Easy to use for staff</div>
-          <div>✓ Clear information for managers</div>
-        </div>
-
-        <div class="app-ctas">
-          <a class="btn btn-primary" href="https://breakclock.app/" target="_blank" rel="noopener">Open Staff Break Manager →</a>
-          <a class="btn btn-outline" href="apps.html">See all apps →</a>
-        </div>
-      </div>
-
-      <div class="app-card">
-        <div class="app-card-top">
-          <span class="app-status"></span>
-          <span>Staff Break Manager</span>
-        </div>
-
-        <div class="app-preview">
-          <div class="preview-title">Staff Breaks</div>
-
-          <div class="preview-row">
-            <span>Staff member</span>
-            <strong>Break status</strong>
-          </div>
-
-          <div class="preview-row">
-            <span>Team member</span>
-            <span class="break-badge">On Break</span>
-          </div>
-
-          <div class="preview-row">
-            <span>Team member</span>
-            <span class="available-badge">Available</span>
-          </div>
-
-          <div class="preview-row">
-            <span>Team member</span>
-            <span class="available-badge">Available</span>
-          </div>
-
-          <div class="preview-button">Start Break</div>
-        </div>
-
-        <a class="app-card-link" href="https://breakclock.app/" target="_blank" rel="noopener">Visit the application →</a>
-      </div>
-
+<!-- GALLERY -->
+<section>
+  <div class="wrap">
+    <h2>Our recent work</h2>
+    <p class="lead">Photos of our fitted doors and windows.</p>
+    <div class="gallery">
+      <div data-img="images/work-1.jpg"></div>
+      <div data-img="images/work-2.jpg"></div>
+      <div data-img="images/work-3.jpg"></div>
+      <div data-img="images/work-4.jpg"></div>
     </div>
   </div>
 </section>
 
-
-<!-- BUSINESS CTA -->
-<section id="business">
-  <div class="container">
-    <div class="business-cta">
-
-      <div class="eyebrow">Care providers · landlords · businesses</div>
-      <h2>Looking for a reliable local partner?</h2>
-      <p>Let's talk about how Pro APEX could support your team with property maintenance, practical digital tools and repeat business services.</p>
-
-      <div class="contact-actions">
-        <a class="btn btn-primary" href="tel:+447775877746">📞 Call 07775 877 746</a>
-        <a class="btn btn-outline" href="https://wa.me/447775877746" target="_blank" rel="noopener">💬 WhatsApp</a>
-      </div>
-
+<!-- AREAS -->
+<section class="soft center">
+  <div class="wrap">
+    <h2>Serving Rugby &amp; surrounding areas</h2>
+    <p class="lead">Window and door fitting across Rugby, Warwickshire and selected nearby areas.</p>
+    <div class="areas">
+      <span>Rugby</span><span>Coventry</span><span>Leamington Spa</span>
+      <span>Daventry</span><span>Bedworth</span><span>Nuneaton</span>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="container">
-  <div class="contact">
+<section id="contact">
+  <div class="wrap">
+    <h2>Let's talk about your project</h2>
+    <p class="lead">The quickest way is a call or a WhatsApp message. Photos help a lot.</p>
 
-    <h2>Need property maintenance support?</h2>
-    <p class="sub">Call, text or WhatsApp. I usually aim to visit within 48 hours for an initial assessment.</p>
+    <div class="contact-grid">
+      <div class="card">
+        <h3>Call us</h3>
+        <p>Speak to Pro APEX directly.</p>
+        <a class="phone" href="tel:+447775877746">07775 877 746</a>
+        <a class="btn btn-gold" href="tel:+447775877746">Call now</a>
+      </div>
 
-    <a class="phone-big" href="tel:+447775877746">07775 877 746</a>
-
-    <div class="contact-actions">
-      <a class="btn btn-primary" href="tel:+447775877746">Call now</a>
-      <a class="btn btn-outline" href="https://wa.me/447775877746" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="card">
+        <h3>Request a quote on WhatsApp</h3>
+        <p>Fill in two details and we'll open WhatsApp for you.</p>
+        <label for="what">What do you need?</label>
+        <select id="what">
+          <option>Composite door</option>
+          <option>Bi-fold doors</option>
+          <option>Patio / French doors</option>
+          <option>Windows</option>
+          <option>Not sure yet</option>
+        </select>
+        <label for="town">Your town or postcode</label>
+        <input id="town" type="text" placeholder="e.g. Rugby CV21" autocomplete="postal-code">
+        <button class="btn btn-dark" id="sendWa" type="button">Send on WhatsApp</button>
+      </div>
     </div>
-
-    <div class="area-list">Serving Rugby, Coventry, Leamington Spa, Daventry, Bedworth &amp; Nuneaton</div>
-
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer>
-  <div class="container">
-    <span>© 2026 Pro APEX. All rights reserved.</span>
-    <br>
-    <span>Ltd registered in England &amp; Wales. Fully insured.</span>
-    <div style="margin-top:7px">
-      <a href="apps.html">Apps</a> ·
-      <a href="privacy.html">Privacy Policy &amp; GDPR Information</a>
-    </div>
-  </div>
+  <strong>Pro APEX</strong>
+  <p>Window &amp; Door Fitting · Rugby · Warwickshire</p>
+  <p>© 2026 Pro APEX. All rights reserved.</p>
+  <p><a href="privacy.html">Privacy Policy</a></p>
 </footer>
 
-<!-- MOBILE BAR -->
 <div class="mobile-bar">
-  <a class="call" href="tel:+447775877746">📞 Call</a>
-  <a class="app" href="apps.html">📱 Apps</a>
+  <a class="call" href="tel:+447775877746">Call</a>
+  <a class="wa" href="https://wa.me/447775877746" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
+<script>
+/* Mobile menu */
+(function(){
+  var btn=document.getElementById('menuBtn'), nav=document.getElementById('nav');
+  function close(){nav.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+  btn.addEventListener('click',function(){
+    var o=nav.classList.toggle('open');
+    btn.classList.toggle('open',o);
+    btn.setAttribute('aria-expanded',o);
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+
+/* Photos: use a photo only if the file exists, otherwise keep the placeholder */
+document.querySelectorAll('[data-img]').forEach(function(el){
+  var src=el.getAttribute('data-img'), im=new Image();
+  im.onload=function(){el.style.backgroundImage="url('"+src+"')";el.textContent='';};
+  im.src=src;
+});
+
+/* Colour groups (approximate colours) */
+var groups={
+  "Standard":[["White","#ffffff"],["Red","#8b1a1a"],["Green","#1f4d2e"],["Blue","#1f3d6b"],["Black","#111111"]],
+  "Foil matched":[["Cream White","#efe9d6"],["Agate Grey","#7d8288"],["Chartwell Green","#5f7a63"],["Slate Grey","#4a5259"],["Anthracite Grey","#2f3437"],["Moondust Grey","#6d6f70"]],
+  "Heritage":[["Clay","#b9a48a"],["Cotton Candy","#e6c9cf"],["Cotswold","#d8ccb0"],["Lawn Grey","#a7ada6"],["Sage Green","#9fb09a"],["Olive Grove","#6b6f45"],["Nimbus","#b9bec2"],["Shadow Grey","#5d6062"]],
+  "Bold":[["Diablo","#b3261e"],["Hot Mustard","#d8a31a"],["Stormy Seas","#3b5566"],["Very Berry","#7a1f4a"],["Victory Blue","#2450a6"],["Twilight","#2b2f55"]],
+  "Woodgrain":[["Alaskan Birch","#d9c7a6"],["Mocha Patina","#6b4a35"],["Stone Grey Patina","#8b8579"],["Slate Patina","#555a5c"],["Golden Oak","#b9823c"],["Rosewood","#6a2e22"]]
+};
+(function(){
+  var tabs=document.getElementById('tabs'), box=document.getElementById('swatches');
+  function show(name){
+    box.innerHTML='';
+    groups[name].forEach(function(c){
+      var d=document.createElement('div');d.className='sw';
+      d.innerHTML='<i style="background:'+c[1]+'"></i><span>'+c[0]+'</span>';
+      box.appendChild(d);
+    });
+    tabs.querySelectorAll('.tab').forEach(function(t){
+      var on=t.textContent===name;
+      t.classList.toggle('active',on);t.setAttribute('aria-selected',on);
+    });
+  }
+  Object.keys(groups).forEach(function(name,i){
+    var b=document.createElement('button');
+    b.className='tab';b.type='button';b.textContent=name;b.setAttribute('role','tab');
+    b.addEventListener('click',function(){show(name);});
+    tabs.appendChild(b);
+  });
+  show('Standard');
+})();
+
+/* WhatsApp quote button */
+document.getElementById('sendWa').addEventListener('click',function(){
+  var what=document.getElementById('what').value;
+  var town=document.getElementById('town').value.trim();
+  var msg="Hello Pro APEX, I'd like a quote for: "+what+"."+(town?" Location: "+town+".":"")+" I can send photos.";
+  window.open("https://wa.me/447775877746?text="+encodeURIComponent(msg),"_blank","noopener");
+});
+</script>
 </body>
 </html>
