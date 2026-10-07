@@ -164,15 +164,6 @@ header.site{
 .tick-list li{padding-left:32px;position:relative;color:#e2e7ea}
 .tick-list li:before{content:"✓";position:absolute;left:0;top:0;color:var(--gold-light);font-weight:800}
 
-/* Gallery */
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
-.gallery div{
-  aspect-ratio:1;border-radius:10px;
-  background:linear-gradient(135deg,#ecebe5,#dcd9cf);
-  background-size:cover;background-position:center;
-}
-@media(min-width:800px){.gallery{grid-template-columns:repeat(4,1fr)}}
-
 /* Areas */
 .areas{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
 .areas span{background:#fff;border:1px solid var(--line);padding:9px 16px;border-radius:999px;font-size:.9rem;font-weight:600}
@@ -207,6 +198,47 @@ footer a{color:var(--gold-light);text-decoration:none}
 .mobile-bar .wa{background:#fff;color:var(--ink)}
 @media(min-width:900px){.mobile-bar{display:none}body{padding-bottom:0}}
 
+/* Cleaner placeholders + gold accent */
+.product .img{background-size:cover;background-position:center}
+h2:after{content:"";display:block;width:48px;height:3px;background:var(--gold);margin-top:12px;border-radius:2px}
+.center h2:after,.dark h2:after{margin-left:auto;margin-right:auto}
+.dark h2:after{margin-left:0}
+
+/* Phone-friendly layout */
+@media(max-width:899px){
+  section{padding:46px 0}
+  .hero{padding:52px 0 44px}
+  .hero p{font-size:1rem}
+  .nav.open{max-height:calc(100vh - 64px - env(safe-area-inset-top));overflow-y:auto}
+  .nav a{padding:17px 0;font-size:1.02rem}
+  .features{gap:10px}
+  .feat{padding:18px 12px}
+
+  /* swipeable product cards instead of long vertical scroll */
+  .products{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;
+    margin-left:-22px;margin-right:-22px;padding:4px 22px 14px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  }
+  .products::-webkit-scrollbar{display:none}
+  .product{flex:0 0 80%;scroll-snap-align:center}
+  .product .img{aspect-ratio:3/2}
+  .product .body{padding:18px}
+  .product a.more{padding:8px 0}
+
+  .steps{gap:10px}
+  .step{padding:16px}
+  .areas span{padding:10px 14px}
+  .card{padding:22px}
+  .phone{font-size:1.7rem}
+  .tick-list li{font-size:.98rem}
+}
+@media(max-width:380px){
+  .wrap{padding:0 16px}
+  .products{margin-left:-16px;margin-right:-16px;padding-left:16px;padding-right:16px}
+  .brand{font-size:1.15rem}
+}
+
 :focus-visible{outline:3px solid var(--gold-light);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -220,7 +252,8 @@ footer a{color:var(--gold-light);text-decoration:none}
       <a class="brand" href="#top" aria-label="Pro APEX home">
         <svg viewBox="0 0 100 100" aria-hidden="true">
           <rect width="100" height="100" rx="16" fill="#101820"/>
-          <path d="M55 15 L30 55 L48 55 L42 85 L72 42 L52 42 Z" fill="#C99A3E"/>
+          <path d="M18 74 L50 24 L82 74" fill="none" stroke="#C99A3E" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M36 74 L50 52 L64 74" fill="none" stroke="#E2BD70" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         Pro APEX
       </a>
@@ -347,17 +380,15 @@ footer a{color:var(--gold-light);text-decoration:none}
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- REVIEWS -->
 <section>
-  <div class="wrap">
-    <h2>Our recent work</h2>
-    <p class="lead">Photos of our fitted doors and windows.</p>
-    <div class="gallery">
-      <div data-img="images/work-1.jpg"></div>
-      <div data-img="images/work-2.jpg"></div>
-      <div data-img="images/work-3.jpg"></div>
-      <div data-img="images/work-4.jpg"></div>
-    </div>
+  <div class="wrap center">
+    <h2>What our customers say</h2>
+    <p class="lead">Read honest reviews from customers we have supplied and fitted for.</p>
+    <a class="btn btn-gold" style="margin-top:22px"
+       href="LINK_GOOGLE_REVIEWS" target="_blank" rel="noopener">
+      ★ Read our Google reviews
+    </a>
   </div>
 </section>
 
